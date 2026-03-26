@@ -1,0 +1,36 @@
+site_name: SpoolSense
+site_url: https://spoolsense.org
+site_description: Smart filament tracking for your 3D printer
+site_author: SpoolSense
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.instant
+    - navigation.top
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/SpoolSense
+
+copyright: Copyright &copy; 2025 SpoolSense
+
+nav:
+  - Home: index.md
