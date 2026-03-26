@@ -10,9 +10,9 @@ hide:
   padding: 6rem 2rem;
 }
 
-.coming-soon .logo {
-  font-size: 4rem;
-  margin-bottom: 1rem;
+.coming-soon .logo img {
+  width: 180px;
+  margin-bottom: 1.5rem;
 }
 
 .coming-soon h1 {
@@ -56,8 +56,9 @@ hide:
 </style>
 
 <div class="coming-soon">
-  <div class="logo">🧵</div>
-  <h1>SpoolSense</h1>
+  <div class="logo">
+    <img src="https://raw.githubusercontent.com/SpoolSense/spoolsense_middleware/master/docs/spoolsense-logo.png" alt="SpoolSense" />
+  </div>
   <p class="tagline">Smart filament tracking for your 3D printer</p>
   <div class="badge">Documentation coming soon</div>
   <div class="links">
