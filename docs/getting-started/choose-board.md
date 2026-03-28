@@ -8,12 +8,13 @@ The most common and beginner-friendly option.
 
 | Spec | Value |
 |------|-------|
-| Chip | ESP32-D0WD-V3 |
+| Board | Freenove ESP32-WROOM (recommended) |
+| Chip | ESP32-D0WD-V3, dual-core 240MHz |
 | Flash | 4MB |
-| USB | USB-C (newer) or Micro-USB (older variants) |
+| USB | USB-C |
 | GPIO | 30+ available pins |
 | Status LED | External SK6812 RGBW (optional wiring) |
-| Price | ~$3-5 |
+| Price | ~$3-5 (2-pack available) |
 
 **Pros:**
 
