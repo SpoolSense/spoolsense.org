@@ -54,7 +54,7 @@ MQTT password []:
 MQTT topic prefix [spoolsense]:
 
 Enable Spoolman? [Y/n]: <span style="color:#fff">y</span>
-Spoolman URL [http://spoolman.local:7912]: <span style="color:#fff">http://192.168.1.32:7912</span>
+Spoolman URL [http://spoolman.local:7912]: <span style="color:#fff">http://192.168.1.100:7912</span>
 
 Automation mode:
   1) Self Directed — scanner auto-deducts filament weight

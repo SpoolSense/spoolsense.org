@@ -34,7 +34,7 @@ Returns device health info.
   "firmware_version": "1.5.9",
   "wifi": { "connected": true, "ssid": "MyNetwork", "rssi_dbm": -45, "ip": "192.168.1.100" },
   "mqtt": { "enabled": true, "broker": "192.168.1.50", "connected": true },
-  "spoolman": { "enabled": true, "url": "http://192.168.1.32:7912", "reachable": true },
+  "spoolman": { "enabled": true, "url": "http://192.168.1.100:7912", "reachable": true },
   "nfc": { "ok": true, "reader": "PN5180 v3.4" },
   "memory": { "free_bytes": 180000, "total_bytes": 303000 }
 }
