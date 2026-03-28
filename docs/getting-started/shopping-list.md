@@ -10,7 +10,7 @@ Everything you need to build a SpoolSense scanner. Total cost: **$10-20** depend
 | **NFC Reader** | PN5180 (recommended, all tag formats) or PN532 (ISO14443A only, no OpenPrintTag on SLIX2) | $3-6 |
 | **NFC Tags** | NTAG215 stickers for UID-based tracking, or ICODE SLIX2 for OpenPrintTag (PN5180 required) | $5-8 |
 | **Jumper Wires** | Female-to-female dupont wires (8 minimum, more if adding extras) | $2 |
-| **USB Cable** | Micro-USB (WROOM) or USB-C (S3-Zero) | $1 |
+| **USB Cable** | USB-C (most boards) or Micro-USB (older WROOM variants) | $1 |
 
 ## Optional
 

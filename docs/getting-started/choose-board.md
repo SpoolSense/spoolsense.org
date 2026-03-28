@@ -10,7 +10,7 @@ The most common and beginner-friendly option.
 |------|-------|
 | Chip | ESP32-D0WD-V3 |
 | Flash | 4MB |
-| USB | Micro-USB |
+| USB | USB-C (newer) or Micro-USB (older variants) |
 | GPIO | 30+ available pins |
 | Status LED | External SK6812 RGBW (optional wiring) |
 | Price | ~$3-5 |
