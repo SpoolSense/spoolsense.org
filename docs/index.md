@@ -14,6 +14,11 @@ hide:
   display: none;
 }
 
+/* Hide the page title "Home" on the landing page */
+.md-content h1 {
+  display: none;
+}
+
 .hero {
   text-align: center;
   padding: 0 2rem 2rem;
