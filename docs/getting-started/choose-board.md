@@ -62,3 +62,6 @@ A compact option with USB-C and onboard RGB LED.
 
 !!! note
     Both boards run the same firmware binary. The installer handles board selection automatically.
+
+!!! tip "Have a different ESP32?"
+    If you have a different ESP32 board and want it supported, [open an issue](https://github.com/SpoolSense/spoolsense_scanner/issues) with the board name and specs. Most ESP32 variants can be added with just a pin mapping update.
