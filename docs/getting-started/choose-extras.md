@@ -34,8 +34,14 @@ Shows scanner state with color-coded feedback: white during boot, blue when read
 | Wiring | 1 data pin + VCC + GND (WROOM only) |
 | Board Compatibility | External on WROOM, built-in on S3-Zero |
 
-!!! note
-    The ESP32-S3-Zero has an onboard WS2812 RGB LED. No external LED or wiring needed.
+**When to add it:**
+
+- You're using an ESP32-WROOM and want visual feedback at the scanner
+
+**When to skip it:**
+
+- **ESP32-S3-Zero** — has an onboard WS2812 RGB LED built in, no external LED needed
+- **AFC BoxTurtle users** — the middleware sends filament colors directly to the AFC lane LEDs, so you already get color feedback at the printer without a scanner LED
 
 ## 3x4 Matrix Keypad
 
