@@ -22,9 +22,9 @@ Build a scanner, try it out, tell us what works and what doesn't. Even "it just 
 
 This site is built from Markdown files in the [spoolsense.org repo](https://github.com/SpoolSense/spoolsense.org). Fork it, edit, and open a PR.
 
-### Design an Enclosure
+### Design an Enclosure or Mod
 
-We need printable cases. See [Enclosure Design](enclosure-design.md) for what's needed and how to submit.
+We need printable cases, mounts, and mods. See [Enclosure Design](enclosure-design.md) for what's needed, or browse existing [Community Mods](../builds/community-mods.md). Designs are submitted to the scanner repo's [`usermods/`](https://github.com/SpoolSense/spoolsense_scanner/tree/main/usermods) directory.
 
 ### Contribute Code
 

@@ -27,9 +27,8 @@ The NFC reader antenna should face upward so you can place spools on top of it.
 
 ### With Enclosure
 
-Enclosure designs will be linked here as they become available. The ideal standalone case:
+| Enclosure | Hardware | Author |
+|-----------|----------|--------|
+| [Jim's Enclosure v2](community-mods.md#jims-scanner-enclosure-v2) | ESP32-S3-Zero + PN5180 | Jim |
 
-- Flat top surface for placing spool tags
-- PN5180/PN532 antenna close to the surface
-- USB port accessible for power
-- Optional cutouts for LCD and keypad
+See [Community Mods](community-mods.md) for all available designs, or [contribute your own](../contributing/enclosure-design.md).

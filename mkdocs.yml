@@ -72,6 +72,7 @@ nav:
   - Build Guides:
     - Standalone Scanner: builds/standalone.md
     - BoxTurtle AFC Mount: builds/boxturtles.md
+    - Community Mods: builds/community-mods.md
   - Installation:
     - Firmware Install: installation/firmware.md
     - Middleware Setup: installation/middleware.md
