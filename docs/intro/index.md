@@ -13,6 +13,7 @@ Stick an NFC tag on each spool. When you load a spool, the scanner reads the tag
 - Identifies the filament (material, color, manufacturer, weight)
 - Updates your spool manager (Spoolman) automatically
 - Publishes status to Home Assistant for dashboards and automations
+- Sends spool data to Klipper/Moonraker via the optional middleware for AFC lane assignment, toolchanger support, and slicer integration (Orca Slicer, etc.)
 - Tracks remaining filament as you print
 
 No cloud. No subscriptions. Everything runs on your local network.
