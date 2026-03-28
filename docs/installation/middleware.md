@@ -1,6 +1,6 @@
 # Middleware Setup
 
-The SpoolSense middleware runs on your Klipper host (Raspberry Pi) and bridges the scanner to Klipper/AFC.
+The SpoolSense middleware bridges the scanner to Klipper/AFC. It typically runs on your Klipper host (Raspberry Pi), but can run on any machine on your network that can reach the MQTT broker and Moonraker (a separate Pi, a Linux VM, a NAS, etc.).
 
 ## When Do I Need This?
 
