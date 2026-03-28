@@ -12,7 +12,7 @@ The PN5180 connects to the ESP32 via SPI. 8 wires total.
 | MISO | GPIO 26 | SPI data in |
 | SCK | GPIO 25 | SPI clock |
 | BUSY | GPIO 33 | Busy signal (input) |
-| VCC | 5V | Power |
+| 5V | 5V | Power |
 | GND | GND | Ground |
 
 ## ESP32-S3-Zero Pinout
@@ -25,7 +25,7 @@ The PN5180 connects to the ESP32 via SPI. 8 wires total.
 | MISO | GPIO 7 | SPI data in |
 | SCK | GPIO 8 | SPI clock |
 | BUSY | GPIO 9 | Busy signal (input) |
-| VCC | 5V | Power |
+| 5V | 5V | Power |
 | GND | GND | Ground |
 
 ## Wiring Tips
