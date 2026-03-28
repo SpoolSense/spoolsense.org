@@ -34,7 +34,7 @@ A 3x4 matrix keypad enables scan-to-tool assignment for toolchanger and multi-to
 | COL3 | GPIO 42 | Column 3 |
 
 !!! warning
-    Using LCD + keypad together on the ESP32-S3-Zero is not recommended due to limited GPIO. Use the WROOM board for this combination.
+    Using LCD + keypad together on the ESP32-S3-Zero is not recommended due to limited GPIO...it can be done but soldering to the exposed pins on the back is tough. Use the WROOM board for LCD + keypad builds.
 
 ## How It Works
 

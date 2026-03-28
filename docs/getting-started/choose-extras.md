@@ -66,7 +66,7 @@ Enables scan-to-tool assignment for toolchanger and multi-tool setups. Scan a sp
 - You assign spools through Home Assistant or macros
 
 !!! warning
-    Using LCD + keypad together on the ESP32-S3-Zero is not recommended due to limited GPIO. Use the WROOM board for LCD + keypad builds.
+    Using LCD + keypad together on the ESP32-S3-Zero is not recommended due to limited GPIO...it can be done but soldering to the exposed pins on the back is tough. Use the WROOM board for LCD + keypad builds.
 
 ## Summary
 
