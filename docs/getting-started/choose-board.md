@@ -43,8 +43,7 @@ A compact option with USB-C and onboard RGB LED.
 **Pros:**
 
 - Very small form factor
-- USB-C
-- Onboard RGB LED (always available)
+- Onboard RGB LED (always available, no wiring)
 
 **Cons:**
 
@@ -59,7 +58,7 @@ A compact option with USB-C and onboard RGB LED.
 | Simplest build, most GPIO | **ESP32-WROOM** |
 | LCD + keypad + NFC reader | **ESP32-WROOM** |
 | Smallest possible scanner | **ESP32-S3-Zero** |
-| USB-C and onboard LED | **ESP32-S3-Zero** |
+| Onboard LED (no wiring) | **ESP32-S3-Zero** |
 
 !!! note
     Both boards run the same firmware binary. The installer handles board selection automatically.
