@@ -49,7 +49,7 @@ SpoolSense supports two NFC reader modules. Both connect via SPI and share the s
 | If you... | Choose |
 |-----------|--------|
 | Want maximum tag compatibility | **PN5180** |
-| Only use NTAG/TigerTag/UID tags | **PN532** |
+| Only use NFC+/TigerTag/OpenTag3D tags | **PN532** |
 | Have OpenPrintTag SLIX2 tags | **PN5180** (required) |
 | Want the cheapest option | **PN532** |
 
