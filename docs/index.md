@@ -10,6 +10,10 @@ hide:
   margin-top: 0 !important;
 }
 
+.md-tabs__link--active[href="."] {
+  display: none;
+}
+
 .hero {
   text-align: center;
   padding: 0 2rem 2rem;

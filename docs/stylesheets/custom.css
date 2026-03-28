@@ -128,7 +128,7 @@
   --md-typeset-a-color: #dc2626;
 }
 
-/* Header title / logo size */
+/* Hide header title on landing page — logo is already shown */
 .md-header__title {
   font-size: 0.8rem;
 }
