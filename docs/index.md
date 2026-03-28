@@ -126,19 +126,19 @@ hide:
   </a>
 
   <a href="installation/home-assistant/" class="tool-card">
-    <div class="tool-icon">&#127968;</div>
+    <div class="tool-icon"><svg width="36" height="36" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M120 0C53.7 0 0 53.7 0 120s53.7 120 120 120 120-53.7 120-120S186.3 0 120 0" fill="#18bcf2"/><path d="M120 40.5L42 100.5v78c0 8.3 6.7 15 15 15h30v-54h66v54h30c8.3 0 15-6.7 15-15v-78L120 40.5z" fill="#fff"/></svg></div>
     <div class="tool-name">Home Assistant</div>
     <div class="tool-desc">MQTT auto-discovery. Dashboard sensors for material, color, weight, and scanner status. Build automations.</div>
   </a>
 
   <a href="installation/middleware/" class="tool-card">
-    <div class="tool-icon">&#9881;</div>
+    <div class="tool-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="18" r="16" fill="#b4202a"/><path d="M18 6l-1.5 8.5L9 12l5.5 5-8.5 1.5L14 22l-5 5.5 8.5-1.5L15 33l3-8 3 8-2.5-7L27 27.5 22 22l8-3.5L21.5 17 27 12l-7.5 2.5L18 6z" fill="#fff"/></svg></div>
     <div class="tool-name">Klipper Ready</div>
     <div class="tool-desc">Middleware integrates with AFC, toolchangers, and Moonraker. Assign spools to tools via keypad or macro.</div>
   </a>
 
   <a href="getting-started/shopping-list/" class="tool-card">
-    <div class="tool-icon">&#128161;</div>
+    <div class="tool-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="18" r="16" fill="none" stroke="#22c55e" stroke-width="2.5"/><circle cx="18" cy="14" r="5" fill="none" stroke="#22c55e" stroke-width="2.5"/><path d="M18 19v11" stroke="#22c55e" stroke-width="2.5"/><path d="M13 25h10" stroke="#22c55e" stroke-width="2.5"/></svg></div>
     <div class="tool-name">Open Source</div>
     <div class="tool-desc">ESP32 firmware, Python middleware, and interactive installer. All GPL-3.0. Build it yourself for under $15.</div>
   </a>
