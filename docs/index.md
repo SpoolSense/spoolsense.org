@@ -5,19 +5,18 @@ hide:
 ---
 
 <style>
+.md-content__inner {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
 .hero {
   text-align: center;
-  padding: 4rem 2rem 2rem;
+  padding: 0 2rem 2rem;
 }
 
 .hero .logo img {
-  width: 180px;
-  margin-bottom: 1rem;
-}
-
-.hero h1 {
-  font-size: 2.8rem;
-  font-weight: 800;
+  width: 320px;
   margin-bottom: 0.5rem;
 }
 
@@ -101,7 +100,6 @@ hide:
   <div class="logo">
     <img src="https://raw.githubusercontent.com/SpoolSense/spoolsense_middleware/master/docs/spoolsense-logo.png" alt="SpoolSense" />
   </div>
-  <h1>SpoolSense</h1>
   <p class="tagline">Smart filament tracking for your 3D printer</p>
   <a href="intro/" class="cta">Get Started</a>
   <a href="https://github.com/SpoolSense" class="cta cta-secondary" target="_blank">GitHub</a>
