@@ -141,7 +141,7 @@ hide:
   </a>
 
   <a href="installation/middleware/" class="tool-card">
-    <div class="tool-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="18" r="16" fill="#b4202a"/><path d="M18 6l-1.5 8.5L9 12l5.5 5-8.5 1.5L14 22l-5 5.5 8.5-1.5L15 33l3-8 3 8-2.5-7L27 27.5 22 22l8-3.5L21.5 17 27 12l-7.5 2.5L18 6z" fill="#fff"/></svg></div>
+    <div class="tool-icon"><img src="https://www.klipper3d.org/img/klipper-logo.png" alt="Klipper" style="width:40px;height:40px" /></div>
     <div class="tool-name">Klipper Ready</div>
     <div class="tool-desc">Middleware integrates with AFC, toolchangers, and Moonraker. Assign spools to tools via keypad or macro.</div>
   </a>
