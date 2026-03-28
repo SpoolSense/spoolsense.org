@@ -5,66 +5,111 @@ hide:
 ---
 
 <style>
-.coming-soon {
+.hero {
   text-align: center;
-  padding: 6rem 2rem;
+  padding: 4rem 2rem 2rem;
 }
 
-.coming-soon .logo img {
+.hero .logo img {
   width: 180px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.coming-soon h1 {
-  font-size: 3rem;
+.hero h1 {
+  font-size: 2.8rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
 }
 
-.coming-soon .tagline {
+.hero .tagline {
   font-size: 1.25rem;
   opacity: 0.75;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
-.coming-soon .badge {
+.hero .cta {
   display: inline-block;
   background: var(--md-primary-fg-color);
   color: var(--md-primary-bg-color);
-  padding: 0.5rem 1.5rem;
+  padding: 0.7rem 2rem;
   border-radius: 2rem;
   font-weight: 600;
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin-bottom: 3rem;
-}
-
-.coming-soon .links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--md-primary-fg-color);
-  font-weight: 500;
+  font-size: 1rem;
   text-decoration: none;
-  margin: 0 1rem;
+  margin: 0 0.5rem;
 }
 
-.coming-soon .links a:hover {
-  text-decoration: underline;
+.hero .cta:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.hero .cta-secondary {
+  background: transparent;
+  border: 2px solid var(--md-primary-fg-color);
+  color: var(--md-primary-fg-color);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.feature {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: var(--md-code-bg-color);
+}
+
+.feature h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.feature p {
+  opacity: 0.8;
+  font-size: 0.95rem;
+  margin-bottom: 0;
 }
 </style>
 
-<div class="coming-soon">
+<div class="hero">
   <div class="logo">
     <img src="https://raw.githubusercontent.com/SpoolSense/spoolsense_middleware/master/docs/spoolsense-logo.png" alt="SpoolSense" />
   </div>
+  <h1>SpoolSense</h1>
   <p class="tagline">Smart filament tracking for your 3D printer</p>
-  <div class="badge">Documentation coming soon</div>
-  <div class="links">
-    <a href="https://github.com/SpoolSense" target="_blank">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
-      GitHub
-    </a>
+  <a href="intro/" class="cta">Get Started</a>
+  <a href="https://github.com/SpoolSense" class="cta cta-secondary" target="_blank">GitHub</a>
+</div>
+
+<div class="features">
+  <div class="feature">
+    <h3>Scan and Track</h3>
+    <p>Place a spool on the reader. Material, color, weight, and manufacturer are identified instantly from the NFC tag.</p>
+  </div>
+  <div class="feature">
+    <h3>Open Source</h3>
+    <p>ESP32 firmware, Python middleware, and interactive installer. All GPL-3.0. Build it yourself for under $15.</p>
+  </div>
+  <div class="feature">
+    <h3>Multiple Tag Formats</h3>
+    <p>Reads OpenPrintTag, TigerTag, OpenTag3D, and plain UID tags. Auto-detects the format.</p>
+  </div>
+  <div class="feature">
+    <h3>Spoolman Integration</h3>
+    <p>Syncs spool data automatically. Register UID tags, track remaining filament, and manage your inventory.</p>
+  </div>
+  <div class="feature">
+    <h3>Home Assistant</h3>
+    <p>MQTT auto-discovery. Dashboard sensors for material, color, weight, and scanner status. Build automations.</p>
+  </div>
+  <div class="feature">
+    <h3>Klipper Ready</h3>
+    <p>Middleware integrates with AFC, toolchangers, and Moonraker. Assign spools to tools via keypad or macro.</p>
   </div>
 </div>

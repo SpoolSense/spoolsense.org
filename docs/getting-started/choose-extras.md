@@ -1,0 +1,71 @@
+# Choose Your Extras
+
+All extras are optional. The scanner works with just an ESP32 + NFC reader.
+
+## 16x2 I2C LCD Display
+
+Shows spool info directly on the scanner: material, color, remaining weight, and status messages.
+
+| Spec | Value |
+|------|-------|
+| Type | 16x2 character LCD with I2C backpack |
+| I2C Address | 0x27 (most common) |
+| Wiring | 2 pins (SDA + SCL) + VCC + GND |
+| Board Compatibility | Both WROOM and S3-Zero |
+
+**When to add it:**
+
+- You want to see spool info without opening a browser
+- Your scanner is mounted away from a screen
+- You use the keypad (LCD shows tool assignment feedback)
+
+**When to skip it:**
+
+- You only check spools via Home Assistant or the web UI
+- You want the smallest possible build
+
+## Status LED (SK6812 RGBW)
+
+Shows scanner state with color-coded feedback: white during boot, blue when ready, filament color when a spool is scanned, flashing on write operations.
+
+| Spec | Value |
+|------|-------|
+| Type | SK6812 RGBW (WROOM) or WS2812 RGB (S3-Zero onboard) |
+| Wiring | 1 data pin + VCC + GND (WROOM only) |
+| Board Compatibility | External on WROOM, built-in on S3-Zero |
+
+!!! note
+    The ESP32-S3-Zero has an onboard WS2812 RGB LED. No external LED or wiring needed.
+
+## 3x4 Matrix Keypad
+
+Enables scan-to-tool assignment for toolchanger and multi-tool setups. Scan a spool, type the tool number, press # to confirm.
+
+| Spec | Value |
+|------|-------|
+| Type | 3x4 membrane matrix keypad |
+| Wiring | 7 pins (4 rows + 3 columns) |
+| Board Compatibility | WROOM recommended |
+
+**Workflow:** Scan spool > Type tool number (e.g. `12`) > Press `#` to confirm > Scanner sends `ASSIGN_SPOOL TOOL=T12` to Moonraker
+
+**When to add it:**
+
+- You have a toolchanger or multi-tool setup (AFC, tradrack, etc.)
+- You want to assign spools to tools without using Klipper screen or web UI
+
+**When to skip it:**
+
+- Single-tool printer
+- You assign spools through Home Assistant or macros
+
+!!! warning
+    Using LCD + keypad together on the ESP32-S3-Zero is not recommended due to limited GPIO. Use the WROOM board for LCD + keypad builds.
+
+## Summary
+
+| Extra | Pins Used | WROOM | S3-Zero | Recommended For |
+|-------|-----------|-------|---------|-----------------|
+| LCD | 2 (I2C) | Yes | Yes | Visual feedback without browser |
+| LED | 1 (data) | External | Built-in | Status at a glance |
+| Keypad | 7 (matrix) | Yes | Limited | Toolchanger/multi-tool |

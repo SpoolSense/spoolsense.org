@@ -7,14 +7,14 @@ theme:
   name: material
   palette:
     - scheme: slate
-      primary: deep orange
-      accent: orange
+      primary: red
+      accent: red
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
     - scheme: default
-      primary: deep orange
-      accent: orange
+      primary: red
+      accent: red
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
@@ -24,13 +24,66 @@ theme:
   features:
     - navigation.instant
     - navigation.top
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+    - search.suggest
+    - search.highlight
 
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/SpoolSense
 
-copyright: Copyright &copy; 2025 SpoolSense
+copyright: Copyright &copy; 2026 SpoolSense — Licensed under GPL-3.0
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
 
 nav:
   - Home: index.md
+  - Introduction:
+    - What is SpoolSense: intro/index.md
+    - How It Works: intro/how-it-works.md
+    - Supported Tags: intro/supported-tags.md
+  - Getting Started:
+    - Shopping List: getting-started/shopping-list.md
+    - Choose Your Board: getting-started/choose-board.md
+    - Choose Your NFC Reader: getting-started/choose-reader.md
+    - Choose Your Extras: getting-started/choose-extras.md
+  - Hardware Guides:
+    - Wiring - ESP32 + PN5180: hardware/wiring-pn5180.md
+    - Wiring - ESP32 + PN532: hardware/wiring-pn532.md
+    - Optional - LCD Display: hardware/lcd.md
+    - Optional - Keypad: hardware/keypad.md
+    - Optional - Status LED: hardware/led.md
+  - Build Guides:
+    - Standalone Scanner: builds/standalone.md
+    - BoxTurtle AFC Mount: builds/boxturtles.md
+  - Installation:
+    - Firmware Install: installation/firmware.md
+    - Middleware Setup: installation/middleware.md
+    - Spoolman Integration: installation/spoolman.md
+    - Home Assistant: installation/home-assistant.md
+  - Releases:
+    - Overview: releases/index.md
+    - Scanner: releases/scanner.md
+    - Middleware: releases/middleware.md
+    - Installer: releases/installer.md
+  - Resources:
+    - Tag Formats: resources/tag-formats.md
+    - API Reference: resources/api.md
+    - Troubleshooting: resources/troubleshooting.md
+  - Contributing:
+    - How to Contribute: contributing/index.md
+    - Development Setup: contributing/dev-setup.md
+    - Enclosure Design: contributing/enclosure-design.md
