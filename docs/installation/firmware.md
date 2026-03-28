@@ -28,7 +28,8 @@ The installer will:
 
 Here's what the installer looks like when you run it:
 
-```
+<div class="installer-output" style="background:#0b0b0d; border:1px solid #2a2e36; border-radius:12px; padding:20px; font-family:'JetBrains Mono',monospace; font-size:13px; line-height:1.7; overflow-x:auto; color:#f4f4f5">
+<pre style="margin:0; background:transparent; color:inherit">
 ╔══════════════════════════════════════╗
 ║       SpoolSense Installer           ║
 ╚══════════════════════════════════════╝
@@ -36,53 +37,53 @@ Here's what the installer looks like when you run it:
 Updating installer...
 Installing dependencies...
 
-── Scanner Configuration ──────────────
+<span style="color:#06b6d4;font-weight:bold">── Scanner Configuration ──────────────</span>
 
 Scanner board:
   1) ESP32-WROOM DevKit (4MB) — most common
   2) ESP32-S3-Zero by Waveshare (4MB)
   3) Other / not sure
-Choice [1]: 1
+Choice [1]: <span style="color:#fff">1</span>
 
-WiFi SSID: MyNetwork
-WiFi Password: ********
-MQTT broker host: 192.168.1.50
+WiFi SSID: <span style="color:#fff">MyNetwork</span>
+WiFi Password: <span style="color:#fff">********</span>
+MQTT broker host: <span style="color:#fff">192.168.1.50</span>
 MQTT port [1883]:
 MQTT username []:
 MQTT password []:
 MQTT topic prefix [spoolsense]:
 
-Enable Spoolman? [Y/n]: y
-Spoolman URL [http://spoolman.local:7912]: http://192.168.1.32:7912
+Enable Spoolman? [Y/n]: <span style="color:#fff">y</span>
+Spoolman URL [http://spoolman.local:7912]: <span style="color:#fff">http://192.168.1.32:7912</span>
 
 Automation mode:
   1) Self Directed — scanner auto-deducts filament weight
   2) Controlled by HA — Home Assistant controls deduction
-Choice [1]: 1
+Choice [1]: <span style="color:#fff">1</span>
 
-── Optional Hardware ──────────────────
+<span style="color:#06b6d4;font-weight:bold">── Optional Hardware ──────────────────</span>
 
-16x2 I2C LCD display attached? [y/N]: n
-Status LED attached? [Y/n]: y
-3x4 matrix keypad attached? [y/N]: n
-NFC reader model [pn5180]: pn5180
+16x2 I2C LCD display attached? [y/N]: <span style="color:#fff">n</span>
+Status LED attached? [Y/n]: <span style="color:#fff">y</span>
+3x4 matrix keypad attached? [y/N]: <span style="color:#fff">n</span>
+NFC reader model [pn5180]: <span style="color:#fff">pn5180</span>
 
-── Printer Integration ────────────────
+<span style="color:#06b6d4;font-weight:bold">── Printer Integration ────────────────</span>
 
-Klipper / Moonraker printer? [y/N]: n
+Klipper / Moonraker printer? [y/N]: <span style="color:#fff">n</span>
 
   Fetching latest release...
   Downloading spoolsense_scanner_esp32dev.bin...
-  ✓ Firmware downloaded (1432113 bytes)
+  <span style="color:#22c55e">✓</span> Firmware downloaded (1432113 bytes)
   Downloading bootloader_esp32dev.bin...
-  ✓ Bootloader downloaded
+  <span style="color:#22c55e">✓</span> Bootloader downloaded
   Downloading partitions_esp32dev.bin...
-  ✓ Partition table downloaded
+  <span style="color:#22c55e">✓</span> Partition table downloaded
   Generating NVS config partition...
-  ✓ NVS config generated
+  <span style="color:#22c55e">✓</span> NVS config generated
 
   Flashing firmware...
-  ⚠  Do NOT disconnect the USB cable during flashing!
+  <span style="color:#f59e0b">⚠</span>  Do NOT disconnect the USB cable during flashing!
 
   Connecting... done
   Writing bootloader... done
@@ -90,10 +91,11 @@ Klipper / Moonraker printer? [y/N]: n
   Writing NVS config... done
   Writing firmware... done
 
-  ✓ Flash complete! Device is rebooting.
+  <span style="color:#22c55e">✓</span> Flash complete! Device is rebooting.
 
   Connect to http://spoolsense.local to verify.
-```
+</pre>
+</div>
 
 ## What the Installer Asks
 
