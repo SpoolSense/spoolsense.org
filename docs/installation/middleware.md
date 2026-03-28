@@ -35,7 +35,17 @@ cp config.example.yaml config.yaml
 
 ## Configuration
 
-Edit `config.yaml`:
+### Finding Your Scanner's Device ID
+
+The middleware identifies each scanner by its **device ID**. You need this to configure the `scanners:` section.
+
+To find it:
+
+1. Power on the scanner and connect to `http://spoolsense.local`
+2. The device ID is displayed on the landing page (e.g. `ecb008`)
+3. It's also available at `http://spoolsense.local/api/status` in the `device_id` field
+
+### Edit config.yaml
 
 ```yaml
 mqtt:
@@ -49,11 +59,14 @@ moonraker:
   url: http://localhost:7125
 
 scanners:
-  ecb008:                    # Your scanner's device ID (shown on the web UI)
+  ecb008:                    # Replace with YOUR scanner's device ID
     action: toolhead          # or afc_lane, afc_stage, toolhead_stage
     target: T0                # Tool or lane name
     publish_lane_data: true   # Write to Moonraker DB for slicer integration
 ```
+
+!!! tip
+    If you have multiple scanners, add each one as a separate entry under `scanners:` with its own device ID and action.
 
 ## Actions
 
