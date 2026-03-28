@@ -15,13 +15,26 @@ If you only need Spoolman sync and Home Assistant, the scanner handles that dire
 
 ## Install
 
-The SpoolSense installer can set up both the scanner firmware and the middleware in one pass:
+### Easy Mode (Voron / Klipper Users)
+
+If you're running Klipper on a Raspberry Pi (or similar host), plug the ESP32 into one of your printer's USB ports. Then SSH into your printer and run:
 
 ```bash
+ssh pi@your-printer-ip
 curl -sL https://raw.githubusercontent.com/SpoolSense/spoolsense-installer/main/install.sh | bash
 ```
 
-Choose "Both" when asked what to install.
+Choose **"Both"** when asked what to install. The installer will:
+
+1. Flash the scanner firmware to the ESP32 (auto-detects the USB port)
+2. Install the middleware on the same machine
+3. Generate `config.yaml` with your settings
+4. Set up the systemd service
+
+After it finishes, unplug the ESP32 from USB and power it separately (USB power adapter or a permanent USB port). The scanner communicates over WiFi, not USB. The USB connection is only needed for the initial flash.
+
+!!! tip
+    This is the recommended setup for most Klipper users. Everything runs on one machine, the installer handles it all, and you're done in a few minutes.
 
 ### Manual Install
 
