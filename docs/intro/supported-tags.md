@@ -32,7 +32,6 @@ SpoolSense reads multiple NFC tag formats. Each format stores filament data diff
 
 **If you have OpenPrintTag or OpenTag3D tags:**
 
-- Full support for reading and writing (OpenPrintTag)
 - Full read and write support for both formats
 - These are less common but fully supported
 
