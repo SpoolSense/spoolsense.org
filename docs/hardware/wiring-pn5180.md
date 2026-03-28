@@ -12,7 +12,7 @@ The PN5180 connects to the ESP32 via SPI. 8 wires total.
 | MISO | GPIO 26 | SPI data in |
 | SCK | GPIO 25 | SPI clock |
 | BUSY | GPIO 33 | Busy signal (input) |
-| VCC | 3.3V | Power |
+| VCC | 5V | Power |
 | GND | GND | Ground |
 
 ## ESP32-S3-Zero Pinout
@@ -25,13 +25,13 @@ The PN5180 connects to the ESP32 via SPI. 8 wires total.
 | MISO | GPIO 7 | SPI data in |
 | SCK | GPIO 8 | SPI clock |
 | BUSY | GPIO 9 | Busy signal (input) |
-| VCC | 3.3V | Power |
+| VCC | 5V | Power |
 | GND | GND | Ground |
 
 ## Wiring Tips
 
-!!! warning "Use 3.3V, not 5V"
-    The ESP32 is 3.3V logic. Connecting VCC to 5V may damage the board.
+!!! note "PN5180 uses 5V power"
+    The PN5180 module runs on 5V. Connect VCC to the ESP32's 5V pin (not 3.3V). The SPI data lines are 3.3V logic and are level-shifted on the PN5180 board.
 
 - Keep SPI wires short (under 15cm) for reliable communication
 - The AITRIP PN5180 module has labeled pins matching the table above

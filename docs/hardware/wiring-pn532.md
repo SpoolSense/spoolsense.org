@@ -40,8 +40,8 @@ Check your specific board. Some have a 2-position DIP switch, others have solder
 
 ## Wiring Tips
 
-!!! warning "Use 3.3V, not 5V"
-    The ESP32 is 3.3V logic. Connecting VCC to 5V may damage the board.
+!!! note "PN532 uses 3.3V power"
+    The PN532 module runs on 3.3V. Connect VCC to the ESP32's 3.3V pin (not 5V).
 
 - Keep SPI wires short (under 15cm)
 - The IRQ pin is optional (not currently used by the firmware)
