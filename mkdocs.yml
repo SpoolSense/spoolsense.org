@@ -30,6 +30,9 @@ theme:
     - search.suggest
     - search.highlight
 
+extra_css:
+  - stylesheets/custom.css
+
 extra:
   social:
     - icon: fontawesome/brands/github
