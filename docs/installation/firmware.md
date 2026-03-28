@@ -24,6 +24,77 @@ The installer will:
 4. Generate an NVS partition with your settings
 5. Flash the firmware + config to your ESP32
 
+## Example Installer Session
+
+Here's what the installer looks like when you run it:
+
+```
+╔══════════════════════════════════════╗
+║       SpoolSense Installer           ║
+╚══════════════════════════════════════╝
+
+Updating installer...
+Installing dependencies...
+
+── Scanner Configuration ──────────────
+
+Scanner board:
+  1) ESP32-WROOM DevKit (4MB) — most common
+  2) ESP32-S3-Zero by Waveshare (4MB)
+  3) Other / not sure
+Choice [1]: 1
+
+WiFi SSID: MyNetwork
+WiFi Password: ********
+MQTT broker host: 192.168.1.50
+MQTT port [1883]:
+MQTT username []:
+MQTT password []:
+MQTT topic prefix [spoolsense]:
+
+Enable Spoolman? [Y/n]: y
+Spoolman URL [http://spoolman.local:7912]: http://192.168.1.32:7912
+
+Automation mode:
+  1) Self Directed — scanner auto-deducts filament weight
+  2) Controlled by HA — Home Assistant controls deduction
+Choice [1]: 1
+
+── Optional Hardware ──────────────────
+
+16x2 I2C LCD display attached? [y/N]: n
+Status LED attached? [Y/n]: y
+3x4 matrix keypad attached? [y/N]: n
+NFC reader model [pn5180]: pn5180
+
+── Printer Integration ────────────────
+
+Klipper / Moonraker printer? [y/N]: n
+
+  Fetching latest release...
+  Downloading spoolsense_scanner_esp32dev.bin...
+  ✓ Firmware downloaded (1432113 bytes)
+  Downloading bootloader_esp32dev.bin...
+  ✓ Bootloader downloaded
+  Downloading partitions_esp32dev.bin...
+  ✓ Partition table downloaded
+  Generating NVS config partition...
+  ✓ NVS config generated
+
+  Flashing firmware...
+  ⚠  Do NOT disconnect the USB cable during flashing!
+
+  Connecting... done
+  Writing bootloader... done
+  Writing partition table... done
+  Writing NVS config... done
+  Writing firmware... done
+
+  ✓ Flash complete! Device is rebooting.
+
+  Connect to http://spoolsense.local to verify.
+```
+
 ## What the Installer Asks
 
 | Setting | Description | Required |
