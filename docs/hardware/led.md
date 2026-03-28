@@ -11,7 +11,7 @@ The S3-Zero has an onboard WS2812 RGB LED on GPIO 21. No external wiring needed.
 | LED Pin | ESP32 GPIO | Function |
 |---------|-----------|----------|
 | DIN | GPIO 4 | Data in |
-| VCC | 5V | Power (5V recommended for full brightness) |
+| VCC | 5V | Power (5V recommended for full brightness but 3.3V works fine) |
 | GND | GND | Ground |
 
 ## LED States
