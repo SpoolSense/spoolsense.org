@@ -129,7 +129,7 @@ hide:
   </a>
 
   <a href="installation/spoolman/" class="tool-card">
-    <div class="tool-icon">&#128230;</div>
+    <div class="tool-icon"><img src="https://github.com/Donkie/Spoolman/assets/2332094/4e6e80ac-c7be-4ad2-9a33-dedc1b5ba30e" alt="Spoolman" style="width:40px;height:40px" /></div>
     <div class="tool-name">Spoolman Integration</div>
     <div class="tool-desc">Syncs spool data automatically. Register NFC+ tags, track remaining filament, manage inventory.</div>
   </a>
