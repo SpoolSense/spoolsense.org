@@ -36,7 +36,7 @@ SpoolSense supports two NFC reader modules. Both connect via SPI and share the s
 **Pros:**
 
 - Cheaper and more widely available
-- Works great with NTAG215, TigerTag, and OpenTag3D
+- Works great with NFC+ (NTAG + Spoolman), TigerTag, and OpenTag3D
 - Smaller module
 
 **Cons:**
