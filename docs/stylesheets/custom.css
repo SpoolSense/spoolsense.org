@@ -128,6 +128,11 @@
   --md-typeset-a-color: #dc2626;
 }
 
+/* Header title / logo size */
+.md-header__title {
+  font-size: 0.8rem;
+}
+
 /* Landing page hero — both modes */
 .hero .cta {
   background: linear-gradient(180deg, #ef4444, #dc2626);

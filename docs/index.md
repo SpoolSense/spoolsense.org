@@ -16,14 +16,15 @@ hide:
 }
 
 .hero .logo img {
-  width: 320px;
-  margin-bottom: 0.5rem;
+  width: 380px;
+  margin-bottom: 0;
 }
 
 .hero .tagline {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   opacity: 0.75;
-  margin-bottom: 2rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero .cta {
