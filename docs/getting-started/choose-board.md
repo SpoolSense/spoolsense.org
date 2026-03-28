@@ -27,9 +27,12 @@ The most common and beginner-friendly option.
 - Larger form factor
 - No onboard RGB LED
 
-## ESP32-S3-Zero (Waveshare)
+## ESP32-S3-Zero / S3-Zero-M (Waveshare)
 
-A compact option with USB-C and onboard RGB LED.
+A compact option with USB-C and onboard RGB LED. Available in two variants:
+
+- **ESP32-S3-Zero** — requires soldering pin headers yourself
+- **ESP32-S3-Zero-M** — comes with pre-soldered pin headers (ready to use with dupont wires)
 
 | Spec | Value |
 |------|-------|
