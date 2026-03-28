@@ -49,3 +49,46 @@
 - Try clearing browser cache or using incognito mode
 - Check that port 80 is not blocked by your network
 - Try accessing by IP address instead of mDNS hostname
+
+## Viewing Serial Output
+
+Serial output is the best way to debug boot issues, WiFi failures, and NFC errors. Plug the ESP32 into your computer or printer host via USB and open a terminal.
+
+**Linux (Raspberry Pi, printer host):**
+
+```bash
+# Find the port
+ls /dev/ttyUSB* /dev/ttyACM* 2>/dev/null
+
+# Open serial monitor (115200 baud)
+screen /dev/ttyUSB0 115200
+```
+
+Press `Ctrl+A` then `K` then `Y` to exit screen.
+
+**macOS:**
+
+```bash
+# Find the port
+ls /dev/cu.usbserial-* /dev/cu.usbmodem* 2>/dev/null
+
+# Open serial monitor
+screen /dev/cu.usbserial-310 115200
+```
+
+**PlatformIO (any OS):**
+
+```bash
+pio device monitor -b 115200
+```
+
+**What to look for:**
+
+- `WiFi connected` / `WiFi failed` — network issues
+- `PN5180: No response` / `PN532: No response` — wiring or voltage problem
+- `NFC reader: PN5180 v3.4` or `NFC reader: PN532 v1.6` — reader detected successfully
+- `SpoolmanManager: sync OK` / `sync failed` — Spoolman connectivity
+- `MQTT connected` / `MQTT failed` — broker issues
+
+!!! tip
+    Press the **RST** button on the ESP32 to reboot and see the full startup sequence from the beginning.
