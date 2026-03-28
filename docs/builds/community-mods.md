@@ -20,6 +20,31 @@ A 3-piece printable enclosure for the **ESP32-S3-Zero + PN5180** configuration.
 
 ---
 
+### LinuxGangster's Scanner Mods
+
+#### Standalone Case (ESP32-S3-Zero + PN532)
+
+A two-piece case (body + lid) for the ESP32-S3-Zero with PN532 NFC reader.
+
+| File | Description |
+|------|-------------|
+| `nfc-case-esp32s3zero.3mf` | Main case body |
+| `NFC+Reader+Lid+v1.0.stl` | Lid |
+
+**Print settings:** PLA or PETG, 0.2mm layer height, 15-20% infill
+
+#### BoxTurtle PN532 Tray
+
+A modified BoxTurtle tray that holds a PN532 reader alongside an AFC lane. For multi-scanner setups with per-lane spool detection.
+
+| File | Description |
+|------|-------------|
+| `tray_plain_pn532.stl` | Modified BoxTurtle tray for PN532 |
+
+[:material-download: Download from GitHub](https://github.com/SpoolSense/spoolsense_scanner/tree/main/usermods/linuxgangster){ .md-button }
+
+---
+
 ## Submit Your Own
 
 Have a case, mount, or mod? Add it to the scanner repo's `usermods/` directory:

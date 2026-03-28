@@ -29,5 +29,10 @@ See [Middleware Setup](../installation/middleware.md) for full configuration.
 <!-- TODO: Add CAD renders and assembly photos -->
 <!-- TODO: Add wiring diagram for BoxTurtle mounting -->
 
-!!! info "Mount designs needed"
-    No BoxTurtle mount designs exist yet. If you design one, see [Contributing > Enclosure Design](../contributing/enclosure-design.md).
+## Available Mounts
+
+| Mount | NFC Reader | Author |
+|-------|-----------|--------|
+| [PN532 Tray](community-mods.md#boxturtle-pn532-tray) | PN532 | LinuxGangster |
+
+See [Community Mods](community-mods.md) for all designs, or [contribute your own](../contributing/enclosure-design.md).
