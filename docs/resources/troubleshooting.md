@@ -9,7 +9,7 @@
 ## NFC reader not detected
 
 - Check SPI wiring matches the [wiring guide](../hardware/wiring-pn5180.md)
-- Verify 3.3V power (not 5V)
+- Verify proper voltage (5V for PN5180, 3.3V for PN532)
 - Open `http://spoolsense.local/troubleshoot` for diagnostics
 - Check serial output for "PN5180: No response" or "PN532: No response"
 
