@@ -24,7 +24,7 @@ Everything you need to build a SpoolSense scanner. Total cost: **$10-20** depend
 
 | Tag Type | Best For | Works With | Price |
 |----------|----------|------------|-------|
-| **NTAG215 stickers** | Most users. Register UID in Spoolman, done. Can also write TigerTag format. | PN5180 and PN532 | ~$0.10 each |
+| **NTAG215 stickers** | Most users. Register UID in Spoolman, write TigerTag or OpenTag3D format, or use UID-only. | PN5180 and PN532 | ~$0.10 each |
 | **ICODE SLIX2** | OpenPrintTag format with full CBOR filament data on the tag | PN5180 only | ~$0.30 each |
 
 !!! tip
