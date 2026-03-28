@@ -4,7 +4,7 @@ A 3x4 matrix keypad enables scan-to-tool assignment for toolchanger and multi-to
 
 ## What You Need
 
-- 3x4 membrane matrix keypad (standard Arduino type)
+- 3x4 membrane matrix keypad ([this one on Amazon](https://www.amazon.com/dp/B0DZ26VVR7) is confirmed working)
 - 7 jumper wires
 
 ## Wiring
