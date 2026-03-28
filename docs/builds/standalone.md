@@ -14,7 +14,7 @@ A standalone scanner sits on your desk or mounts to a wall. Place a spool on the
 <!-- TODO: Add step-by-step photos with CAD model renders -->
 
 !!! info "Enclosure designs needed"
-    No printable cases exist yet for the current hardware. If you design one, see [Contributing > Enclosure Design](../contributing/enclosure-design.md) for how to submit it.
+    As of March 2026 only a few printable cases exist. We need the community's help! If you design one, see [Contributing > Enclosure Design](../contributing/enclosure-design.md) for how to submit it.
 
 ### Basic Build (No Enclosure)
 
