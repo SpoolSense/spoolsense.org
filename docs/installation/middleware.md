@@ -83,12 +83,12 @@ scanners:
 
 ## Actions
 
-| Action | Use Case | How It Works |
-|--------|----------|--------------|
-| `toolhead` | Single toolhead | Scan assigns spool directly to the tool |
-| `toolhead_stage` | Toolchanger | Scan stages spool, ASSIGN_SPOOL macro assigns to tool |
-| `afc_lane` | AFC with dedicated scanner per lane | Scan assigns spool to a specific lane |
-| `afc_stage` | AFC with shared scanner | Scan stages spool, lane load triggers assignment |
+| Action | Use Case |
+|--------|----------|
+| `toolhead` | Single toolhead. Scan assigns spool directly. |
+| `toolhead_stage` | Toolchanger. Scan stages spool, ASSIGN_SPOOL macro assigns to tool. |
+| `afc_lane` | AFC, one scanner per lane. Scan assigns to that lane. |
+| `afc_stage` | AFC, shared scanner. Scan stages spool, lane load triggers assignment. |
 
 ## Running as a Service
 
