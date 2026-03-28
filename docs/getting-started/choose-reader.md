@@ -21,7 +21,7 @@ SpoolSense supports two NFC reader modules. Both connect via SPI and share the s
 **Cons:**
 
 - Slightly more expensive
-- Larger module
+- Larger module for cheap clones (Elechouse makes a compact PN5180 board closer to the PN532 size, but it's harder to find and more expensive)
 
 ## PN532
 
