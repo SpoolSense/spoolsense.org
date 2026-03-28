@@ -92,6 +92,9 @@ scanners:
 
 ## Running as a Service
 
+!!! note
+    The installer sets this up automatically. These commands are only needed if you installed manually.
+
 ```bash
 sudo cp ~/SpoolSense/middleware/spoolsense.service /etc/systemd/system/
 sudo systemctl enable spoolsense
