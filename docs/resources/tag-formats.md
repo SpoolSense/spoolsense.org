@@ -28,21 +28,21 @@ Material IDs map to a community-maintained database with ~100 materials.
 
 A newer format using CBOR encoding on NTAG tags.
 
-- **Tag types:** NTAG (ISO14443A)
+- **Tag types:** NTAG215/216 (ISO14443A)
 - **Encoding:** CBOR
 - **Data:** Base material, modifiers, manufacturer, color, weight, density, temps
 
-SpoolSense supports read-only for OpenTag3D.
+SpoolSense supports full read and write for OpenTag3D via the web UI at `/writer/opentag3d`.
 
-## Generic UID
+## NFC+
 
-Plain NFC tags (typically NTAG215) with no filament data written to them. SpoolSense reads the UID and looks it up in Spoolman via the `nfc_id` extra field.
+SpoolSense's term for a plain NTAG tag paired with a Spoolman entry. The tag stores only a UID. All spool data (material, color, weight, manufacturer) lives in Spoolman and is linked via the `nfc_id` extra field.
 
-- **Tag types:** Any ISO14443A tag
+- **Tag types:** NTAG213/215/216 (ISO14443A)
 - **Data on tag:** None (UID only)
 - **Data source:** Spoolman database
 
-This is the simplest and cheapest approach. Buy NTAG215 stickers, register UIDs in Spoolman.
+This is the simplest and cheapest approach. Buy NTAG stickers, register UIDs in Spoolman.
 
 ## Bambu Lab
 

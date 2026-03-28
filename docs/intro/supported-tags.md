@@ -8,8 +8,8 @@ SpoolSense reads multiple NFC tag formats. Each format stores filament data diff
 |--------|----------|----------|-------------|---------------|
 | **OpenPrintTag** | ICODE SLIX2 or NTAG | ISO15693 / ISO14443A | Full CBOR filament profile | Yes |
 | **TigerTag** | NTAG213/215/216 | ISO14443A | Binary material/color/weight | Yes |
-| **OpenTag3D** | NTAG | ISO14443A | CBOR material/manufacturer/color | Read only |
-| **NFC+** | NTAG215 or similar | ISO14443A | UID only (data in Spoolman) | N/A |
+| **OpenTag3D** | NTAG215/216 | ISO14443A | CBOR material/manufacturer/color | Yes |
+| **NFC+** | NTAG213/215/216 | ISO14443A | UID only (data in Spoolman) | N/A |
 | **Bambu Lab** | MIFARE Classic | ISO14443A | UID only (encrypted) | No |
 
 !!! info "What is NFC+?"
@@ -33,7 +33,7 @@ SpoolSense reads multiple NFC tag formats. Each format stores filament data diff
 **If you have OpenPrintTag or OpenTag3D tags:**
 
 - Full support for reading and writing (OpenPrintTag)
-- OpenTag3D read support
+- Full read and write support for both formats
 - These are less common but fully supported
 
 ## NFC Reader Compatibility
