@@ -31,10 +31,13 @@ The PN5180 connects to the ESP32 via SPI. 8 wires total.
 ## Wiring Tips
 
 !!! note "PN5180 uses 5V power"
-    The PN5180 module runs on 5V. Connect VCC to the ESP32's 5V pin (not 3.3V). The SPI data lines are 3.3V logic and are level-shifted on the PN5180 board.
+    Connect 5V to the ESP32's 5V pin (not 3.3V). The SPI data lines are 3.3V logic and are level-shifted on the PN5180 board.
 
 - Keep SPI wires short (under 15cm) for reliable communication
 - The AITRIP PN5180 module has labeled pins matching the table above
 - GPIO/IRQ/AUX pins are defined in firmware but not currently required for basic operation
+
+!!! warning "Using a different board or module?"
+    The pinout and voltage above are verified for the Freenove ESP32-WROOM and AITRIP PN5180. If you're using a different ESP32 or PN5180 module, check the datasheet for your specific boards to confirm pin labels and voltage levels before wiring.
 
 <!-- TODO: Add wiring diagram photo -->
