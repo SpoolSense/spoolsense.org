@@ -147,7 +147,7 @@ hide:
   </a>
 
   <a href="getting-started/shopping-list/" class="tool-card">
-    <div class="tool-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="18" r="16" fill="none" stroke="#22c55e" stroke-width="2.5"/><circle cx="18" cy="14" r="5" fill="none" stroke="#22c55e" stroke-width="2.5"/><path d="M18 19v11" stroke="#22c55e" stroke-width="2.5"/><path d="M13 25h10" stroke="#22c55e" stroke-width="2.5"/></svg></div>
+    <div class="tool-icon"><img src="https://www.openmaint.org/images/opensource-logo.png/@@images/image.png" alt="Open Source" style="width:40px;height:40px" /></div>
     <div class="tool-name">Open Source</div>
     <div class="tool-desc">ESP32 firmware, Python middleware, and interactive installer. All GPL-3.0. Build it yourself for under $15.</div>
   </a>
