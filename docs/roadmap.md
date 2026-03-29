@@ -100,6 +100,7 @@ hide:
 <tr><td>ST7789 TFT color display</td><td><span class="repo-tag">Scanner</span></td><td>Replace 16x2 LCD with 240x240 color TFT</td></tr>
 <tr><td>Multi-tag detection</td><td><span class="repo-tag">Scanner</span></td><td>Read two spools simultaneously (dual antenna)</td></tr>
 <tr><td>Spoolman write to tag</td><td><span class="repo-tag">Middleware</span></td><td>Write spool data from Spoolman directly to a tag</td></tr>
+<tr><td>Bondtech INDX compatibility</td><td><span class="repo-tag">Middleware</span></td><td>Support up to 8 toolheads (retail Q2 2026)</td></tr>
 </table>
 
 ### <span class="badge badge-planned">Planned</span>
@@ -115,6 +116,9 @@ hide:
 <tr><td>HTTP connection reuse for Spoolman</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
 <tr><td>HA publish queue fix (silent drops)</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
 <tr><td>Tag writer auto-populate from scanned tag</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
+<tr><td>Smarter Spoolman lookups (filter by NFC ID)</td><td><span class="repo-tag">Middleware</span></td><td>—</td></tr>
+<tr><td>Low spool push notification (HA)</td><td><span class="repo-tag">Middleware</span></td><td>—</td></tr>
+<tr><td>Klipper error alerts via LED (per-toolhead)</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
 <tr><td>Nozzle/bed temps to AFC lane_data</td><td><span class="repo-tag">Middleware</span></td><td>—</td></tr>
 <tr><td>Resync AFC lock state on MQTT reconnect</td><td><span class="repo-tag">Middleware</span></td><td>—</td></tr>
 <tr><td>Moonraker websocket (replace polling)</td><td><span class="repo-tag">Middleware</span></td><td>—</td></tr>
@@ -148,6 +152,7 @@ hide:
 <tr><td>Orca Slicer lane data integration</td><td><span class="repo-tag">Middleware</span></td><td>v1.5.4</td></tr>
 <tr><td>Write loop prevention</td><td><span class="repo-tag">Middleware</span></td><td>v1.5.5</td></tr>
 <tr><td>Atomic toolhead activation</td><td><span class="repo-tag">Middleware</span></td><td>v1.5.5</td></tr>
+<tr><td>Tag writeback (remaining weight sync)</td><td><span class="repo-tag">Middleware</span></td><td>v1.5.5</td></tr>
 <tr><td>16x2 I2C LCD display</td><td><span class="repo-tag">Scanner</span></td><td>v1.4.0</td></tr>
 <tr><td>OTA firmware updates</td><td><span class="repo-tag">Scanner</span></td><td>v1.3.0</td></tr>
 <tr><td>Spoolman auto-sync</td><td><span class="repo-tag">Scanner</span></td><td>v1.2.0</td></tr>
