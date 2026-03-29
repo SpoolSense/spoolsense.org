@@ -90,6 +90,7 @@ nav:
     - Tag Formats: resources/tag-formats.md
     - API Reference: resources/api.md
     - Troubleshooting: resources/troubleshooting.md
+  - Roadmap: roadmap.md
   - Contributing:
     - How to Contribute: contributing/index.md
     - Development Setup: contributing/dev-setup.md
