@@ -76,6 +76,7 @@ nav:
     - BoxTurtle AFC Mount: builds/boxturtles.md
     - Community Mods: builds/community-mods.md
   - Installation:
+    - Web Flasher: installation/web-flasher.md
     - Firmware Install: installation/firmware.md
     - Middleware Setup: installation/middleware.md
     - Spoolman Integration: installation/spoolman.md

@@ -1,0 +1,23 @@
+{
+  "name": "SpoolSense Scanner",
+  "version": "1.5.10",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        { "path": "https://github.com/SpoolSense/spoolsense_scanner/releases/latest/download/bootloader_esp32dev.bin", "offset": 4096 },
+        { "path": "https://github.com/SpoolSense/spoolsense_scanner/releases/latest/download/partitions_esp32dev.bin", "offset": 32768 },
+        { "path": "https://github.com/SpoolSense/spoolsense_scanner/releases/latest/download/spoolsense_scanner_esp32dev.bin", "offset": 65536 }
+      ]
+    },
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        { "path": "https://github.com/SpoolSense/spoolsense_scanner/releases/latest/download/bootloader_esp32s3zero.bin", "offset": 0 },
+        { "path": "https://github.com/SpoolSense/spoolsense_scanner/releases/latest/download/partitions_esp32s3zero.bin", "offset": 32768 },
+        { "path": "https://github.com/SpoolSense/spoolsense_scanner/releases/latest/download/spoolsense_scanner_esp32s3zero.bin", "offset": 65536 }
+      ]
+    }
+  ]
+}
