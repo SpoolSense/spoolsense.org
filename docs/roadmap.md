@@ -202,7 +202,7 @@ a.roadmap-stat:hover {
   <a href="#exploring" class="roadmap-stat stat-exploring"><div class="num">7</div><div class="label">Exploring</div></a>
   <a href="#planned" class="roadmap-stat stat-planned"><div class="num">17</div><div class="label">Planned</div></a>
   <a href="#in-progress" class="roadmap-stat stat-progress"><div class="num">2</div><div class="label">In Progress</div></a>
-  <a href="#shipped" class="roadmap-stat stat-done"><div class="num">20</div><div class="label">Shipped</div></a>
+  <a href="#completed" class="roadmap-stat stat-done"><div class="num">20</div><div class="label">Completed</div></a>
 </div>
 
 <div class="roadmap-section">
@@ -278,7 +278,7 @@ a.roadmap-stat:hover {
 <tr><td>Creality rooted printer guide</td><td><span class="repo-tag">Docs</span></td><td>Compatible via Moonraker</td></tr>
 </table>
 
-### <span id="shipped" class="badge badge-done">Shipped</span>
+### <span id="completed" class="badge badge-done">Completed</span>
 
 <table class="roadmap-table completed">
 <tr><th>Feature</th><th>Repo</th><th>Version</th></tr>
