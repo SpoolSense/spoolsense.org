@@ -77,7 +77,7 @@ nav:
     - Community Mods: builds/community-mods.md
   - Installation:
     - Web Flasher: installation/web-flasher.md
-    - Middleware Setup: installation/middleware.md
+    - Scanner + Middleware: installation/middleware.md
     - Spoolman Integration: installation/spoolman.md
     - Home Assistant: installation/home-assistant.md
   - Releases:

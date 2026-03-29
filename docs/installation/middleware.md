@@ -1,21 +1,6 @@
-# Middleware Setup
-
-The SpoolSense middleware bridges the scanner to Klipper/AFC. It typically runs on your Klipper host (Raspberry Pi), but can run on any machine on your network that can reach the MQTT broker and Moonraker (a separate Pi, a Linux VM, a NAS, etc.).
-
-## When Do I Need This?
-
-You need the middleware if you want:
-
-- AFC lane assignment (BoxTurtle, tradrack)
-- Toolchanger spool assignment
-- Tag weight writeback after prints
-- Slicer integration (Orca Slicer lane data)
-
-If you only need Spoolman sync and Home Assistant, the scanner handles that directly. No middleware needed.
+# Installation
 
 ## Step 1: Flash the Scanner Firmware
-
-You have two options for flashing the ESP32:
 
 ### Option A: Web Flasher (Recommended)
 
@@ -23,23 +8,7 @@ Flash directly from your browser at the [Web Flasher](web-flasher.md) page. No s
 
 ### Option B: CLI Installer
 
-If you prefer the command line, or want to flash the scanner and install the middleware in one step:
-
-```bash
-curl -sL https://raw.githubusercontent.com/SpoolSense/spoolsense-installer/main/install.sh | bash
-```
-
-The installer walks you through WiFi, MQTT, Spoolman, and hardware configuration, then flashes the firmware with your settings baked into NVS.
-
-| Setting | Description | Required |
-|---------|-------------|----------|
-| Board | ESP32-WROOM or S3-Zero | Yes |
-| WiFi SSID / Password | Your network credentials | Yes |
-| MQTT Host | Broker IP for Home Assistant | Optional |
-| Spoolman URL | Your Spoolman instance URL | Optional |
-| NFC Reader | PN5180 or PN532 | Yes |
-| LCD / LED / Keypad | Optional hardware toggles | Optional |
-| Moonraker URL | For keypad tool assignment | Optional |
+If you prefer the command line, use the CLI installer. See [Step 2](#step-2-install-the-middleware) below — when the installer asks what to install, choose **"Scanner only"** or **"Both"** (if you also need the middleware).
 
 ### Option C: Build from Source (Advanced)
 
@@ -62,9 +31,24 @@ curl -sL https://raw.githubusercontent.com/SpoolSense/spoolsense-installer/main/
 
 Select **"Config only (source builds)"** when prompted.
 
+---
+
 ## Step 2: Install the Middleware
 
-### Easy Mode (Klipper Host)
+The SpoolSense middleware bridges the scanner to Klipper/AFC. It typically runs on your Klipper host (Raspberry Pi), but can run on any machine on your network that can reach the MQTT broker and Moonraker.
+
+### Do I Need This?
+
+You need the middleware if you want:
+
+- AFC lane assignment (BoxTurtle, tradrack)
+- Toolchanger spool assignment
+- Tag weight writeback after prints
+- Slicer integration (Orca Slicer lane data)
+
+If you only need Spoolman sync and Home Assistant, the scanner handles that directly. No middleware needed.
+
+### CLI Installer
 
 SSH into your Klipper host and run:
 
@@ -73,16 +57,22 @@ ssh pi@your-printer-ip
 curl -sL https://raw.githubusercontent.com/SpoolSense/spoolsense-installer/main/install.sh | bash
 ```
 
-Choose **"Middleware only"** when asked what to install. The installer will:
+Choose **"Middleware only"** if you already flashed the scanner with the Web Flasher. Choose **"Both"** to flash the scanner and install the middleware in one step.
 
-1. Clone the middleware repo
-2. Walk you through `config.yaml` settings
-3. Set up the systemd service
+The installer will:
+
+1. Flash the scanner firmware (if "Both" selected)
+2. Clone the middleware repo
+3. Walk you through `config.yaml` settings
+4. Set up the systemd service
 
 !!! tip
-    If you used the CLI installer (Option B above) and chose **"Both"**, the middleware is already installed. Skip this step.
+    After flashing via the installer, unplug the ESP32 from USB and power it separately. The scanner communicates over WiFi, not USB. USB is only needed for the initial flash.
 
-### Manual Install
+### Manual Install (Advanced)
+
+!!! warning "For advanced users only"
+    Most users should use the CLI installer above.
 
 ```bash
 git clone https://github.com/SpoolSense/spoolsense_middleware.git ~/SpoolSense
@@ -92,7 +82,9 @@ cp config.example.yaml config.yaml
 # Edit config.yaml with your settings
 ```
 
-## Configuration
+---
+
+## Step 3: Configure the Middleware
 
 ### Finding Your Scanner's Device ID
 
@@ -127,7 +119,7 @@ scanners:
 !!! tip
     If you have multiple scanners, add each one as a separate entry under `scanners:` with its own device ID and action.
 
-## Actions
+### Actions
 
 | Action | Use Case |
 |--------|----------|
@@ -136,7 +128,7 @@ scanners:
 | `afc_lane` | AFC, one scanner per lane. Scan assigns to that lane. |
 | `afc_stage` | AFC, shared scanner. Scan stages spool, lane load triggers assignment. |
 
-## Running as a Service
+### Running as a Service
 
 !!! note
     The installer sets this up automatically. These commands are only needed if you installed manually.
