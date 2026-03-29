@@ -77,17 +77,17 @@ If running the middleware on your Klipper host, it receives the MQTT scan event 
 ## With vs Without Middleware
 
 | Feature | Scanner Only | Scanner + Middleware |
-|---------|-------------|---------------------|
-| Read NFC tags | Yes | Yes |
-| Spoolman sync | Yes | Yes |
-| Home Assistant sensors | Yes | Yes |
-| Scanner LED filament color | Yes (from tag data) | Yes (from tag or Spoolman) |
-| LCD display | Yes | Yes |
-| AFC lane assignment | No | Yes |
-| AFC lane color LEDs | No | Yes |
-| Toolchanger support | No | Yes |
-| Keypad tool assignment | Scanner only (direct to Moonraker) | Also via middleware |
-| Tag weight writeback | No | Yes |
-| Slicer integration (Orca) | No | Yes |
+|---------|:---:|:---:|
+| Read NFC tags | :white_check_mark: | :white_check_mark: |
+| Spoolman sync | :white_check_mark: | :white_check_mark: |
+| Home Assistant sensors | :white_check_mark: | :white_check_mark: |
+| Scanner LED filament color | :white_check_mark: from tag | :white_check_mark: from tag or Spoolman |
+| LCD display | :white_check_mark: | :white_check_mark: |
+| AFC lane assignment | :x: | :white_check_mark: |
+| AFC lane color LEDs | :x: | :white_check_mark: |
+| Toolchanger support | :x: | :white_check_mark: |
+| Keypad tool assignment | :white_check_mark: direct to Moonraker | :white_check_mark: also via middleware |
+| Tag weight writeback | :x: | :white_check_mark: |
+| Slicer integration (Orca) | :x: | :white_check_mark: |
 
 The scanner works standalone for basic spool tracking, Spoolman sync, and Home Assistant. Add the middleware when you need Klipper/AFC integration, lane colors, or tag writeback.
