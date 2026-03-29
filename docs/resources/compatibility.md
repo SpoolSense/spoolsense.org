@@ -12,9 +12,6 @@ SpoolSense works with any printer that runs Klipper with Moonraker. Direct integ
 | **Prusa (PrusaLink)** | ✅ | ✅ | ⚠️ Experimental | ❌ | See below |
 | **Creality K1/K1 Max (rooted)** | ✅ | ✅ | ✅ | ✅ | Requires Moonraker via community script |
 | **Creality K1/K1 Max (stock)** | ✅ | ❌ | ❌ | ❌ | Scan only — no API to push spool data |
-| **Creality CFS** | ❌ | ❌ | ❌ | ❌ | MIFARE Classic encrypted tags — not supported |
-| **Bambu Lab** | ⚠️ UID only | ❌ | ❌ | ❌ | Tag UID detected, encrypted data not accessible |
-| **OctoPrint** | ✅ | ❌ | ❌ | ❌ | No active spool API — community plugins may help |
 
 **Legend:** ✅ Supported &nbsp;|&nbsp; ⚠️ Partial / Experimental &nbsp;|&nbsp; ❌ Not supported
 
@@ -70,27 +67,3 @@ Once Moonraker is running on your Creality printer, SpoolSense treats it identic
 **Status: Scan only**
 
 Stock Creality firmware does not expose Moonraker. The scanner can still read NFC tags and publish to MQTT or Home Assistant, but there is no way to push spool data back to the printer without Moonraker.
-
----
-
-## Creality CFS
-
-**Status: Not supported**
-
-The Creality Filament System uses MIFARE Classic 1K tags with AES-128 encryption. These are a different tag type from what SpoolSense supports (NTAG, ISO15693). CFS tag writing is not currently planned.
-
----
-
-## Bambu Lab
-
-**Status: UID detection only**
-
-Bambu Lab spools use MIFARE Classic tags with proprietary encryption. SpoolSense can detect the tag's UID and report it, but cannot read filament data from the tag. Bambu printers also do not expose a spool management API to third-party tools.
-
----
-
-## OctoPrint
-
-**Status: Scan and MQTT only**
-
-OctoPrint does not have a native active spool API. SpoolSense can scan tags and publish to MQTT or Home Assistant alongside OctoPrint, but cannot push spool assignments directly to the printer. Community OctoPrint plugins may bridge this gap.
