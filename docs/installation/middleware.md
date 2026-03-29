@@ -22,11 +22,68 @@ ssh pi@your-printer-ip
 curl -sL https://raw.githubusercontent.com/SpoolSense/spoolsense-installer/main/install.sh | bash
 ```
 
-Choose **"Middleware only"** when asked what to install. The installer will:
+Choose **"Middleware only"** when asked what to install. Here's what the installer looks like:
 
-1. Clone the middleware repo
-2. Walk you through `config.yaml` settings
-3. Set up the systemd service
+<div style="background:#0b0b0d; border:1px solid #2a2e36; border-radius:12px; padding:20px; font-family:'JetBrains Mono',monospace; font-size:13px; line-height:1.7; overflow-x:auto; color:#f4f4f5">
+<pre style="margin:0; background:transparent; color:inherit">
+<span style="color:#06b6d4;font-weight:bold">╔══════════════════════════════════════╗
+║       SpoolSense Installer           ║
+╚══════════════════════════════════════╝</span>
+
+What do you want to install?
+  1) Scanner + Middleware (recommended)
+  2) Scanner only
+  3) <span style="color:#fff;font-weight:bold">Middleware only</span>
+  4) Config only (source builds)
+Choice [1]: <span style="color:#fff">3</span>
+
+<span style="color:#06b6d4;font-weight:bold">── Connection Settings ─────────────────</span>
+
+  (These must match your scanner's config)
+
+MQTT broker host: <span style="color:#fff">192.168.1.50</span>
+MQTT port [1883]:
+MQTT username []:
+MQTT password []:
+
+<span style="color:#06b6d4;font-weight:bold">── Middleware Configuration ────────────</span>
+
+Scanner setup:
+  1) AFC shared scanner (scan spool, load any lane)
+  2) AFC per-lane scanners (one scanner per lane)
+  3) Toolchanger shared scanner (scan spool, pick up any tool)
+  4) Toolchanger per-toolhead scanners (one scanner per tool)
+  5) Single toolhead (one scanner, one extruder)
+Choice [1]: <span style="color:#fff">1</span>
+
+  <span style="color:#f59e0b">Note:</span> After flashing your scanner, find its device ID
+  from the MQTT topic: spoolsense/&lt;device_id&gt;/tag/state
+
+Moonraker URL [http://localhost]: <span style="color:#fff">http://localhost</span>
+
+  <span style="color:#f59e0b">Slicer integration:</span> Slicers like Orca Slicer can auto-populate
+  tool colors, materials, and temps from your scanned spools.
+
+Enable slicer integration for toolheads? [y/N]: <span style="color:#fff">y</span>
+
+<span style="color:#06b6d4;font-weight:bold">── Installing Middleware ────────────────</span>
+
+  Cloning SpoolSense middleware...
+  <span style="color:#22c55e">✓</span> Repository ready
+  Installing Python dependencies...
+  <span style="color:#22c55e">✓</span> Dependencies installed
+  <span style="color:#22c55e">✓</span> Config written to ~/SpoolSense/middleware/config.yaml
+  Creating systemd service...
+  <span style="color:#22c55e">✓</span> Service created and enabled
+
+<span style="color:#22c55e">══════════════════════════════════════
+  SpoolSense is installed!
+
+  Middleware: systemctl status spoolsense
+  Config:     ~/SpoolSense/middleware/config.yaml
+══════════════════════════════════════</span>
+</pre>
+</div>
 
 ### Manual Install (Advanced)
 
