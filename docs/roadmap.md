@@ -200,7 +200,7 @@ a.roadmap-stat:hover {
 
 <div class="roadmap-stats">
   <a href="#exploring" class="roadmap-stat stat-exploring"><div class="num">7</div><div class="label">Exploring</div></a>
-  <a href="#planned" class="roadmap-stat stat-planned"><div class="num">17</div><div class="label">Planned</div></a>
+  <a href="#planned" class="roadmap-stat stat-planned"><div class="num">18</div><div class="label">Planned</div></a>
   <a href="#in-progress" class="roadmap-stat stat-progress"><div class="num">2</div><div class="label">In Progress</div></a>
   <a href="#completed" class="roadmap-stat stat-done"><div class="num">20</div><div class="label">Completed</div></a>
 </div>
@@ -266,6 +266,7 @@ a.roadmap-stat:hover {
 <tr><td>Nozzle/bed temps to AFC lane_data</td><td><span class="repo-tag">Middleware</span></td><td>—</td></tr>
 <tr><td>Resync AFC lock state on MQTT reconnect</td><td><span class="repo-tag">Middleware</span></td><td>—</td></tr>
 <tr><td>Moonraker websocket (replace polling)</td><td><span class="repo-tag">Middleware</span></td><td>—</td></tr>
+<tr><td>Tag writeback architecture review</td><td><span class="repo-tag">Scanner + Middleware</span></td><td>—</td></tr>
 <tr><td>Wiring photos and assembly guides</td><td><span class="repo-tag">Docs</span></td><td>—</td></tr>
 <tr><td>More community enclosure designs</td><td><span class="repo-tag">Docs</span></td><td>—</td></tr>
 </table>
