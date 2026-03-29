@@ -8,7 +8,7 @@ A 240x240 color TFT replaces the 16x2 LCD with a graphical spool display showing
 ## What You Need
 
 - 1.54" ST7789 240x240 SPI TFT module (8-pin: GND, VCC, SCL, SDA, RES, DC, CS, BLK)
-- 5 jumper wires (SCL, SDA, DC, CS, RES) + VCC + GND
+- 7 jumper wires (SCL, SDA, DC, CS, RES, VCC, GND) — 8 if wiring BLK for backlight control
 
 ## Wiring (ESP32-WROOM)
 
