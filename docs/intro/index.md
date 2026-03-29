@@ -2,6 +2,11 @@
 
 SpoolSense is an open-source NFC-based filament tracking system for 3D printers. It uses an ESP32 microcontroller and an NFC reader to scan spool tags, identify filament, and keep your spool management system up to date automatically.
 
+<figure markdown>
+  ![SpoolSense scanner demo](../img/scanner-demo.gif){ width="480" }
+  <figcaption>Scan a spool, LED changes to the filament color</figcaption>
+</figure>
+
 ## The Problem
 
 Every 3D printer owner eventually asks: "How much filament is left on this spool?" and "Which spool is loaded right now?" Manual tracking breaks down fast, especially with multiple printers or tool changers.
