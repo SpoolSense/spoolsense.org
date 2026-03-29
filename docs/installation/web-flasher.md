@@ -188,7 +188,7 @@ esp-web-install-button button:hover {
 </div>
 
 <div class="flash-btn-wrap">
-  <esp-web-install-button manifest="manifest.json">
+  <esp-web-install-button manifest="/installation/manifest.json">
     <button slot="activate">Flash SpoolSense Scanner</button>
   </esp-web-install-button>
   <div class="not-supported" id="notSupported">
