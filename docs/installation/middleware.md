@@ -51,7 +51,7 @@ MQTT password []:
 Scanner setup:
   1) AFC shared scanner (scan spool, load any lane)
   2) AFC per-lane scanners (one scanner per lane)
-  3) Toolchanger shared scanner (scan spool, pick up any tool)
+  3) Toolchanger shared scanner (scan spool, assign via macro or keypad)
   4) Toolchanger per-toolhead scanners (one scanner per tool)
   5) Single toolhead (one scanner, one extruder)
 Choice [1]: <span style="color:#fff">1</span>
