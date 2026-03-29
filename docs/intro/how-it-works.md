@@ -81,7 +81,7 @@ If running the middleware on your Klipper host, it receives the MQTT scan event 
 | Read NFC tags | :white_check_mark: | :white_check_mark: |
 | Spoolman sync | :white_check_mark: | :white_check_mark: |
 | Home Assistant sensors | :white_check_mark: | :white_check_mark: |
-| Scanner LED filament color | :white_check_mark: from tag | :white_check_mark: from tag or Spoolman |
+| Scanner LED filament color | :white_check_mark: from tag or Spoolman | :white_check_mark: from tag or Spoolman |
 | LCD display | :white_check_mark: | :white_check_mark: |
 | AFC lane assignment | :x: | :white_check_mark: |
 | AFC lane color LEDs | :x: | :white_check_mark: |
