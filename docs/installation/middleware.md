@@ -1,43 +1,8 @@
-# Installation
-
-## Step 1: Flash the Scanner Firmware
-
-### Option A: Web Flasher (Recommended)
-
-Flash directly from your browser at the [Web Flasher](web-flasher.md) page. No software to install. After flashing, the scanner starts a WiFi hotspot — connect to it and configure your settings.
-
-### Option B: CLI Installer
-
-If you prefer the command line, use the CLI installer. See [Step 2](#step-2-install-the-middleware) below — when the installer asks what to install, choose **"Scanner only"** or **"Both"** (if you also need the middleware).
-
-### Option C: Build from Source (Advanced)
-
-!!! warning "For developers only"
-    This option requires PlatformIO and familiarity with C++ embedded development. Most users should use the Web Flasher or CLI Installer instead.
-
-```bash
-git clone https://github.com/SpoolSense/spoolsense_scanner.git
-cd spoolsense_scanner
-cp include/UserConfig.example.h include/UserConfig.h
-# Edit UserConfig.h with your settings
-pio run -e esp32dev -t upload    # or esp32s3zero
-```
-
-Then run the installer in config-only mode to write NVS settings:
-
-```bash
-curl -sL https://raw.githubusercontent.com/SpoolSense/spoolsense-installer/main/install.sh | bash
-```
-
-Select **"Config only (source builds)"** when prompted.
-
----
-
-## Step 2: Install the Middleware
+# Middleware Setup
 
 The SpoolSense middleware bridges the scanner to Klipper/AFC. It typically runs on your Klipper host (Raspberry Pi), but can run on any machine on your network that can reach the MQTT broker and Moonraker.
 
-### Do I Need This?
+## Do I Need This?
 
 You need the middleware if you want:
 
@@ -48,7 +13,7 @@ You need the middleware if you want:
 
 If you only need Spoolman sync and Home Assistant, the scanner handles that directly. No middleware needed.
 
-### CLI Installer
+## Install
 
 SSH into your Klipper host and run:
 
@@ -57,22 +22,16 @@ ssh pi@your-printer-ip
 curl -sL https://raw.githubusercontent.com/SpoolSense/spoolsense-installer/main/install.sh | bash
 ```
 
-Choose **"Middleware only"** if you already flashed the scanner with the Web Flasher. Choose **"Both"** to flash the scanner and install the middleware in one step.
+Choose **"Middleware only"** when asked what to install. The installer will:
 
-The installer will:
-
-1. Flash the scanner firmware (if "Both" selected)
-2. Clone the middleware repo
-3. Walk you through `config.yaml` settings
-4. Set up the systemd service
-
-!!! tip
-    After flashing via the installer, unplug the ESP32 from USB and power it separately. The scanner communicates over WiFi, not USB. USB is only needed for the initial flash.
+1. Clone the middleware repo
+2. Walk you through `config.yaml` settings
+3. Set up the systemd service
 
 ### Manual Install (Advanced)
 
 !!! warning "For advanced users only"
-    Most users should use the CLI installer above.
+    Most users should use the installer above.
 
 ```bash
 git clone https://github.com/SpoolSense/spoolsense_middleware.git ~/SpoolSense
@@ -82,9 +41,7 @@ cp config.example.yaml config.yaml
 # Edit config.yaml with your settings
 ```
 
----
-
-## Step 3: Configure the Middleware
+## Configuration
 
 ### Finding Your Scanner's Device ID
 
@@ -119,7 +76,7 @@ scanners:
 !!! tip
     If you have multiple scanners, add each one as a separate entry under `scanners:` with its own device ID and action.
 
-### Actions
+## Actions
 
 | Action | Use Case |
 |--------|----------|
@@ -128,7 +85,7 @@ scanners:
 | `afc_lane` | AFC, one scanner per lane. Scan assigns to that lane. |
 | `afc_stage` | AFC, shared scanner. Scan stages spool, lane load triggers assignment. |
 
-### Running as a Service
+## Running as a Service
 
 !!! note
     The installer sets this up automatically. These commands are only needed if you installed manually.
