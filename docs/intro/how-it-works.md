@@ -86,7 +86,7 @@ If running the middleware on your Klipper host, it receives the MQTT scan event 
 | AFC lane assignment | :x: | :white_check_mark: |
 | AFC lane color LEDs | :x: | :white_check_mark: |
 | Toolchanger support | :x: | :white_check_mark: |
-| Keypad tool assignment | :white_check_mark: direct to Moonraker | :white_check_mark: also via middleware |
+| Keypad tool assignment | :white_check_mark: | :white_check_mark: |
 | Tag weight writeback | :x: | :white_check_mark: |
 | Slicer integration (Orca) | :x: | :white_check_mark: |
 
