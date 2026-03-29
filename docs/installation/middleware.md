@@ -13,28 +13,71 @@ You need the middleware if you want:
 
 If you only need Spoolman sync and Home Assistant, the scanner handles that directly. No middleware needed.
 
-## Install
+## Step 1: Flash the Scanner Firmware
 
-### Easy Mode (Voron / Klipper Users)
+You have two options for flashing the ESP32:
 
-If you're running Klipper on a Raspberry Pi (or similar host), plug the ESP32 into one of your printer's USB ports. Then SSH into your printer and run:
+### Option A: Web Flasher (Recommended)
+
+Flash directly from your browser at the [Web Flasher](web-flasher.md) page. No software to install. After flashing, the scanner starts a WiFi hotspot — connect to it and configure your settings.
+
+### Option B: CLI Installer
+
+If you prefer the command line, or want to flash the scanner and install the middleware in one step:
+
+```bash
+curl -sL https://raw.githubusercontent.com/SpoolSense/spoolsense-installer/main/install.sh | bash
+```
+
+The installer walks you through WiFi, MQTT, Spoolman, and hardware configuration, then flashes the firmware with your settings baked into NVS.
+
+| Setting | Description | Required |
+|---------|-------------|----------|
+| Board | ESP32-WROOM or S3-Zero | Yes |
+| WiFi SSID / Password | Your network credentials | Yes |
+| MQTT Host | Broker IP for Home Assistant | Optional |
+| Spoolman URL | Your Spoolman instance URL | Optional |
+| NFC Reader | PN5180 or PN532 | Yes |
+| LCD / LED / Keypad | Optional hardware toggles | Optional |
+| Moonraker URL | For keypad tool assignment | Optional |
+
+### Option C: Build from Source
+
+```bash
+git clone https://github.com/SpoolSense/spoolsense_scanner.git
+cd spoolsense_scanner
+cp include/UserConfig.example.h include/UserConfig.h
+# Edit UserConfig.h with your settings
+pio run -e esp32dev -t upload    # or esp32s3zero
+```
+
+Then run the installer in config-only mode to write NVS settings:
+
+```bash
+curl -sL https://raw.githubusercontent.com/SpoolSense/spoolsense-installer/main/install.sh | bash
+```
+
+Select **"Config only (source builds)"** when prompted.
+
+## Step 2: Install the Middleware
+
+### Easy Mode (Klipper Host)
+
+SSH into your Klipper host and run:
 
 ```bash
 ssh pi@your-printer-ip
 curl -sL https://raw.githubusercontent.com/SpoolSense/spoolsense-installer/main/install.sh | bash
 ```
 
-Choose **"Both"** when asked what to install. The installer will:
+Choose **"Middleware only"** when asked what to install. The installer will:
 
-1. Flash the scanner firmware to the ESP32 (auto-detects the USB port)
-2. Install the middleware on the same machine
-3. Generate `config.yaml` with your settings
-4. Set up the systemd service
-
-After it finishes, unplug the ESP32 from USB and power it separately (USB power adapter or a permanent USB port). The scanner communicates over WiFi, not USB. The USB connection is only needed for the initial flash.
+1. Clone the middleware repo
+2. Walk you through `config.yaml` settings
+3. Set up the systemd service
 
 !!! tip
-    This is the recommended setup for most Klipper users. Everything runs on one machine, the installer handles it all, and you're done in a few minutes.
+    If you used the CLI installer (Option B above) and chose **"Both"**, the middleware is already installed. Skip this step.
 
 ### Manual Install
 
