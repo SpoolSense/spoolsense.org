@@ -49,6 +49,18 @@ hide:
   letter-spacing: 0.05em;
 }
 
+a.roadmap-stat {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+a.roadmap-stat:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
 .stat-done .num { color: #22c55e; }
 .stat-progress .num { color: #4ade80; }
 .stat-planned .num { color: #f59e0b; }
@@ -187,15 +199,15 @@ hide:
 </div>
 
 <div class="roadmap-stats">
-  <div class="roadmap-stat stat-exploring"><div class="num">7</div><div class="label">Exploring</div></div>
-  <div class="roadmap-stat stat-planned"><div class="num">17</div><div class="label">Planned</div></div>
-  <div class="roadmap-stat stat-progress"><div class="num">2</div><div class="label">In Progress</div></div>
-  <div class="roadmap-stat stat-done"><div class="num">20</div><div class="label">Shipped</div></div>
+  <a href="#exploring" class="roadmap-stat stat-exploring"><div class="num">7</div><div class="label">Exploring</div></a>
+  <a href="#planned" class="roadmap-stat stat-planned"><div class="num">17</div><div class="label">Planned</div></a>
+  <a href="#in-progress" class="roadmap-stat stat-progress"><div class="num">2</div><div class="label">In Progress</div></a>
+  <a href="#shipped" class="roadmap-stat stat-done"><div class="num">20</div><div class="label">Shipped</div></a>
 </div>
 
 <div class="roadmap-section">
 
-### <span class="badge badge-exploring">Exploring</span>
+### <span id="exploring" class="badge badge-exploring">Exploring</span>
 
 <div class="explore-grid">
   <div class="explore-card">
@@ -235,7 +247,7 @@ hide:
   </div>
 </div>
 
-### <span class="badge badge-planned">Planned</span>
+### <span id="planned" class="badge badge-planned">Planned</span>
 
 <table class="roadmap-table">
 <tr><th>Feature</th><th>Repo</th><th>Target</th></tr>
@@ -258,7 +270,7 @@ hide:
 <tr><td>More community enclosure designs</td><td><span class="repo-tag">Docs</span></td><td>—</td></tr>
 </table>
 
-### <span class="badge badge-progress">In Progress</span>
+### <span id="in-progress" class="badge badge-progress">In Progress</span>
 
 <table class="roadmap-table">
 <tr><th>Feature</th><th>Repo</th><th>Notes</th></tr>
@@ -266,7 +278,7 @@ hide:
 <tr><td>Creality rooted printer guide</td><td><span class="repo-tag">Docs</span></td><td>Compatible via Moonraker</td></tr>
 </table>
 
-### <span class="badge badge-done">Shipped</span>
+### <span id="shipped" class="badge badge-done">Shipped</span>
 
 <table class="roadmap-table completed">
 <tr><th>Feature</th><th>Repo</th><th>Version</th></tr>
