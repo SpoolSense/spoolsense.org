@@ -72,6 +72,7 @@ nav:
     - Wiring - ESP32 + PN5180: hardware/wiring-pn5180.md
     - Wiring - ESP32 + PN532: hardware/wiring-pn532.md
     - Optional - LCD Display: hardware/lcd.md
+    - Optional - TFT Display: hardware/tft.md
     - Optional - Keypad: hardware/keypad.md
     - Optional - Status LED: hardware/led.md
   - Build Guides:

@@ -1,0 +1,55 @@
+# Optional - TFT Display
+
+A 240x240 color TFT replaces the 16x2 LCD with a graphical spool display showing filament color, weight bar, and tag format icons.
+
+!!! warning "Mutually exclusive with LCD"
+    The TFT and LCD share GPIO 22/23 on WROOM. You can enable one or the other, not both.
+
+## What You Need
+
+- 1.54" ST7789 240x240 SPI TFT module (8-pin: GND, VCC, SCL, SDA, RES, DC, CS, BLK)
+- 5 jumper wires (SCL, SDA, DC, CS, RES) + VCC + GND
+
+## Wiring (ESP32-WROOM)
+
+| TFT Pin | ESP32 Pin | Notes |
+|---------|-----------|-------|
+| GND | GND | |
+| VCC | 3.3V | |
+| SCL | GPIO 22 | SPI clock (shared with LCD SCL when LCD enabled) |
+| SDA | GPIO 23 | SPI data / MOSI (shared with LCD SDA when LCD enabled) |
+| RES | EN | Wired to ESP32 reset pin for reliable cold boot |
+| DC | GPIO 4 | Data/command select (freed from LED when using TFT) |
+| CS | GPIO 2 | Chip select |
+| BLK | 3.3V | Backlight always on (or leave unconnected) |
+
+!!! tip "RES pin"
+    Wire the TFT's RES pin to the ESP32's **EN** pin. This ensures the display resets on every power cycle. Without this, the display may stay blank on cold boot (software reboot works fine either way).
+
+!!! tip "LED pin"
+    GPIO 4 is normally used for the status LED. When using the TFT, the LED is not needed since the display shows filament color directly. Disconnect the LED and use GPIO 4 for the TFT DC pin.
+
+## What It Shows
+
+- **Boot:** SpoolSense logo + firmware version
+- **Ready:** Grey spool graphic with "Tap a spool to scan"
+- **Spool scanned:** Color spool graphic with filament color fill, weight bar, brand and material name, tag format icon
+- **Low spool:** Breathing/pulsing brightness when remaining weight is below 100g
+- **Keypad entry:** Large tool number with confirm/cancel prompt
+- **Write result:** Green checkmark or red X
+- **WiFi/status:** Connection status during boot
+- **AP mode:** Setup instructions with IP address
+
+## Enable in Firmware
+
+The TFT is enabled via the web config page (`/config` > Hardware > TFT Display toggle). No recompile needed.
+
+Make sure the LCD toggle is **off** when enabling TFT on WROOM.
+
+## Tested Hardware
+
+- [1.54" ST7789 240x240 SPI TFT](https://www.amazon.com/dp/B0DN9NMBFW) (verified working)
+
+## SPI Bus Note
+
+The TFT uses VSPI (the ESP32's default SPI bus). The PN5180 NFC reader is automatically moved to HSPI when the TFT is compiled in, so both devices run on separate SPI peripherals with no bus contention.
