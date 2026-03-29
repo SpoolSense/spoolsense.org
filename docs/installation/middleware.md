@@ -41,7 +41,10 @@ The installer walks you through WiFi, MQTT, Spoolman, and hardware configuration
 | LCD / LED / Keypad | Optional hardware toggles | Optional |
 | Moonraker URL | For keypad tool assignment | Optional |
 
-### Option C: Build from Source
+### Option C: Build from Source (Advanced)
+
+!!! warning "For developers only"
+    This option requires PlatformIO and familiarity with C++ embedded development. Most users should use the Web Flasher or CLI Installer instead.
 
 ```bash
 git clone https://github.com/SpoolSense/spoolsense_scanner.git
