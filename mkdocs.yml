@@ -86,6 +86,7 @@ nav:
     - Middleware: releases/middleware.md
     - Installer: releases/installer.md
   - Resources:
+    - Printer Compatibility: resources/compatibility.md
     - Tag Formats: resources/tag-formats.md
     - API Reference: resources/api.md
     - Troubleshooting: resources/troubleshooting.md
