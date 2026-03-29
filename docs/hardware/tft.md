@@ -46,9 +46,18 @@ The TFT is enabled via the web config page (`/config` > Hardware > TFT Display t
 
 Make sure the LCD toggle is **off** when enabling TFT on WROOM.
 
-## Tested Hardware
+## Compatible Displays
 
-- [1.54" ST7789 240x240 SPI TFT](https://www.amazon.com/dp/B0DN9NMBFW) (verified working)
+| Display | Size | Resolution | Driver | Status |
+|---------|------|-----------|--------|--------|
+| [1.54" ST7789 Square](https://www.amazon.com/dp/B0DN9NMBFW) | 1.54" | 240x240 | ST7789 | Tested |
+| 1.3" ST7789 Square | 1.3" | 240x240 | ST7789 | Should work (same driver) |
+| GC9A01 Round | 1.28" | 240x240 | GC9A01 | Untested — community help wanted |
+
+The firmware uses [LovyanGFX](https://github.com/lovyan03/LovyanGFX) which supports many SPI display drivers. Any 240x240 SPI TFT with a supported driver should work with a config change. If you try a display not listed here, let us know in [Discord](https://discord.gg/JYFQQQR5F).
+
+!!! info "GC9A01 Round Display"
+    The GC9A01 is a round 240x240 TFT that would look great as a standalone scanner — the spool graphic centered in a circular display. Same resolution and SPI interface as the ST7789. If you have one and want to test, join the Discord.
 
 ## SPI Bus Note
 
