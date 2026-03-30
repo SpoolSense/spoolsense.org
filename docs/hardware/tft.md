@@ -3,7 +3,7 @@
 A 240x240 color TFT replaces the 16x2 LCD with a graphical spool display showing filament color, weight bar, and tag format icons.
 
 <figure markdown>
-  ![TFT display showing scanned spool](../img/tft-spool-scan.jpg){ width="400" }
+  ![TFT display showing scanned spool](../img/tft-spool-scan.jpg){ width="240" }
   <figcaption>Spool scanned on the 240x240 TFT — filament color, weight bar, and tag info</figcaption>
 </figure>
 
