@@ -200,7 +200,7 @@ a.roadmap-stat:hover {
 
 <div class="roadmap-stats">
   <a href="#exploring" class="roadmap-stat stat-exploring"><div class="num">7</div><div class="label">Exploring</div></a>
-  <a href="#planned" class="roadmap-stat stat-planned"><div class="num">17</div><div class="label">Planned</div></a>
+  <a href="#planned" class="roadmap-stat stat-planned"><div class="num">18</div><div class="label">Planned</div></a>
   <a href="#in-progress" class="roadmap-stat stat-progress"><div class="num">2</div><div class="label">In Progress</div></a>
   <a href="#completed" class="roadmap-stat stat-done"><div class="num">24</div><div class="label">Completed</div></a>
 </div>
@@ -251,6 +251,7 @@ a.roadmap-stat:hover {
 
 <table class="roadmap-table">
 <tr><th>Feature</th><th>Repo</th><th>Target</th></tr>
+<tr><td>Link/re-assign NFC+ tags to Spoolman spools</td><td><span class="repo-tag">Scanner</span></td><td>v1.6.1</td></tr>
 <tr><td>WiFi reconnection logic</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
 <tr><td>Tag writer: populate from Spoolman</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
 <tr><td>NTAG variant detection (GET_VERSION)</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
