@@ -260,7 +260,7 @@ a.roadmap-stat:hover {
 <tr><td>Tag writer: populate from Spoolman</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
 <tr><td>NTAG variant detection (GET_VERSION)</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
 <tr><td>TigerTag partial write (changed fields only)</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
-<tr><td>PN5180 Phase 2 reliability</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
+<tr><td>PN5180 Phase 2 reliability</td><td><span class="repo-tag">Scanner</span></td><td>v1.6.2</td></tr>
 <tr><td>HA publish queue fix (silent drops)</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
 <tr><td>Klipper error alerts via LED (per-toolhead)</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
 <tr><td>Smarter Spoolman lookups (filter by NFC ID)</td><td><span class="repo-tag">Middleware</span></td><td>—</td></tr>
