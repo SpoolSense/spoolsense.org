@@ -2,6 +2,11 @@
 
 A 240x240 color TFT replaces the 16x2 LCD with a graphical spool display showing filament color, weight bar, and tag format icons.
 
+<figure markdown>
+  ![TFT display showing scanned spool](../img/tft-spool-scan.jpg){ width="400" }
+  <figcaption>Spool scanned on the 240x240 TFT — filament color, weight bar, and tag info</figcaption>
+</figure>
+
 !!! warning "Mutually exclusive with LCD"
     The TFT and LCD share GPIO 22/23 on WROOM. You can enable one or the other, not both.
 
