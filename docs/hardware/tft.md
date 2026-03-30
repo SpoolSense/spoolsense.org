@@ -34,6 +34,25 @@ A 240x240 color TFT replaces the 16x2 LCD with a graphical spool display showing
 !!! tip "LED pin"
     GPIO 4 is normally used for the status LED. When using the TFT, the LED is not needed since the display shows filament color directly. Disconnect the LED and use GPIO 4 for the TFT DC pin.
 
+## Wiring (ESP32-S3-Zero + PN532)
+
+!!! warning "PN532 only"
+    On the S3-Zero, the TFT is only compatible with the PN532 NFC reader. The PN5180 uses too many of the limited header pins (GPIO 4-12), leaving insufficient free GPIOs for the TFT. The S3-Zero has GPIO 1-13 on side headers — GPIO 14+ are back pads that require soldering.
+
+| TFT Pin | ESP32-S3 Pin | Notes |
+|---------|-------------|-------|
+| GND | GND | |
+| VCC | 3.3V | |
+| SCL | GPIO 12 | SPI clock |
+| SDA | GPIO 13 | SPI data / MOSI |
+| RES | GPIO 9 | Hardware reset (freed from PN5180 BUSY) |
+| DC | GPIO 3 | Data/command select |
+| CS | GPIO 10 | Chip select (freed from PN5180 GPIO) |
+| BLK | 3.3V | Backlight always on |
+
+!!! note "No external LED needed"
+    The S3-Zero has an onboard WS2812 LED on GPIO 21 that still works alongside the TFT. The TFT also shows filament color directly.
+
 ## What It Shows
 
 - **Boot:** SpoolSense logo + firmware version
