@@ -252,14 +252,16 @@ a.roadmap-stat:hover {
 <table class="roadmap-table">
 <tr><th>Feature</th><th>Repo</th><th>Target</th></tr>
 <tr><td>Link/re-assign NFC+ tags to Spoolman spools</td><td><span class="repo-tag">Scanner</span></td><td>v1.6.1</td></tr>
+<tr><td>NFC+ reader: show temps from Spoolman</td><td><span class="repo-tag">Scanner</span></td><td>v1.6.1</td></tr>
+<tr><td>Tag writer auto-populate from scanned tag</td><td><span class="repo-tag">Scanner</span></td><td>v1.6.1</td></tr>
+<tr><td>HTTP connection reuse for Spoolman</td><td><span class="repo-tag">Scanner</span></td><td>v1.6.1</td></tr>
+<tr><td>Fix HA discovery re-publish on every scan</td><td><span class="repo-tag">Scanner</span></td><td>v1.6.1</td></tr>
 <tr><td>WiFi reconnection logic</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
 <tr><td>Tag writer: populate from Spoolman</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
 <tr><td>NTAG variant detection (GET_VERSION)</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
 <tr><td>TigerTag partial write (changed fields only)</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
 <tr><td>PN5180 Phase 2 reliability</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
-<tr><td>HTTP connection reuse for Spoolman</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
 <tr><td>HA publish queue fix (silent drops)</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
-<tr><td>Tag writer auto-populate from scanned tag</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
 <tr><td>Klipper error alerts via LED (per-toolhead)</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
 <tr><td>Smarter Spoolman lookups (filter by NFC ID)</td><td><span class="repo-tag">Middleware</span></td><td>—</td></tr>
 <tr><td>Low spool push notification (HA)</td><td><span class="repo-tag">Middleware</span></td><td>—</td></tr>
