@@ -77,3 +77,80 @@ That's it. The AMS tray now knows what filament is loaded.
 - The default timeout is 300 seconds (5 minutes) — you must load the filament within this window after scanning
 - You must scan first, then load. Loading before scanning is not detected
 - Increase the timeout in the automation settings if needed
+
+## Automatic Weight Deduction (Optional)
+
+Track filament usage automatically — when a print finishes on your Bambu printer, the weight consumed is deducted from the spool in Spoolman.
+
+### Additional Prerequisites
+
+- [spoolman-homeassistant](https://github.com/Disane87/spoolman-homeassistant) integration installed in HA
+- Spools in Spoolman have the `nfc_id` extra field set to their NFC tag UID
+
+### Create Input Text Helpers
+
+The two blueprints share state through HA helpers. Create one pair of `input_text` helpers per AMS tray:
+
+1. Go to **Settings → Devices & Services → Helpers → + Create Helper → Text**
+2. For each AMS tray, create two helpers:
+
+    | AMS Tray Entity | UID Helper Name | Spoolman ID Helper Name |
+    |---|---|---|
+    | `sensor.p1s_ams_tray_1` | `spoolsense_p1s_ams_tray_1_uid` | `spoolsense_p1s_ams_tray_1_spoolman_id` |
+    | `sensor.p1s_ams_tray_2` | `spoolsense_p1s_ams_tray_2_uid` | `spoolsense_p1s_ams_tray_2_spoolman_id` |
+    | `sensor.p1s_ams_tray_3` | `spoolsense_p1s_ams_tray_3_uid` | `spoolsense_p1s_ams_tray_3_spoolman_id` |
+    | `sensor.p1s_ams_tray_4` | `spoolsense_p1s_ams_tray_4_uid` | `spoolsense_p1s_ams_tray_4_spoolman_id` |
+
+    Replace `p1s` with your printer's entity prefix.
+
+### Install the Deduction Blueprint
+
+1. In Home Assistant, go to **Settings → Automations & Scenes → Blueprints**
+2. Click **Import Blueprint**
+3. Paste this URL:
+
+    ```
+    https://github.com/SpoolSense/spoolsense_scanner/blob/main/homeassistant/blueprints/spoolsense_bambu_deduction.yaml
+    ```
+
+4. Click **Preview** then **Import Blueprint**
+
+### Create the Deduction Automation
+
+1. Click **Create Automation** on the blueprint
+2. Configure:
+
+    | Input | What to select |
+    |-------|----------------|
+    | **Bambu Printer** | Your Bambu printer device |
+    | **Print Weight Sensor** | Your print weight sensor (e.g., `sensor.p1s_print_weight`) |
+    | **AMS Tray Sensors** | Same tray sensors as the loading blueprint |
+
+3. Click **Save**
+
+### How It Works
+
+1. You scan a spool and load it into an AMS tray (handled by the loading blueprint)
+2. The loading blueprint stores the spool's UID and Spoolman ID in the helpers
+3. You start a print
+4. When the print finishes (or is canceled), the deduction blueprint:
+    - Reads how many grams each tray consumed
+    - Looks up the Spoolman spool for each tray (by UID or Spoolman ID)
+    - Deducts the weight via `spoolman.use_spool_filament`
+5. Spoolman now shows the updated remaining weight
+
+### Deduction Troubleshooting
+
+**Weight not deducted after print**
+
+- Check that the loading blueprint stored the UID: go to **Developer Tools → States**, search for `input_text.spoolsense_*_uid` — it should show the tag UID
+- Check that the print weight sensor has per-tray attributes after a print: **Developer Tools → States** → `sensor.p1s_print_weight`
+- Verify the spool exists in Spoolman with a matching `nfc_id` extra field
+
+**Wrong amount deducted**
+
+- The deduction uses the weight reported by the Bambu printer, which is estimated from g-code metadata — not measured. Small variations are normal.
+
+**Multi-material prints**
+
+- Each tray's usage is deducted independently from its mapped spool. Multi-color and multi-material prints are supported.
