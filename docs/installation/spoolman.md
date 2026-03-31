@@ -66,6 +66,9 @@ sync_rate: 5
 
 Restart Moonraker after adding this.
 
+!!! tip "Enable the Spoolman panel in Mainsail"
+    After configuring Moonraker, enable the Spoolman widget in Mainsail so you can see the active spool on your dashboard: **Settings (gear icon) → Dashboard → scroll to "Spoolman" → toggle it on.** In Fluidd, the Spoolman panel appears automatically once Moonraker reports the integration is active.
+
 ## Connecting SpoolSense to Spoolman
 
 During scanner setup (installer or web config), enter your Spoolman URL:
