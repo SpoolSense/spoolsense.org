@@ -6,6 +6,7 @@ When you scan a spool with SpoolSense and load it into an AMS tray, the blueprin
 
 ## Prerequisites
 
+- Bambu printer set to **LAN Only Mode** with **Developer Mode** enabled (required for local MQTT access)
 - SpoolSense scanner connected to Home Assistant via MQTT ([setup guide](home-assistant.md))
 - [Bambu Lab Home Assistant integration](https://github.com/greghesp/ha-bambulab) installed and configured
 - Bambu printer with AMS connected and visible in HA
