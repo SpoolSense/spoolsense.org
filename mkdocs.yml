@@ -84,6 +84,7 @@ nav:
     - Middleware Setup: installation/middleware.md
     - Spoolman Integration: installation/spoolman.md
     - Home Assistant: installation/home-assistant.md
+    - Bambu Lab AMS: installation/bambu-ams.md
   - Releases:
     - Overview: releases/index.md
     - Scanner: releases/scanner.md
