@@ -21,13 +21,16 @@ Wire each pin by its label, not its position on the ribbon.
 
 | Ribbon Label | ESP32 GPIO | Function |
 |-------------|-----------|----------|
-| R1 | GPIO 15 | Row 1 |
-| R2 | GPIO 16 | Row 2 |
-| R3 | GPIO 17 | Row 3 |
-| R4 | GPIO 18 | Row 4 |
-| C1 | GPIO 19 | Column 1 |
+| R1 | GPIO 19 | Row 1 |
+| R2 | GPIO 15 | Row 2 |
+| R3 | GPIO 16 | Row 3 |
+| R4 | GPIO 5 | Row 4 |
+| C1 | GPIO 18 | Column 1 |
 | C2 | GPIO 21 | Column 2 |
-| C3 | GPIO 5 | Column 3 |
+| C3 | GPIO 17 | Column 3 |
+
+!!! warning "Pin assignments changed in v1.6.4"
+    If you wired your keypad before v1.6.4, you'll need to re-wire to match the new pin assignments above. The pins were rearranged to match the physical order of the keypad ribbon connector.
 
 ### ESP32-S3-Zero
 
