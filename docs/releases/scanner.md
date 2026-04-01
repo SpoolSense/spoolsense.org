@@ -1,5 +1,77 @@
 # Scanner Changelog
 
+## [1.6.3] - 2026-03-31
+
+### Added
+
+- **HA state retention after tag removal** — spool data (material, color, weight, temps) persists in HA sensor after tag is removed, with `present: false`. Dashboards now show last scanned spool instead of going blank. (#60)
+- **Tag writer: populate from Spoolman** — searchable spool picker on all 3 writer pages (OpenPrintTag, TigerTag, OpenTag3D). Pick a spool from your Spoolman inventory and the form auto-fills. Shows hint when Spoolman is not configured. (#32)
+
+### Fixed
+
+- **[P1] Spoolman streaming UID lookup** — replaced ArduinoJson bulk parse with streaming HTTP parser for spool lookups. Fixes NoMemory crash on 30+ spools that broke all tag format syncs. Uses ~600 bytes instead of ~60KB. Works with any database size. (#68)
+- **HA publish queue** — increased from 6 to 12 items and added drop logging. Previously silently dropped messages when MQTT was disconnected. (#28)
+- **TFT null queue guards** — all queue operations now check for null before access. Prevents crash if queue allocation fails.
+- **TFT queue depth** — increased from 4 to 8 with drop logging for burst traffic.
+- **TFT showText4** — was discarding lines 1-2 on generic tag scans. Now shows "Spool: Unknown Tag" instead of just "Unknown Tag".
+- **TFT duplicate struct removed** — eliminated TFTSpoolData (duplicate of DisplaySpoolData with unused name field). Saves 48 bytes per queued message.
+- **TFT startTask check** — now verifies task creation succeeded instead of logging success unconditionally.
+
+---
+
+## [1.6.2] - 2026-03-31
+
+### Added
+
+- **WiFi reconnection** — automatic reconnect with exponential backoff (5s→60s) when WiFi drops. Display shows "WiFi Lost" / "WiFi OK" on state change. mDNS re-initializes on reconnect. NFC scanning continues uninterrupted. (#29)
+- **Bambu AMS blueprint** — Home Assistant blueprint pushes scanned spool data (material, color, temps) into Bambu Lab AMS trays automatically. Scan a tag, load the tray, done.
+- **Bambu → Spoolman deduction blueprint** — after a Bambu print finishes or is canceled, automatically deducts filament weight from Spoolman per tray. Requires spoolman-homeassistant integration.
+- **Bambu filament ID map** — 34 material types mapped to Bambu generic filament IDs for accurate AMS tray identification.
+
+### Fixed
+
+- **OTA on TFT builds** — free 57.6KB TFT sprite before OTA download, fixing SSL memory allocation failure. Progress bar shown on TFT during update. (#59)
+- **S3-Zero TFT pins** — corrected pin assignments for side headers, PN532 only.
+
+---
+
+## [1.6.1] - 2026-03-30
+
+### Added
+
+- **Link/re-assign NFC+ tags to Spoolman spools** — spool picker on reader page with search. Link unlinked tags or re-assign existing ones. Proxy endpoints avoid CORS. (#54)
+- **Tag writer auto-populate from scanned tag** — place a tag on the reader, open any writer page, form fields pre-fill from the tag's data. Works cross-format (scan TigerTag, write as OpenPrintTag). (#57)
+- **NFC+ reader shows temps** — extruder and bed temps from Spoolman now displayed on the reader page for NFC+ tags. (#56)
+
+### Fixed
+
+- **HA discovery MQTT traffic reduced ~80%** — only re-publishes when UID changes, not every scan. Legacy openprinttag_ entity cleanup removed. (#55)
+- **Spoolman HTTP connection reuse** — persistent TCP connection across API calls, eliminates per-request connection overhead. (#30)
+- **NFC+ reader polling** — keeps polling until Spoolman data arrives instead of stopping on first tag detection.
+- **Spoolman JSON buffer** — dynamically sized to response (was fixed 16KB, failed on 25KB+ spool lists).
+- **Spool picker security** — XSS escaping, hex validation on nfc_id, HTTP timeouts, safe re-assign order (set new before clearing old).
+- **TFT display** — removed duplicate filament name line. Fixed breathing animation unsigned underflow. NTP failure now shown on TFT.
+- **HA task stack** — bumped 7168 → 8192 to prevent overflow during discovery.
+- **Renamed showStatusOnLCD → showStatusScreen** — method now uses DisplayI interface, name reflects that.
+
+---
+
+## [1.6.0] - 2026-03-30
+
+### Added
+
+- **TFT display support (ST7789 240x240)** — color spool graphic with filament color fill, weight bar, tag format icons, and breathing animation for low spools (<100g). Runtime NVS toggle in web config. Mutually exclusive with LCD on WROOM (shared GPIO 22/23). Uses LovyanGFX with 8-bit color sprite for heap efficiency.
+- **DisplayI interface** — LCDManager and TFTManager both implement a shared display interface. ApplicationManager works with either display without knowing which is attached.
+
+### Fixed
+
+- **Spoolman color_hex parsing** — nested objects (vendor.extra:{}) broke the JSON streaming parser, causing color to be empty for NFC+ UID lookups. Parser now skips unknown nested objects correctly.
+- **NFC+ registration temps** — extruder and bed temperatures now written to Spoolman filament settings. Single temp fields (averaged from material DB min/max).
+- **NFC+ weight bar** — initial_weight_g now passed through SpoolmanSyncedPayload so NFC+ tags show the weight bar on TFT and LCD.
+- **SPI bus separation** — PN5180 moved to HSPI, TFT on VSPI. Separate SPI peripherals eliminate bus contention.
+
+---
+
 ## [1.5.10] - 2026-03-29
 
 ### Added
