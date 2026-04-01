@@ -159,3 +159,26 @@ Check status:
 sudo systemctl status spoolsense
 journalctl -u spoolsense -f
 ```
+
+## Automatic Updates via Mainsail
+
+Add SpoolSense to Moonraker's update manager so you get notified of new versions in Mainsail's update panel.
+
+Add this to your `moonraker.conf`:
+
+```ini
+[update_manager spoolsense]
+type: git_repo
+path: ~/SpoolSense
+origin: https://github.com/SpoolSense/spoolsense_middleware.git
+primary_branch: master
+managed_services: spoolsense
+```
+
+Then restart Moonraker:
+
+```bash
+sudo systemctl restart moonraker
+```
+
+SpoolSense will now appear in **Machine → Update Manager** in Mainsail. When a new version is available, you can update with one click — Moonraker pulls the latest code and restarts the service automatically.
