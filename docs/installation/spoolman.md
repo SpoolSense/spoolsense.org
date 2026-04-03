@@ -105,10 +105,13 @@ Future scans of this tag will automatically look up the spool data from Spoolman
 SpoolSense uses the `nfc_id` extra field in Spoolman to link physical NFC tags to spool records. The installer creates this field automatically. To create it manually:
 
 ```bash
-curl -X POST http://your-spoolman:7912/api/v1/field \
+curl -X POST http://your-spoolman:7912/api/v1/field/spool/nfc_id \
   -H "Content-Type: application/json" \
-  -d '{"name": "nfc_id", "entity_type": "spool", "field_type": "text"}'
+  -d '{"name": "nfc_id", "field_type": "text", "default_value": "\"\""}'
 ```
+
+!!! note "Scanner v1.6.6+ creates this automatically"
+    The scanner now auto-registers all required extra fields on first Spoolman sync. Manual creation is only needed if you're setting up Spoolman before flashing the scanner.
 
 ## Cleaning Up Duplicates
 
