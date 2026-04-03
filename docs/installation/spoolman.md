@@ -110,6 +110,24 @@ curl -X POST http://your-spoolman:7912/api/v1/field \
   -d '{"name": "nfc_id", "entity_type": "spool", "field_type": "text"}'
 ```
 
+## Cleaning Up Duplicates
+
+If you've been running SpoolSense for a while (especially before v1.6.6), you may have duplicate vendors, filaments, or spools in Spoolman from a now-fixed lookup bug. We provide a cleanup script:
+
+```bash
+# On your printer or any machine that can reach Spoolman:
+cd ~/SpoolSense/middleware
+python3 scripts/spoolman-cleanup.py http://your-spoolman:7912
+
+# Preview only (no deletions):
+python3 scripts/spoolman-cleanup.py http://your-spoolman:7912 --dry-run
+```
+
+The script finds duplicates, shows what it would keep and delete, and lets you choose per-group (y/n/all/quit). It keeps the most recently registered entry in each group.
+
+!!! warning "Filaments with linked spools"
+    Spoolman won't let you delete a filament that has spools using it. Reassign those spools to the correct filament in the Spoolman UI first, then re-run the cleanup.
+
 ## Verifying the Connection
 
 Check the scanner's troubleshooting page at `http://spoolsense.local/troubleshoot`. It shows:
