@@ -10,7 +10,7 @@
 
 - Check SPI wiring matches the [wiring guide](../hardware/wiring-pn5180.md)
 - Verify proper voltage (5V for PN5180, 3.3V for PN532)
-- Open `http://spoolsense.local/troubleshoot` for diagnostics
+- Open `http://spoolsense.local/troubleshooting` for diagnostics
 - Check serial output for "PN5180: No response" or "PN532: No response"
 
 ## PN532 specific

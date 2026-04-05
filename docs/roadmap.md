@@ -199,10 +199,10 @@ a.roadmap-stat:hover {
 </div>
 
 <div class="roadmap-stats">
-  <a href="#exploring" class="roadmap-stat stat-exploring"><div class="num">7</div><div class="label">Exploring</div></a>
-  <a href="#planned" class="roadmap-stat stat-planned"><div class="num">13</div><div class="label">Planned</div></a>
+  <a href="#exploring" class="roadmap-stat stat-exploring"><div class="num">6</div><div class="label">Exploring</div></a>
+  <a href="#planned" class="roadmap-stat stat-planned"><div class="num">10</div><div class="label">Planned</div></a>
   <a href="#in-progress" class="roadmap-stat stat-progress"><div class="num">2</div><div class="label">In Progress</div></a>
-  <a href="#completed" class="roadmap-stat stat-done"><div class="num">29</div><div class="label">Completed</div></a>
+  <a href="#completed" class="roadmap-stat stat-done"><div class="num">40</div><div class="label">Completed</div></a>
 </div>
 
 <div class="roadmap-section">
@@ -232,8 +232,8 @@ a.roadmap-stat:hover {
   </div>
   <div class="explore-card">
     <div class="card-repo">Scanner</div>
-    <div class="card-title">ST7789 TFT Color Display</div>
-    <div class="card-desc">Replace 16x2 LCD with 240x240 color TFT</div>
+    <div class="card-title">GC9A01 Round TFT Display</div>
+    <div class="card-desc">Community-requested round display variant</div>
   </div>
   <div class="explore-card">
     <div class="card-repo">Scanner</div>
@@ -251,19 +251,14 @@ a.roadmap-stat:hover {
 
 <table class="roadmap-table">
 <tr><th>Feature</th><th>Repo</th><th>Target</th></tr>
-<tr><td>WiFi reconnection logic</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
-<tr><td>Tag writer: populate from Spoolman</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
 <tr><td>NTAG variant detection (GET_VERSION)</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
 <tr><td>TigerTag partial write (changed fields only)</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
-<tr><td>PN5180 Phase 2 reliability</td><td><span class="repo-tag">Scanner</span></td><td>v1.6.2</td></tr>
-<tr><td>HA publish queue fix (silent drops)</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
+<tr><td>PN5180 Phase 2 reliability</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
+<tr><td>Shared write flow UX refactor</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
 <tr><td>Klipper error alerts via LED (per-toolhead)</td><td><span class="repo-tag">Scanner</span></td><td>—</td></tr>
-<tr><td>Smarter Spoolman lookups (filter by NFC ID)</td><td><span class="repo-tag">Middleware</span></td><td>—</td></tr>
 <tr><td>Low spool push notification (HA)</td><td><span class="repo-tag">Middleware</span></td><td>—</td></tr>
-<tr><td>Nozzle/bed temps to AFC lane_data</td><td><span class="repo-tag">Middleware</span></td><td>—</td></tr>
 <tr><td>Resync AFC lock state on MQTT reconnect</td><td><span class="repo-tag">Middleware</span></td><td>—</td></tr>
 <tr><td>Moonraker websocket (replace polling)</td><td><span class="repo-tag">Middleware</span></td><td>—</td></tr>
-<tr><td>Tag writeback architecture review</td><td><span class="repo-tag">Scanner + Middleware</span></td><td>—</td></tr>
 <tr><td>Wiring photos and assembly guides</td><td><span class="repo-tag">Docs</span></td><td>—</td></tr>
 <tr><td>More community enclosure designs</td><td><span class="repo-tag">Docs</span></td><td>—</td></tr>
 </table>
@@ -272,7 +267,7 @@ a.roadmap-stat:hover {
 
 <table class="roadmap-table">
 <tr><th>Feature</th><th>Repo</th><th>Notes</th></tr>
-<tr><td>Prusa PrusaLink integration</td><td><span class="repo-tag">Scanner</span></td><td>Experimental, looking for testers</td></tr>
+<tr><td>Direct Moonraker mode</td><td><span class="repo-tag">Scanner</span></td><td>Design complete, implementation planned</td></tr>
 <tr><td>Creality rooted printer guide</td><td><span class="repo-tag">Docs</span></td><td>Compatible via Moonraker</td></tr>
 </table>
 
@@ -280,6 +275,19 @@ a.roadmap-stat:hover {
 
 <table class="roadmap-table completed">
 <tr><th>Feature</th><th>Repo</th><th>Version</th></tr>
+<tr><td>Filament deduplication (client-side matching)</td><td><span class="repo-tag">Scanner</span></td><td><span class="version-tag">v1.6.9</span></td></tr>
+<tr><td>Temperature averaging for Spoolman</td><td><span class="repo-tag">Scanner</span></td><td><span class="version-tag">v1.6.9</span></td></tr>
+<tr><td>Diameter default to 1.75mm</td><td><span class="repo-tag">Scanner</span></td><td><span class="version-tag">v1.6.9</span></td></tr>
+<tr><td>Filament naming convention (material + modifier)</td><td><span class="repo-tag">Scanner</span></td><td><span class="version-tag">v1.6.9</span></td></tr>
+<tr><td>Spoolman enrichment on reader + writer pages</td><td><span class="repo-tag">Scanner</span></td><td><span class="version-tag">v1.6.8</span></td></tr>
+<tr><td>Read button on all writer pages</td><td><span class="repo-tag">Scanner</span></td><td><span class="version-tag">v1.6.8</span></td></tr>
+<tr><td>OpenSpool tag format support</td><td><span class="repo-tag">Scanner</span></td><td><span class="version-tag">v1.6.7</span></td></tr>
+<tr><td>Configurable mDNS hostname</td><td><span class="repo-tag">Scanner</span></td><td><span class="version-tag">v1.6.5</span></td></tr>
+<tr><td>SpoolSense Mobile REST API</td><td><span class="repo-tag">Scanner</span></td><td><span class="version-tag">v1.6.4</span></td></tr>
+<tr><td>PrusaLink integration (experimental)</td><td><span class="repo-tag">Scanner</span></td><td><span class="version-tag">v1.6.3</span></td></tr>
+<tr><td>Tag writer: populate from Spoolman</td><td><span class="repo-tag">Scanner</span></td><td><span class="version-tag">v1.6.3</span></td></tr>
+<tr><td>WiFi reconnection with exponential backoff</td><td><span class="repo-tag">Scanner</span></td><td><span class="version-tag">v1.6.2</span></td></tr>
+<tr><td>Bambu AMS blueprint (HA)</td><td><span class="repo-tag">Scanner</span></td><td><span class="version-tag">v1.6.2</span></td></tr>
 <tr><td>Link/re-assign NFC+ tags to Spoolman spools</td><td><span class="repo-tag">Scanner</span></td><td><span class="version-tag">v1.6.1</span></td></tr>
 <tr><td>Tag writer auto-populate from scanned tag</td><td><span class="repo-tag">Scanner</span></td><td><span class="version-tag">v1.6.1</span></td></tr>
 <tr><td>NFC+ reader shows temps from Spoolman</td><td><span class="repo-tag">Scanner</span></td><td><span class="version-tag">v1.6.1</span></td></tr>
