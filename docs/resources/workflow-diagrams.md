@@ -91,3 +91,23 @@ AFC already tracks per-lane remaining weight in real-time using extruder positio
 **Supported tags:** UID-only (plain NTAG), TigerTag, OpenSpool
 
 Same as single toolhead — `UPDATE_TAG` is a no-op. AFC handles Spoolman tracking via its own `spool_id` integration per lane. See the [Single Toolhead — Tags That Do Not Track Filament Usage](#tags-that-do-not-track-filament-usage) section above.
+
+---
+
+## Bambu Lab AMS
+
+Bambu Lab support uses Home Assistant blueprints — no middleware and no `UPDATE_TAG` macro involved. Two blueprints handle the full flow:
+
+1. **SpoolSense → Bambu AMS** — Scan a spool, load it into an AMS tray within 5 minutes, and the blueprint auto-pushes material, color, and temperature data to that tray via `bambu_lab.set_filament`. Also stores the spool UID and Spoolman ID in HA input helpers for deduction tracking.
+
+2. **SpoolSense → Spoolman Deduction** — When a print finishes or is canceled, reads the per-tray weight breakdown from the Bambu print weight sensor, looks up the spool UID per tray from the stored helpers, and calls `spoolman.use_spool_filament` to deduct usage.
+
+**Key points:**
+
+- No middleware, no Moonraker, no Klipper macros — entirely HA-driven
+- Per-tray weight deduction from Bambu's own print weight sensor
+- Requires: HA Bambu Lab integration, spoolman-homeassistant integration, SpoolSense MQTT sensor
+- Supports up to 16 trays across 4 AMS units
+- Physical NFC tag weight is **not** updated — deduction goes to Spoolman only
+
+[![Bambu Lab AMS workflow](diagrams/update-tag-bambu.svg)](diagrams/update-tag-bambu.svg)
