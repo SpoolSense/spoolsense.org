@@ -60,5 +60,5 @@ Initial public release.
 - Configures WiFi, MQTT, Spoolman, automation mode
 - Writes NVS configuration for OTA-safe settings
 - Creates Spoolman extra fields (nfc_id, tag_format, aspect, dry_temp, dry_time_hours)
-- Supports ESP32-WROOM and ESP32-S3-Zero boards
+- Supports ESP32-WROOM, ESP32-S3-Zero, and ESP32-S3-DevKitC-1 boards
 - Installs and configures SpoolSense middleware as a systemd service

@@ -38,6 +38,20 @@ Check your specific board. Some have a 2-position DIP switch, others have solder
 | VCC | 3.3V | Power |
 | GND | GND | Ground |
 
+## ESP32-S3-DevKitC Pinout
+
+Shares the same SPI2 pins as the PN5180 on the S3-DevKitC.
+
+| PN532 Pin | ESP32-S3 GPIO | Function |
+|-----------|--------------|----------|
+| SCK | GPIO 12 | SPI clock |
+| MOSI | GPIO 11 | SPI data out |
+| MISO | GPIO 9 | SPI data in |
+| SS (CS) | GPIO 10 | SPI chip select |
+| RST | GPIO 7 | Reset |
+| VCC | 3.3V | Power |
+| GND | GND | Ground |
+
 ## Wiring Tips
 
 !!! note "PN532 uses 3.3V power"

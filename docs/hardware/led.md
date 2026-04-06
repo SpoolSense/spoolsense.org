@@ -6,6 +6,10 @@ A status LED provides visual feedback about the scanner's state.
 
 The S3-Zero has an onboard WS2812 RGB LED on GPIO 21. No external wiring needed. It's always available.
 
+## ESP32-S3-DevKitC: Built-in
+
+The S3-DevKitC has an onboard WS2812 RGB LED on GPIO 48. No external wiring needed.
+
 ## ESP32-WROOM: External SK6812 RGBW
 
 | LED Pin | ESP32 GPIO | Function |

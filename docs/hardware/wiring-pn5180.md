@@ -28,6 +28,21 @@ The PN5180 connects to the ESP32 via SPI. 8 wires total.
 | 5V | 5V | Power |
 | GND | GND | Ground |
 
+## ESP32-S3-DevKitC Pinout
+
+The S3-DevKitC uses SPI2 (FSPI) for the PN5180, leaving SPI3 free for the TFT display.
+
+| PN5180 Pin | ESP32-S3 GPIO | Function |
+|------------|--------------|----------|
+| RST | GPIO 7 | Hardware reset (active low) |
+| NSS | GPIO 10 | SPI chip select |
+| MOSI | GPIO 11 | SPI data out (FSPID) |
+| MISO | GPIO 9 | SPI data in (FSPIQ) |
+| SCK | GPIO 12 | SPI clock (FSPICLK) |
+| BUSY | GPIO 6 | Busy signal (input) |
+| 5V | 5V | Power |
+| GND | GND | Ground |
+
 ## Wiring Tips
 
 !!! note "PN5180 uses 5V power"

@@ -18,12 +18,13 @@ curl -sL https://raw.githubusercontent.com/SpoolSense/spoolsense-installer/main/
 
 ## Firmware Binaries
 
-Each scanner release includes pre-built firmware for both boards:
+Each scanner release includes pre-built firmware for all three boards:
 
 | File | Board |
 |------|-------|
 | `spoolsense_scanner_esp32dev.bin` | ESP32-WROOM DevKit |
 | `spoolsense_scanner_esp32s3zero.bin` | ESP32-S3-Zero |
+| `spoolsense_scanner_esp32s3devkitc.bin` | ESP32-S3-DevKitC-1 |
 
 Plus matching bootloader and partition table binaries. The installer handles flashing all of these automatically.
 

@@ -44,11 +44,23 @@ Wire each pin by its label, not its position on the ribbon.
 | C2 | GPIO 18 | Column 2 |
 | C3 | GPIO 42 | Column 3 |
 
+### ESP32-S3-DevKitC
+
+| Ribbon Label | ESP32-S3 GPIO | Function |
+|-------------|--------------|----------|
+| R1 | GPIO 39 | Row 1 |
+| R2 | GPIO 40 | Row 2 |
+| R3 | GPIO 41 | Row 3 |
+| R4 | GPIO 42 | Row 4 |
+| C1 | GPIO 47 | Column 1 |
+| C2 | GPIO 1 | Column 2 |
+| C3 | GPIO 8 | Column 3 |
+
 !!! tip
     The ribbon labels are not in order (C2, R1, C1, R4, C3, R3, R2). Match each label to the correct GPIO — don't wire them left to right.
 
 !!! warning
-    Using LCD + keypad together on the ESP32-S3-Zero is not recommended due to limited GPIO...it can be done but soldering to the exposed pins on the back is tough. Use the WROOM board for LCD + keypad builds.
+    Using LCD + keypad together on the ESP32-S3-Zero is not recommended due to limited GPIO...it can be done but soldering to the exposed pins on the back is tough. Use the WROOM or S3-DevKitC board for LCD + keypad builds.
 
 ## How It Works
 

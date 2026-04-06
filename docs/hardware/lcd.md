@@ -9,12 +9,12 @@ A 16x2 I2C LCD shows spool info directly on the scanner.
 
 ## Wiring
 
-| LCD Pin | ESP32-WROOM | ESP32-S3-Zero |
-|---------|------------|---------------|
-| SDA | GPIO 23 | GPIO 1 |
-| SCL | GPIO 22 | GPIO 2 |
-| VCC | 5V or 3.3V | 5V or 3.3V |
-| GND | GND | GND |
+| LCD Pin | ESP32-WROOM | ESP32-S3-Zero | ESP32-S3-DevKitC |
+|---------|------------|---------------|-----------------|
+| SDA | GPIO 23 | GPIO 1 | GPIO 17 |
+| SCL | GPIO 22 | GPIO 2 | GPIO 18 |
+| VCC | 5V or 3.3V | 5V or 3.3V | 5V or 3.3V |
+| GND | GND | GND | GND |
 
 !!! note
     Most I2C LCD backpacks work with both 3.3V and 5V. If the display is dim on 3.3V, try 5V for the backlight.

@@ -29,6 +29,10 @@ pio run -e esp32dev -t upload
 # ESP32-S3-Zero
 pio run -e esp32s3zero
 pio run -e esp32s3zero -t upload
+
+# ESP32-S3-DevKitC-1
+pio run -e esp32s3devkitc
+pio run -e esp32s3devkitc -t upload
 ```
 
 ### Run Tests

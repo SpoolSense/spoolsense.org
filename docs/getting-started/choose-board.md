@@ -1,6 +1,6 @@
 # Choose Your Board
 
-SpoolSense supports two ESP32 board variants.
+SpoolSense supports three ESP32 board variants.
 
 ## ESP32-WROOM DevKit (Recommended)
 
@@ -54,6 +54,33 @@ A compact option with USB-C and onboard RGB LED. Available in two variants:
 - LCD + keypad together is not recommended (pin conflicts)
 - Slightly more expensive
 
+## ESP32-S3-DevKitC-1 (Espressif)
+
+A full-featured development board with 16MB flash and 8MB PSRAM. Best for builds that want separate SPI buses for NFC and TFT.
+
+| Spec | Value |
+|------|-------|
+| Board | ESP32-S3-DevKitC-1-N16R8 |
+| Chip | ESP32-S3, dual-core 240MHz |
+| Flash | 16MB |
+| PSRAM | 8MB (octal SPI) |
+| USB | USB-C (two ports: UART + USB) |
+| GPIO | 30+ available pins |
+| Status LED | Onboard WS2812 RGB on GPIO 48 |
+| Price | ~$8-12 |
+
+**Pros:**
+
+- 16MB flash + 8MB PSRAM for future features
+- Separate SPI buses — PN5180 on SPI2, TFT on SPI3 (no bus contention)
+- Onboard RGB LED (no external wiring)
+- Plenty of GPIO for all peripherals
+
+**Cons:**
+
+- Larger than S3-Zero
+- Two USB ports can be confusing (use the UART port for serial output)
+
 ## Which Should I Choose?
 
 | If you want... | Choose |
@@ -61,10 +88,12 @@ A compact option with USB-C and onboard RGB LED. Available in two variants:
 | Simplest build, most GPIO | **ESP32-WROOM** |
 | LCD + keypad + NFC reader | **ESP32-WROOM** |
 | Smallest possible scanner | **ESP32-S3-Zero** |
-| Onboard LED (no wiring) | **ESP32-S3-Zero** |
+| Onboard LED (no wiring) | **ESP32-S3-Zero** or **S3-DevKitC** |
+| PN5180 + TFT on separate SPI buses | **ESP32-S3-DevKitC** |
+| Most flash + PSRAM | **ESP32-S3-DevKitC** |
 
 !!! note
-    Both boards run the same firmware binary. The installer handles board selection automatically.
+    Each board has its own firmware binary. The installer and web flasher handle board selection automatically.
 
 !!! tip "Have a different ESP32?"
     If you have a different ESP32 board and want it supported, [open an issue](https://github.com/SpoolSense/spoolsense_scanner/issues) with the board name and specs. Most ESP32 variants can be added with just a pin mapping update.
