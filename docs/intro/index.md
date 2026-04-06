@@ -25,7 +25,7 @@ No cloud. No subscriptions. Everything runs on your local network.
 
 ## What You Need
 
-- An **ESP32** board (WROOM or S3-Zero)
+- An **ESP32** board (WROOM, S3-Zero, or S3-DevKitC)
 - An **NFC reader** (PN5180 or PN532)
 - **NFC tags** on your spools (NTAG215, TigerTag, OpenPrintTag, or OpenTag3D)
 - **Spoolman** running on your network (optional but recommended)
