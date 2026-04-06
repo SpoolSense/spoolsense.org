@@ -45,6 +45,7 @@ MQTT broker host: <span style="color:#fff">192.168.1.50</span>
 MQTT port [1883]:
 MQTT username []:
 MQTT password []:
+Spoolman URL [http://spoolman.local:7912]: <span style="color:#fff">http://192.168.1.32:7912</span>
 
 <span style="color:#06b6d4;font-weight:bold">── Middleware Configuration ────────────</span>
 
@@ -64,6 +65,11 @@ Moonraker URL [http://localhost]: <span style="color:#fff">http://localhost</spa
   <span style="color:#f59e0b">Slicer integration:</span> Slicers like Orca Slicer can auto-populate
   tool colors, materials, and temps from your scanned spools.
 
+  AFC handles lane data for its own lanes automatically.
+  Enable this if you also have direct toolheads (e.g. a toolchanger
+  with a Box Turtle) and want slicer data for those tools too.
+  This also enables the ASSIGN_SPOOL macro for tool assignment.
+
 Enable slicer integration for toolheads? [y/N]: <span style="color:#fff">y</span>
 
 <span style="color:#06b6d4;font-weight:bold">── Installing Middleware ────────────────</span>
@@ -81,6 +87,8 @@ Enable slicer integration for toolheads? [y/N]: <span style="color:#fff">y</span
 
   Middleware: systemctl status spoolsense
   Config:     ~/SpoolSense/middleware/config.yaml
+  Remember: Replace YOUR_DEVICE_ID in config.yaml with
+  the device ID from http://spoolsense.local
 ══════════════════════════════════════</span>
 </pre>
 </div>
@@ -91,11 +99,29 @@ Enable slicer integration for toolheads? [y/N]: <span style="color:#fff">y</span
     Most users should use the installer above.
 
 ```bash
+# Clone the middleware
 git clone https://github.com/SpoolSense/spoolsense_middleware.git ~/SpoolSense
 cd ~/SpoolSense/middleware
+
+# Install dependencies
 pip3 install -r requirements.txt
+
+# Configure
 cp config.example.yaml config.yaml
-# Edit config.yaml with your settings
+nano config.yaml  # Edit with your MQTT, Spoolman, Moonraker settings
+
+# Copy Klipper macros (see Klipper Macros section below)
+cp klipper/spoolman_macros.cfg ~/printer_data/config/
+# Add [include spoolman_macros.cfg] to printer.cfg
+
+# Create systemd service
+sudo cp spoolsense.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable spoolsense
+sudo systemctl start spoolsense
+
+# Verify it's running
+sudo systemctl status spoolsense
 ```
 
 ## Configuration
