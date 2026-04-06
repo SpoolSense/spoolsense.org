@@ -87,9 +87,11 @@ Enable slicer integration for toolheads? [y/N]: <span style="color:#fff">y</span
 
   Middleware: systemctl status spoolsense
   Config:     ~/SpoolSense/middleware/config.yaml
-  Remember: Replace YOUR_DEVICE_ID in config.yaml with
-  the device ID from http://spoolsense.local
 ══════════════════════════════════════</span>
+
+<span style="color:#ef4444;font-weight:bold">⚠  IMPORTANT: Open ~/SpoolSense/middleware/config.yaml and
+   replace YOUR_DEVICE_ID with your scanner's device ID.
+   Find it at http://spoolsense.local (shown on landing page).</span>
 </pre>
 </div>
 
