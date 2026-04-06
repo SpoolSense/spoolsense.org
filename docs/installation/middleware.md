@@ -95,37 +95,6 @@ Enable slicer integration for toolheads? [y/N]: <span style="color:#fff">y</span
 </pre>
 </div>
 
-### Manual Install (Advanced)
-
-!!! warning "For advanced users only"
-    Most users should use the installer above.
-
-```bash
-# Clone the middleware
-git clone https://github.com/SpoolSense/spoolsense_middleware.git ~/SpoolSense
-cd ~/SpoolSense/middleware
-
-# Install dependencies
-pip3 install -r requirements.txt
-
-# Configure
-cp config.example.yaml config.yaml
-nano config.yaml  # Edit with your MQTT, Spoolman, Moonraker settings
-
-# Copy Klipper macros (see Klipper Macros section below)
-cp klipper/spoolman_macros.cfg ~/printer_data/config/
-# Add [include spoolman_macros.cfg] to printer.cfg
-
-# Create systemd service
-sudo cp spoolsense.service /etc/systemd/system/
-sudo systemctl daemon-reload
-sudo systemctl enable spoolsense
-sudo systemctl start spoolsense
-
-# Verify it's running
-sudo systemctl status spoolsense
-```
-
 ## Configuration
 
 ### Finding Your Scanner's Device ID
@@ -268,3 +237,34 @@ sudo systemctl restart moonraker
 ```
 
 SpoolSense will now appear in **Machine → Update Manager** in Mainsail. When a new version is available, you can update with one click — Moonraker pulls the latest code and restarts the service automatically.
+
+## Manual Install (Advanced)
+
+!!! warning "For advanced users only"
+    Most users should use the installer above. This section is for users who prefer manual setup or are troubleshooting.
+
+```bash
+# Clone the middleware
+git clone https://github.com/SpoolSense/spoolsense_middleware.git ~/SpoolSense
+cd ~/SpoolSense/middleware
+
+# Install dependencies
+pip3 install -r requirements.txt
+
+# Configure
+cp config.example.yaml config.yaml
+nano config.yaml  # Edit with your MQTT, Spoolman, Moonraker settings
+
+# Copy Klipper macros (see Klipper Macros section above)
+cp klipper/spoolman_macros.cfg ~/printer_data/config/
+# Add [include spoolman_macros.cfg] to printer.cfg
+
+# Create systemd service
+sudo cp spoolsense.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable spoolsense
+sudo systemctl start spoolsense
+
+# Verify it's running
+sudo systemctl status spoolsense
+```
