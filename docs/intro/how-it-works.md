@@ -39,6 +39,7 @@ The firmware auto-detects the tag format based on the NFC protocol and tag conte
 - **ISO14443A** (4 or 7-byte UID) ... the firmware reads the tag pages and checks for known formats:
     - **TigerTag** ... binary layout starting at page 4 with a known version signature
     - **OpenTag3D** ... CBOR-encoded data with OpenTag3D MIME type
+    - **OpenSpool** ... NDEF JSON with `"protocol":"openspool"`
     - **Bambu Lab** ... MIFARE Classic detected by SAK byte (UID-only, encrypted data)
     - **Generic UID** ... plain NTAG with no recognized data format
 
@@ -48,17 +49,17 @@ Each format has its own parser that extracts material, color, weight, manufactur
 
 If Spoolman is configured, the scanner syncs with it over HTTP:
 
-**Smart tags** (OpenPrintTag, TigerTag, OpenTag3D) contain filament data directly on the tag. The scanner searches Spoolman for a matching spool by UID. If no match is found, a new spool entry is created automatically with the material, color, weight, and manufacturer from the tag. If a match exists, the scanner updates the existing entry with the latest tag data.
+**Smart tags** (OpenPrintTag, TigerTag, OpenTag3D, OpenSpool) contain filament data directly on the tag. The scanner searches Spoolman for a matching spool by UID. If no match is found, a new spool entry is created automatically with the material, color, weight, and manufacturer from the tag. If a match exists, the scanner updates the existing entry with the latest tag data.
 
 **Basic UID tags** (NTAG215 with no data written) carry only a UID. The scanner searches Spoolman for a spool with a matching `nfc_id` extra field. If found, the spool's data (material, color, weight, manufacturer) is pulled from Spoolman and displayed on the LCD, web reader, and Home Assistant sensors. If not found, the tag is shown as unregistered and the user can register it via the web UI.
 
 A sync cache prevents redundant API calls when the same spool is scanned repeatedly without changes.
 
-### 4. LED + LCD Feedback
+### 4. LED + Display Feedback
 
 If a status LED is enabled, the scanner shows the spool's filament color on the LED. The actual hex color from the tag or Spoolman is used, so a red PLA spool lights up red. Black filament shows as dim white (so you can tell a spool is scanned vs. no spool). The LED also flashes white on tag detection, green on successful writes, and red on errors.
 
-If an LCD is attached, it displays the material type, remaining weight, and status messages (WiFi, Spoolman sync, write progress, keypad entry).
+If a **TFT display** is attached (ST7789 square or GC9A01 round, 240x240), it shows a colored spool graphic with filament color fill, weight bar, brand/material name, and tag format icon. If a **16x2 LCD** is attached, it displays the material type, remaining weight, and status messages.
 
 ### 5. MQTT Published
 
@@ -82,7 +83,7 @@ If running the middleware on your Klipper host, it receives the MQTT scan event 
 | Spoolman sync | :white_check_mark: | :white_check_mark: |
 | Home Assistant sensors | :white_check_mark: | :white_check_mark: |
 | Scanner LED filament color | :white_check_mark: from tag or Spoolman | :white_check_mark: from tag or Spoolman |
-| LCD display | :white_check_mark: | :white_check_mark: |
+| TFT / LCD display | :white_check_mark: | :white_check_mark: |
 | AFC lane assignment | :x: | :white_check_mark: |
 | AFC lane color LEDs | :x: | :white_check_mark: |
 | Toolchanger support | :x: | :white_check_mark: |
