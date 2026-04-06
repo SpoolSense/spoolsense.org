@@ -94,6 +94,7 @@ nav:
     - Printer Compatibility: resources/compatibility.md
     - Tag Formats: resources/tag-formats.md
     - API Reference: resources/api.md
+    - Workflow Diagrams: resources/workflow-diagrams.md
     - Troubleshooting: resources/troubleshooting.md
   - Roadmap: roadmap.md
   - Contributing:
