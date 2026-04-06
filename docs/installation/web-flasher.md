@@ -188,7 +188,15 @@ esp-web-install-button button:hover {
 </div>
 
 <div class="flash-btn-wrap">
-  <esp-web-install-button manifest="/installation/manifest.json">
+  <div style="margin-bottom:14px">
+    <label style="font-weight:600;font-size:0.95rem;margin-right:8px">Board:</label>
+    <select id="boardSelect" style="padding:8px 14px;border-radius:8px;border:1px solid #2a2e36;background:#141519;color:#fff;font-size:0.95rem" onchange="updateManifest()">
+      <option value="/installation/manifest.json">ESP32-WROOM (auto-detect)</option>
+      <option value="/installation/manifest-s3zero.json">ESP32-S3-Zero</option>
+      <option value="/installation/manifest-s3devkitc.json">ESP32-S3-DevKitC-1 (N16R8)</option>
+    </select>
+  </div>
+  <esp-web-install-button id="flashBtn" manifest="/installation/manifest.json">
     <button slot="activate">Flash SpoolSense Scanner</button>
   </esp-web-install-button>
   <div class="not-supported" id="notSupported">
@@ -200,8 +208,8 @@ esp-web-install-button button:hover {
 <div class="flash-info">
   <div class="info-grid">
     <div class="info-card">
-      <h4>Auto-Detect</h4>
-      <p>The flasher detects your board automatically. Works with ESP32-WROOM and ESP32-S3-Zero.</p>
+      <h4>Board Select</h4>
+      <p>Choose your board from the dropdown. ESP32-WROOM is auto-detected. S3 boards require manual selection.</p>
     </div>
     <div class="info-card">
       <h4>Always Latest</h4>
@@ -223,5 +231,11 @@ esp-web-install-button button:hover {
 <script>
 if (!("serial" in navigator)) {
   document.getElementById("notSupported").style.display = "block";
+}
+
+function updateManifest() {
+  var select = document.getElementById("boardSelect");
+  var btn = document.getElementById("flashBtn");
+  btn.setAttribute("manifest", select.value);
 }
 </script>

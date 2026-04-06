@@ -1,0 +1,15 @@
+{
+  "name": "SpoolSense Scanner (ESP32-S3-Zero)",
+  "version": "1.6.11",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        { "path": "/firmware/bootloader_esp32s3zero.bin", "offset": 0 },
+        { "path": "/firmware/partitions_esp32s3zero.bin", "offset": 32768 },
+        { "path": "/firmware/spoolsense_scanner_esp32s3zero.bin", "offset": 65536 }
+      ]
+    }
+  ]
+}
