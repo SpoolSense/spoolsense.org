@@ -142,6 +142,64 @@ scanners:
 | `afc_lane` | AFC, one scanner per lane. Scan assigns to that lane. |
 | `afc_stage` | AFC, shared scanner. Scan stages spool, lane load triggers assignment. |
 
+## Klipper Macros
+
+SpoolSense includes Klipper macros for Spoolman spool tracking. These live in the middleware repo at `middleware/klipper/` and need to be copied to your Klipper config directory.
+
+### spoolman_macros.cfg — Required for all Klipper setups
+
+Provides `SET_ACTIVE_SPOOL`, `CLEAR_ACTIVE_SPOOL`, and automatic spool restore after Klipper restart.
+
+```bash
+cp ~/SpoolSense/middleware/klipper/spoolman_macros.cfg ~/printer_data/config/
+```
+
+Add to your `printer.cfg`:
+
+```ini
+[include spoolman_macros.cfg]
+
+[save_variables]
+filename: ~/printer_data/config/variables.cfg
+```
+
+!!! tip
+    Add `CLEAR_ACTIVE_SPOOL` to your `END_PRINT` macro so Spoolman stops tracking filament after a print completes.
+
+### spoolsense.cfg — Required for toolchanger setups
+
+Provides the `ASSIGN_SPOOL` macro used by the middleware and the 3x4 keypad to assign scanned spools to toolheads.
+
+```bash
+cp ~/SpoolSense/middleware/klipper/spoolsense.cfg ~/printer_data/config/
+```
+
+Add to your `printer.cfg`:
+
+```ini
+[include spoolsense.cfg]
+```
+
+### toolhead_macros_example.cfg — Example for toolchanger users
+
+Example T0–T3 toolchange macros with per-toolhead spool tracking. Each toolchange calls `SET_ACTIVE_SPOOL` so Spoolman tracks the correct spool per tool. Includes `RESTORE_SPOOL_IDS` to restore all toolhead spool assignments after Klipper restart.
+
+```bash
+cp ~/SpoolSense/middleware/klipper/toolhead_macros_example.cfg ~/printer_data/config/
+```
+
+!!! warning
+    This is an **example** — adapt the T0–T3 macros to match your existing toolchange configuration. Don't replace your working macros. Add `variable_spool_id: None` and the `SET_ACTIVE_SPOOL` call to your existing T0–T3 macros.
+
+### Which macros do I need?
+
+| Setup | spoolman_macros.cfg | spoolsense.cfg | toolhead_macros_example.cfg |
+|-------|:---:|:---:|:---:|
+| Single toolhead | ✅ | — | — |
+| Toolchanger (shared scanner) | ✅ | ✅ | ✅ (adapt) |
+| Toolchanger (per-toolhead scanners) | ✅ | — | ✅ (adapt) |
+| AFC (BoxTurtle, tradrack) | ✅ | — | — |
+
 ## Running as a Service
 
 !!! note

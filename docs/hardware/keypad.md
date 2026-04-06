@@ -61,7 +61,7 @@ Wire each pin by its label, not its position on the ribbon.
 ## Requirements
 
 - **Moonraker URL** must be configured (web config or installer)
-- **ASSIGN_SPOOL** macro must be defined in your Klipper config
+- **ASSIGN_SPOOL** macro must be defined in your Klipper config (see [Klipper Macros](../installation/middleware.md#klipper-macros))
 - Keypad enabled via installer or web config (`/config` > Hardware > Keypad toggle)
 
 <!-- TODO: Add photo of keypad wired to ESP32 -->
