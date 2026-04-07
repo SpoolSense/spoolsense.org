@@ -1,10 +1,8 @@
 # Build Guide: Standalone Scanner
 
-A standalone scanner sits on your desk or mounts to a wall. Place a spool on the NFC reader to scan it.
-
 ## Parts Needed
 
-- ESP32 board (WROOM or S3-Zero)
+- ESP32 board (WROOM, S3-Zero, or S3-DevKitC)
 - NFC reader (PN5180 or PN532)
 - USB cable for power
 - (Optional) LCD, LED, keypad
