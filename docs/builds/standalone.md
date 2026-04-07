@@ -14,7 +14,7 @@
 !!! info "Enclosure designs needed"
     As of March 2026 only a few printable cases exist. We need the community's help! If you design one, see [Contributing > Enclosure Design](../contributing/enclosure-design.md) for how to submit it.
 
-### Basic Build (No Enclosure)
+### Basic Build
 
 1. Wire the NFC reader to the ESP32 per the [wiring guide](../hardware/wiring-pn5180.md)
 2. Connect optional peripherals (LCD, LED, keypad)
