@@ -5,7 +5,6 @@ SpoolSense syncs scanned spool data to [Spoolman](https://github.com/Donkie/Spoo
 ## Requirements
 
 - Spoolman running and reachable over HTTP from the scanner
-- Spoolman URL configured in the scanner (via installer or web config at `/config`)
 
 If you don't have Spoolman yet, see the [Spoolman installation docs](https://github.com/Donkie/Spoolman#installation).
 
