@@ -16,8 +16,9 @@ Everything you need to build a SpoolSense scanner. Total cost: **$10-20** depend
 
 | Component | Use Case | Est. Cost |
 |-----------|----------|-----------|
-| **16x2 I2C LCD** | Display spool info directly on the scanner | $3-5 |
-| **SK6812 RGBW LED** | Status indicator (WROOM only, S3 has onboard LED) | $1 |
+| **1.54" TFT Display** | Color spool graphic with filament color, weight bar, tag format (ST7789 square or GC9A01 round, 240x240) | $3-6 |
+| **16x2 I2C LCD** | Display spool info directly on the scanner (text only, simpler alternative to TFT) | $3-5 |
+| **SK6812 RGBW LED** | Status indicator (WROOM only, S3-Zero and S3-DevKitC have onboard LED) | $1 |
 | **3x4 Matrix Keypad** | Toolchanger users: assign spools to tools by typing the tool number | $2-3 |
 
 ## NFC Tags: Which to Buy?
