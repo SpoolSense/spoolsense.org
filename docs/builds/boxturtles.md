@@ -8,23 +8,32 @@ The NFC antenna is positioned next to the BoxTurtle lane entry. When a spool wit
 
 ## Parts Needed
 
-- ESP32 board (WROOM or S3-Zero)
+- ESP32 board (WROOM, S3-Zero, or S3-DevKitC)
 - NFC reader (PN5180 recommended for best range)
 - Mounting hardware (bracket or tray)
 - USB cable for power
 
 ## Middleware Configuration
 
-For AFC lane scanning, the middleware config should use `afc_stage` or `afc_lane` action:
+The middleware action depends on your scanner setup:
+
+- **One scanner per lane** — use `afc_lane` with a `target` for each lane. The scanner auto-assigns the scanned spool to its lane.
+- **One shared scanner** — use `afc_stage`. Scan a spool on the shared scanner, then load it into any lane. The middleware assigns the spool when AFC detects the lane load.
 
 ```yaml
+# Per-lane scanner example
 scanners:
-  your_scanner_id:
+  abc123:
+    action: afc_lane
+    target: lane1
+
+# Shared scanner example
+scanners:
+  abc123:
     action: afc_stage
-    publish_lane_data: true
 ```
 
-See [Middleware Setup](../installation/middleware.md) for full configuration.
+See [Middleware Setup](../installation/middleware.md) for full configuration and all action types.
 
 <!-- TODO: Add CAD renders and assembly photos -->
 <!-- TODO: Add wiring diagram for BoxTurtle mounting -->
