@@ -10,7 +10,7 @@ SpoolSense syncs scanned spool data to [Spoolman](https://github.com/Donkie/Spoo
 If you don't have Spoolman yet, see the [Spoolman installation docs](https://github.com/Donkie/Spoolman#installation).
 
 !!! note "Spoolman is optional"
-    Smart tags (TigerTag, OpenPrintTag, OpenTag3D, OpenSpool) work without Spoolman — data comes from the tag itself. NFC+ tags (UID-only) require Spoolman for spool data lookup.
+    Smart tags (TigerTag, OpenPrintTag, OpenTag3D, OpenSpool) work without Spoolman — data comes from the tag itself. NFC+ tags (UID-only) require Spoolman for spool data lookup. Note that only OpenPrintTag and OpenTag3D store remaining weight on the tag, so filament usage can be tracked without Spoolman. TigerTag and OpenSpool don't store remaining weight — Spoolman is needed for usage tracking with those formats.
 
 ## Connecting SpoolSense to Spoolman
 
