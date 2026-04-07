@@ -9,6 +9,7 @@ SpoolSense reads multiple NFC tag formats. Each format stores filament data diff
 | **OpenPrintTag** | ICODE SLIX2 or NTAG | ISO15693 / ISO14443A | Full CBOR filament profile | Yes |
 | **TigerTag** | NTAG213/215/216 | ISO14443A | Binary material/color/weight | Yes |
 | **OpenTag3D** | NTAG215/216 | ISO14443A | CBOR material/manufacturer/color | Yes |
+| **OpenSpool** | NTAG215/216 | ISO14443A | NDEF JSON brand/material/color/temps | Yes |
 | **NFC+** | NTAG213/215/216 | ISO14443A | UID only (data in Spoolman) | N/A |
 | **Bambu Lab** | MIFARE Classic | ISO14443A | UID only (encrypted) | No |
 
@@ -22,7 +23,7 @@ SpoolSense reads multiple NFC tag formats. Each format stores filament data diff
 - Cheap (~$0.10 each)
 - Works with both PN5180 and PN532 readers
 - Register the UID in Spoolman and you're done
-- Can also be written as TigerTag or OpenTag3D format for offline use
+- Can also be written as TigerTag, OpenTag3D, or OpenSpool format for offline use
 
 **If you want rich offline data: TigerTag on NTAG213/215.**
 
@@ -43,6 +44,7 @@ SpoolSense reads multiple NFC tag formats. Each format stores filament data diff
 | OpenPrintTag (NTAG) | Yes | Yes |
 | TigerTag | Yes | Yes |
 | OpenTag3D | Yes | Yes |
+| OpenSpool | Yes | Yes |
 | NFC+ (UID + Spoolman) | Yes | Yes |
 | Bambu Lab (UID only) | Yes | Yes |
 
