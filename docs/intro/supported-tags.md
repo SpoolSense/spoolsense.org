@@ -31,10 +31,16 @@ SpoolSense reads multiple NFC tag formats. Each format stores filament data diff
 - Works without Spoolman
 - Community-maintained material database
 
-**If you have OpenPrintTag or OpenTag3D tags:**
+**If you want OpenPrintTag format: ICODE SLIX2 tags.**
+
+- Full CBOR filament profile stored on tag (material, color, weight, temps, density, diameter)
+- Requires PN5180 reader (ISO15693 not supported on PN532)
+- ~$0.30 each
+
+**If you have OpenTag3D or OpenSpool tags:**
 
 - Full read and write support for both formats
-- These are less common but fully supported
+- Same NTAG215/216 tags used for NFC+ and TigerTag
 
 ## NFC Reader Compatibility
 
