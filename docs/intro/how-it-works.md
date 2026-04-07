@@ -51,7 +51,7 @@ If Spoolman is configured, the scanner syncs with it over HTTP:
 
 **Smart tags** (OpenPrintTag, TigerTag, OpenTag3D, OpenSpool) contain filament data directly on the tag. The scanner searches Spoolman for a matching spool by UID. If no match is found, a new spool entry is created automatically with the material, color, weight, and manufacturer from the tag. If a match exists, the scanner updates the existing entry with the latest tag data.
 
-**Basic UID tags** (NTAG215 with no data written) carry only a UID. The scanner searches Spoolman for a spool with a matching `nfc_id` extra field. If found, the spool's data (material, color, weight, manufacturer) is pulled from Spoolman and displayed on the LCD, web reader, and Home Assistant sensors. If not found, the tag is shown as unregistered and the user can register it via the web UI.
+**Basic UID tags** (NTAG215 with no data written) carry only a UID. The scanner searches Spoolman for a spool with a matching `nfc_id` extra field. If found, the spool's data (material, color, weight, manufacturer) is pulled from Spoolman and used for display, LED color, and Home Assistant sensors. If not found, the tag is shown as unregistered and the user can register it via the web UI.
 
 A sync cache prevents redundant API calls when the same spool is scanned repeatedly without changes.
 
