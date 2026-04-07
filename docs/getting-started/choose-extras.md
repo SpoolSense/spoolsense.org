@@ -2,6 +2,29 @@
 
 All extras are optional. The scanner works with just an ESP32 + NFC reader.
 
+## TFT Color Display
+
+A 240x240 color TFT shows a graphical spool display with filament color, weight bar, brand/material name, and tag format icon.
+
+| Spec | Value |
+|------|-------|
+| Type | 1.54" ST7789 (square) or 1.28" GC9A01 (round), 240x240 SPI |
+| Wiring | 5-6 pins (SCL, SDA, DC, CS, RES) + VCC + GND |
+| Board Compatibility | All boards (WROOM, S3-Zero with PN532, S3-DevKitC) |
+
+**When to add it:**
+
+- You want a color spool graphic at the scanner
+- You want to see filament color, weight bar, and tag format at a glance
+
+**When to skip it:**
+
+- You only check spools via Home Assistant or the web UI
+- You want the simplest possible build (LCD is easier to wire)
+
+!!! tip "S3-DevKitC is the best board for TFT + PN5180"
+    The S3-DevKitC runs TFT and PN5180 on separate SPI buses — no pin sharing. On the S3-Zero, TFT is only compatible with the PN532 reader.
+
 ## 16x2 I2C LCD Display
 
 Shows spool info directly on the scanner: material, color, remaining weight, and status messages.
@@ -72,6 +95,7 @@ Enables scan-to-tool assignment for toolchanger and multi-tool setups. Scan a sp
 
 | Extra | Pins Used | WROOM | S3-Zero | S3-DevKitC | Recommended For |
 |-------|-----------|-------|---------|------------|-----------------|
-| LCD | 2 (I2C) | Yes | Yes | Yes | Visual feedback without browser |
+| TFT | 5-6 (SPI) | Yes | PN532 only | Yes | Color spool graphic |
+| LCD | 2 (I2C) | Yes | Yes | Yes | Simple text display |
 | LED | 1 (data) | External | Built-in | Built-in | Status at a glance |
 | Keypad | 7 (matrix) | Yes | Limited | Yes | Toolchanger/multi-tool |
