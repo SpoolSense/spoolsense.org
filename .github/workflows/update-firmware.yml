@@ -15,7 +15,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release download --repo SpoolSense/spoolsense_scanner --dir docs/firmware/ --clobber
+          TAG="${{ github.event.client_payload.tag }}"
+          gh release download "$TAG" --repo SpoolSense/spoolsense_scanner --pattern '*.bin' --pattern '*.csv' --dir docs/firmware/ --clobber
 
       - name: Update manifest versions
         run: |
@@ -27,8 +28,10 @@ jobs:
 
       - name: Commit and push
         run: |
+          VERSION="${{ github.event.client_payload.tag }}"
+          VERSION="${VERSION#v}"
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add docs/firmware/ docs/installation/manifest*.json
-          git commit -m "firmware: update web flasher to ${VERSION}" || echo "No changes"
+          git commit -m "firmware: update web flasher to v${VERSION}" || echo "No changes"
           git push
