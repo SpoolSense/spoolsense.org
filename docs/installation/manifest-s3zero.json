@@ -1,6 +1,6 @@
 {
   "name": "SpoolSense Scanner (ESP32-S3-Zero)",
-  "version": "1.6.17",
+  "version": "1.6.17-1",
   "new_install_prompt_erase": true,
   "builds": [
     {
