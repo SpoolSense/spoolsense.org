@@ -10,10 +10,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.DOCS_DEPLOY_TOKEN }}
 
       - name: Download release assets
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.DOCS_DEPLOY_TOKEN }}
         run: |
           TAG="${{ github.event.client_payload.tag }}"
           gh release download "$TAG" --repo SpoolSense/spoolsense_scanner --pattern '*.bin' --pattern '*.csv' --dir docs/firmware/ --clobber
