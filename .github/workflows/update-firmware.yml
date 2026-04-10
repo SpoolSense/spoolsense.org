@@ -1,0 +1,34 @@
+name: Update Web Flasher Firmware
+
+on:
+  repository_dispatch:
+    types: [firmware-released]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download release assets
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release download --repo SpoolSense/spoolsense_scanner --dir docs/firmware/ --clobber
+
+      - name: Update manifest versions
+        run: |
+          VERSION="${{ github.event.client_payload.tag }}"
+          VERSION="${VERSION#v}"
+          sed -i "s/\"version\": \".*\"/\"version\": \"${VERSION}\"/" docs/installation/manifest.json
+          sed -i "s/\"version\": \".*\"/\"version\": \"${VERSION}\"/" docs/installation/manifest-s3zero.json
+          sed -i "s/\"version\": \".*\"/\"version\": \"${VERSION}\"/" docs/installation/manifest-s3devkitc.json
+
+      - name: Commit and push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add docs/firmware/ docs/installation/manifest*.json
+          git commit -m "firmware: update web flasher to ${VERSION}" || echo "No changes"
+          git push
