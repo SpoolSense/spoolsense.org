@@ -84,8 +84,8 @@ Track filament usage automatically — when a print finishes on your Bambu print
 
 ### Additional Prerequisites
 
-- [spoolman-homeassistant](https://github.com/Disane87/spoolman-homeassistant) integration installed in HA
-- Spools in Spoolman have the `nfc_id` extra field set to their NFC tag UID
+- SpoolSense scanner firmware v1.6.18+ (or dev branch)
+- Spoolman configured on the scanner (the scanner handles all Spoolman updates — no spoolman-homeassistant integration needed)
 
 ### Create Input Text Helpers
 
@@ -125,6 +125,7 @@ The two blueprints share state through HA helpers. Create one pair of `input_tex
     | **Bambu Printer** | Your Bambu printer device |
     | **Print Weight Sensor** | Your print weight sensor (e.g., `sensor.p1s_print_weight`) |
     | **AMS Tray Sensors** | Same tray sensors as the loading blueprint |
+    | **SpoolSense Scanner Device ID** | Your scanner's device ID (shown on the scanner landing page, e.g., `4d9620`) |
 
 3. Click **Save**
 
@@ -134,10 +135,13 @@ The two blueprints share state through HA helpers. Create one pair of `input_tex
 2. The loading blueprint stores the spool's UID and Spoolman ID in the helpers
 3. You start a print
 4. When the print finishes (or is canceled), the deduction blueprint:
-    - Reads how many grams each tray consumed
-    - Looks up the Spoolman spool for each tray (by UID or Spoolman ID)
-    - Deducts the weight via `spoolman.use_spool_filament`
-5. Spoolman now shows the updated remaining weight
+    - Reads how many grams each tray consumed from the print weight sensor
+    - Looks up the stored UID for each tray from the input helpers
+    - Sends an MQTT deduction command to the SpoolSense scanner (`cmd/deduct/{uid}`)
+5. The scanner receives the deduction and:
+    - If the tag is on the scanner and writable (OpenPrintTag/OpenTag3D) — writes the new weight to the NFC tag
+    - Updates Spoolman directly with the new remaining weight
+    - If Spoolman is unreachable, stores the deduction in NVS for retry on next scan
 
 ### Deduction Troubleshooting
 
@@ -145,7 +149,8 @@ The two blueprints share state through HA helpers. Create one pair of `input_tex
 
 - Check that the loading blueprint stored the UID: go to **Developer Tools → States**, search for `input_text.spoolsense_*_uid` — it should show the tag UID
 - Check that the print weight sensor has per-tray attributes after a print: **Developer Tools → States** → `sensor.p1s_print_weight`
-- Verify the spool exists in Spoolman with a matching `nfc_id` extra field
+- Verify the scanner is connected to MQTT and receiving commands — check `spoolsense.local/logs` for deduction events
+- Verify Spoolman is configured and reachable from the scanner
 
 **Wrong amount deducted**
 

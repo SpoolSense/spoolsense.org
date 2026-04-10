@@ -100,14 +100,15 @@ Bambu Lab support uses Home Assistant blueprints — no middleware and no `UPDAT
 
 1. **SpoolSense → Bambu AMS** — Scan a spool, load it into an AMS tray within 5 minutes, and the blueprint auto-pushes material, color, and temperature data to that tray via `bambu_lab.set_filament`. Also stores the spool UID and Spoolman ID in HA input helpers for deduction tracking.
 
-2. **SpoolSense → Spoolman Deduction** — When a print finishes or is canceled, reads the per-tray weight breakdown from the Bambu print weight sensor, looks up the spool UID per tray from the stored helpers, and calls `spoolman.use_spool_filament` to deduct usage.
+2. **SpoolSense → Bambu Deduction** — When a print finishes or is canceled, reads the per-tray weight breakdown from the Bambu print weight sensor, looks up the spool UID per tray from the stored helpers, and sends an MQTT deduction command to the SpoolSense scanner. The scanner updates Spoolman directly and writes to the NFC tag if it's on the scanner.
 
 **Key points:**
 
 - No middleware, no Moonraker, no Klipper macros — entirely HA-driven
 - Per-tray weight deduction from Bambu's own print weight sensor
-- Requires: HA Bambu Lab integration, spoolman-homeassistant integration, SpoolSense MQTT sensor
+- Requires: HA Bambu Lab integration, SpoolSense MQTT sensor
+- No spoolman-homeassistant integration needed — the scanner handles Spoolman updates
 - Supports up to 16 trays across 4 AMS units
-- Physical NFC tag weight is **not** updated — deduction goes to Spoolman only
+- Writable tags (OpenPrintTag/OpenTag3D) get weight updated on next scan
 
 [![Bambu Lab AMS workflow](diagrams/update-tag-bambu.svg)](diagrams/update-tag-bambu.svg)
