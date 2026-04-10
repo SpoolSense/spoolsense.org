@@ -1,6 +1,6 @@
 {
   "name": "SpoolSense Scanner",
-  "version": "1.6.12",
+  "version": "1.6.16",
   "new_install_prompt_erase": true,
   "builds": [
     {
