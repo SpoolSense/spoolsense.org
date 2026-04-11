@@ -49,6 +49,16 @@ https://github.com/SpoolSense/spoolsense_scanner/blob/main/homeassistant/bluepri
 https://github.com/SpoolSense/spoolsense_scanner/blob/main/homeassistant/blueprints/spoolsense_bambu_deduction.yaml
 ```
 
+## Finding Your Scanner Device ID and Entities
+
+Before creating the automations, you'll need two pieces of information:
+
+**Scanner Device ID** — This is the 6-character hex ID shown on the scanner's landing page at `http://spoolsense.local`. It's also the last 6 characters of the scanner's MAC address and appears in the MQTT topic prefix (e.g., `4d9620`).
+
+**SpoolSense Spool Sensor** — Once the scanner is connected to HA via MQTT, it auto-creates a sensor entity. To find it: go to **Developer Tools → States** and search for `spoolsense`. You'll see an entity like `sensor.spoolsense_4d9620_spool` — the middle part is your device ID.
+
+**AMS Tray Sensors** — These are created by the Bambu Lab HA integration. Search for `ams_tray` in **Developer Tools → States** to find entities like `sensor.p1s_ams_tray_1` through `sensor.p1s_ams_tray_4`. The prefix (e.g., `p1s`) matches your printer name in HA.
+
 ## Step 3: Create the Automations
 
 After importing, create an automation from each blueprint.
@@ -62,7 +72,7 @@ Click **Create Automation** on the "SpoolSense → Bambu AMS" blueprint:
 | **SpoolSense Spool Sensor** | Your SpoolSense spool sensor (e.g., `sensor.spoolsense_4d9620_spool`) |
 | **AMS Tray Sensors** | All AMS tray sensors in order (e.g., `sensor.p1s_ams_tray_1` through `tray_4`) |
 | **Scan-to-Load Timeout** | How long to wait after a scan for a tray load (default: 300 seconds) |
-| **SpoolSense Scanner Device ID** | Your scanner's device ID (e.g., `4d9620` — shown on the scanner's landing page) |
+| **SpoolSense Scanner Device ID** | Your scanner's device ID (e.g., `4d9620`) |
 
 ### Dashboard Automation
 
