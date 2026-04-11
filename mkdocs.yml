@@ -94,7 +94,12 @@ nav:
     - Printer Compatibility: resources/compatibility.md
     - Tag Formats: resources/tag-formats.md
     - API Reference: resources/api.md
-    - Workflow Diagrams: resources/workflow-diagrams.md
+    - Workflow Diagrams:
+      - Overview: resources/workflow-diagrams.md
+      - Single Toolhead: resources/workflow-single-toolhead.md
+      - Multi-Toolhead: resources/workflow-multi-toolhead.md
+      - AFC (Box Turtle): resources/workflow-afc.md
+      - Bambu Lab AMS: resources/workflow-bambu.md
     - Troubleshooting: resources/troubleshooting.md
   - Roadmap: roadmap.md
   - Contributing:
