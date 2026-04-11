@@ -8,9 +8,9 @@ For setup instructions, see the [Bambu Lab AMS Integration guide](../installatio
 
 ## Full Data Flow
 
-<iframe src="diagrams/bambu-dashboard-flow.html" width="100%" height="1400" frameborder="0" style="border-radius: 12px; background: #1a1a2e;"></iframe>
+<iframe src="../diagrams/bambu-dashboard-flow.html" width="100%" height="1400" frameborder="0" style="border-radius: 12px; background: #1a1a2e;"></iframe>
 
-<small>[Open full diagram](diagrams/bambu-dashboard-flow.html){ target="_blank" }</small>
+<small>[Open full diagram](../diagrams/bambu-dashboard-flow.html){ target="_blank" }</small>
 
 ---
 
@@ -61,4 +61,4 @@ For setup instructions, see the [Bambu Lab AMS Integration guide](../installatio
 
 For reference, the original deduction-only workflow diagram:
 
-[![Bambu Lab AMS workflow](diagrams/update-tag-bambu.svg)](diagrams/update-tag-bambu.svg)
+[![Bambu Lab AMS workflow](../diagrams/update-tag-bambu.svg)](../diagrams/update-tag-bambu.svg)

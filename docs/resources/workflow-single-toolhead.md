@@ -17,7 +17,7 @@ The tag is the source of truth — Spoolman is updated from the tag data on each
 - `UPDATE_TAG` fires automatically at the end of each print
 - Deductions accumulate on the scanner if multiple prints occur before the next scan
 - The scanner writes the updated weight to the tag on the next scan, then clears the deduction
-[![OpenPrintTag / OpenTag3D workflow](diagrams/update-tag-openprinttag.svg)](diagrams/update-tag-openprinttag.svg)
+[![OpenPrintTag / OpenTag3D workflow](../diagrams/update-tag-openprinttag.svg)](../diagrams/update-tag-openprinttag.svg)
 
 ---
 
@@ -36,4 +36,4 @@ These tags have no writable weight field. Filament tracking is handled entirely 
 - Moonraker and Spoolman handle all filament usage tracking automatically
 - `UPDATE_TAG` is a no-op for these tag types — no errors, just a clean skip
 
-[![UID-Only / TigerTag / OpenSpool workflow](diagrams/update-tag-uid-only.svg)](diagrams/update-tag-uid-only.svg)
+[![UID-Only / TigerTag / OpenSpool workflow](../diagrams/update-tag-uid-only.svg)](../diagrams/update-tag-uid-only.svg)

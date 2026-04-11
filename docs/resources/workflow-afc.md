@@ -18,7 +18,7 @@ AFC already tracks per-lane remaining weight in real-time using extruder positio
 - One deduction sent per active spool UID, same scanner persistence as other setups
 - Handles multi-lane prints where AFC swaps lanes mid-print
 
-[![AFC workflow](diagrams/update-tag-afc.svg)](diagrams/update-tag-afc.svg)
+[![AFC workflow](../diagrams/update-tag-afc.svg)](../diagrams/update-tag-afc.svg)
 
 ---
 

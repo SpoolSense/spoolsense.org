@@ -18,7 +18,7 @@ Same concept as single toolhead, but the middleware reads the per-tool `filament
 - Scanner accumulates deductions per UID independently
 - Tools with zero usage in a job are skipped
 
-[![Multi-Toolhead workflow](diagrams/update-tag-multi-toolhead.svg)](diagrams/update-tag-multi-toolhead.svg)
+[![Multi-Toolhead workflow](../diagrams/update-tag-multi-toolhead.svg)](../diagrams/update-tag-multi-toolhead.svg)
 
 ---
 
