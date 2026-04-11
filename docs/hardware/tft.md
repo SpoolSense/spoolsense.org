@@ -63,10 +63,13 @@ The S3-DevKitC runs the TFT on SPI3, completely separate from the PN5180 on SPI2
 | VCC | 3.3V | |
 | SCL | GPIO 13 | SPI3 clock |
 | SDA | GPIO 14 | SPI3 data / MOSI |
-| RES | — | Not connected (software reset via LovyanGFX) |
+| RES | RST | Wired to ESP32-S3 reset pin for reliable cold boot |
 | DC | GPIO 16 | Data/command select |
 | CS | GPIO 15 | Chip select |
 | BLK | 3.3V | Backlight always on |
+
+!!! tip "RES pin"
+    Wire the TFT's RES pin to the S3-DevKitC's **RST** pin. This ensures the display resets on every power cycle. Without this, the display may stay blank on cold boot (software reboot works fine either way).
 
 !!! tip "Best board for TFT + PN5180"
     The S3-DevKitC is the only board with dedicated SPI buses for both the NFC reader and TFT display. No pin sharing, no compromises.
