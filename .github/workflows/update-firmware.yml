@@ -27,6 +27,7 @@ jobs:
           sed -i "s/\"version\": \".*\"/\"version\": \"${VERSION}\"/" docs/installation/manifest.json
           sed -i "s/\"version\": \".*\"/\"version\": \"${VERSION}\"/" docs/installation/manifest-s3zero.json
           sed -i "s/\"version\": \".*\"/\"version\": \"${VERSION}\"/" docs/installation/manifest-s3devkitc.json
+          sed -i "s/\"version\": \".*\"/\"version\": \"${VERSION}\"/" docs/installation/manifest-esp32c3.json
 
       - name: Commit and push
         run: |
