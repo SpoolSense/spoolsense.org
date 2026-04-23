@@ -10,6 +10,16 @@ The S3-Zero has an onboard WS2812 RGB LED on GPIO 21. No external wiring needed.
 
 The S3-DevKitC has an onboard WS2812 RGB LED on GPIO 48. No external wiring needed.
 
+## ESP32-C3 SuperMini: External WS2812
+
+The SuperMini's onboard LED is a single-color blue LED (not RGB), so an external WS2812 is required for color feedback.
+
+| LED Pin | ESP32-C3 GPIO | Function |
+|---------|--------------|----------|
+| DIN | GPIO 1 | Data in |
+| VCC | 5V or 3.3V | Power |
+| GND | GND | Ground |
+
 ## ESP32-WROOM: External SK6812 RGBW
 
 | LED Pin | ESP32 GPIO | Function |

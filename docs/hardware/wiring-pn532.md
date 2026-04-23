@@ -52,6 +52,24 @@ Shares the same SPI2 pins as the PN5180 on the S3-DevKitC.
 | VCC | 3.3V | Power |
 | GND | GND | Ground |
 
+## ESP32-C3 SuperMini Pinout
+
+The PN532 shares the same SPI pins as the PN5180 on the C3 — only one reader is active at runtime. The C3 variant is scoped to NFC reader + I2C LCD + WS2812 only (no TFT or keypad).
+
+| PN532 Pin | ESP32-C3 GPIO | Function |
+|-----------|--------------|----------|
+| SCK | GPIO 4 | SPI clock |
+| MOSI | GPIO 6 | SPI data out |
+| MISO | GPIO 5 | SPI data in |
+| SS (CS) | GPIO 7 | SPI chip select |
+| RST | GPIO 0 | Reset |
+| IRQ | GPIO 10 | Interrupt (optional) |
+| VCC | 3.3V | Power |
+| GND | GND | Ground |
+
+!!! note "RST on GPIO 0 is intentional"
+    GPIO 2 is a C3 boot strap pin. RST is wired to GPIO 0 (non-strap) so the reader cannot hold the board in download mode at power-on.
+
 ## Wiring Tips
 
 !!! note "PN532 uses 3.3V power"

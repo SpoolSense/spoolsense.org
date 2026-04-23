@@ -10,6 +10,9 @@ A 240x240 color TFT replaces the 16x2 LCD with a graphical spool display showing
 !!! warning "Mutually exclusive with LCD"
     The TFT and LCD share GPIO 22/23 on WROOM. You can enable one or the other, not both.
 
+!!! info "Not supported on ESP32-C3"
+    The C3 variant has only one usable SPI controller, which is dedicated to the NFC reader. TFT is intentionally disabled on C3 builds.
+
 ## What You Need
 
 - 1.54" ST7789 240x240 SPI TFT module (8-pin: GND, VCC, SCL, SDA, RES, DC, CS, BLK)

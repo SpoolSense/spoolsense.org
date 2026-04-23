@@ -1,6 +1,6 @@
 # Choose Your Board
 
-SpoolSense supports three ESP32 board variants.
+SpoolSense supports four ESP32 board variants.
 
 ## ESP32-WROOM DevKit (Recommended)
 
@@ -81,13 +81,41 @@ A full-featured development board with 16MB flash and 8MB PSRAM. Best for builds
 - Larger than S3-Zero
 - Two USB ports can be confusing (use the UART port for serial output)
 
+## ESP32-C3 SuperMini
+
+A tiny, inexpensive RISC-V board (HORNAXYS, Waveshare, and other clones). Scoped build: NFC reader + I2C LCD + WS2812 status LED only.
+
+| Spec | Value |
+|------|-------|
+| Chip | ESP32-C3 (single-core RISC-V, 160 MHz) |
+| Flash | 4MB |
+| PSRAM | None |
+| USB | USB-C (native USB-Serial/JTAG) |
+| GPIO | 13 exposed pins (0–10, 20, 21) |
+| Status LED | External WS2812 (onboard LED is single-color blue, not RGB) |
+| Price | ~$2-4 |
+
+**Pros:**
+
+- Cheapest option by a wide margin
+- Very small footprint (about the size of a US quarter)
+- No soldering required on most clones (pre-tinned headers)
+
+**Cons:**
+
+- **No TFT support** — single usable SPI controller is dedicated to the NFC reader
+- **No keypad support** — pin budget too tight
+- No PSRAM, less flash headroom for future features
+- Strap pins on GPIO 2, 8, 9 require care when wiring (see [PN5180 wiring](../hardware/wiring-pn5180.md))
+
 ## Which Should I Choose?
 
 | If you want... | Choose |
 |----------------|--------|
+| Cheapest build, smallest footprint | **ESP32-C3 SuperMini** |
 | Simplest build, most GPIO | **ESP32-WROOM** |
 | LCD + keypad + NFC reader | **ESP32-WROOM** |
-| Smallest possible scanner | **ESP32-S3-Zero** |
+| Smallest possible scanner (LCD + NFC) | **ESP32-S3-Zero** or **ESP32-C3** |
 | Onboard LED (no wiring) | **ESP32-S3-Zero** or **S3-DevKitC** |
 | PN5180 + TFT on separate SPI buses | **ESP32-S3-DevKitC** |
 | Most flash + PSRAM | **ESP32-S3-DevKitC** |

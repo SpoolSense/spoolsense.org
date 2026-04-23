@@ -9,15 +9,18 @@ A 16x2 I2C LCD shows spool info directly on the scanner.
 
 ## Wiring
 
-| LCD Pin | ESP32-WROOM | ESP32-S3-Zero | ESP32-S3-DevKitC |
-|---------|------------|---------------|-----------------|
-| SDA | GPIO 23 | GPIO 1 | GPIO 17 |
-| SCL | GPIO 22 | GPIO 2 | GPIO 18 |
-| VCC | 5V or 3.3V | 5V or 3.3V | 5V or 3.3V |
-| GND | GND | GND | GND |
+| LCD Pin | ESP32-WROOM | ESP32-S3-Zero | ESP32-S3-DevKitC | ESP32-C3 |
+|---------|------------|---------------|-----------------|----------|
+| SDA | GPIO 23 | GPIO 1 | GPIO 17 | GPIO 8 |
+| SCL | GPIO 22 | GPIO 2 | GPIO 18 | GPIO 9 |
+| VCC | 5V or 3.3V | 5V or 3.3V | 5V or 3.3V | 5V or 3.3V |
+| GND | GND | GND | GND | GND |
 
 !!! note
     Most I2C LCD backpacks work with both 3.3V and 5V. If the display is dim on 3.3V, try 5V for the backlight.
+
+!!! warning "ESP32-C3: strap pin requirement"
+    GPIO 8 and 9 are boot strap pins on the C3. A standard PCF8574 I2C backpack provides external pull-ups that idle both lines HIGH, which satisfies the POR strap condition. Don't wire devices to GPIO 8 or 9 that can drive either line LOW before firmware finishes startup, or the board will fail to boot from flash.
 
 ## What It Shows
 

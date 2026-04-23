@@ -2,6 +2,9 @@
 
 A 3x4 matrix keypad enables scan-to-tool assignment for toolchanger and multi-tool setups.
 
+!!! info "Not supported on ESP32-C3"
+    The C3 variant's pin budget is too tight for a 3x4 keypad alongside the NFC reader and LCD. Keypad is intentionally disabled on C3 builds.
+
 ## What You Need
 
 - 3x4 membrane matrix keypad ([this one on Amazon](https://www.amazon.com/dp/B0DZ26VVR7) is confirmed working)
