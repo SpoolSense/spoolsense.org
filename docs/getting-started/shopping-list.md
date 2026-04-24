@@ -1,12 +1,12 @@
 # Shopping List
 
-Everything you need to build a SpoolSense scanner. Total cost: **$10-20** depending on options.
+Everything you need to build a SpoolSense scanner. Total cost: **$8-20** depending on options.
 
 ## Required
 
 | Component | Options | Est. Cost |
 |-----------|---------|-----------|
-| **ESP32 Board** | ESP32-WROOM DevKit (if you want extras like LCD/keypad), ESP32-S3-Zero / S3-Zero-M (smaller builds, M = pre-soldered pin headers), or ESP32-S3-DevKitC-1-N16R8 (16MB flash, 8MB PSRAM, separate SPI buses) | $3-12 |
+| **ESP32 Board** | ESP32-C3 SuperMini (cheapest, smallest, NFC + LCD + LED only), ESP32-WROOM DevKit (if you want extras like LCD/keypad), ESP32-S3-Zero / S3-Zero-M (smaller builds, M = pre-soldered pin headers), or ESP32-S3-DevKitC-1-N16R8 (16MB flash, 8MB PSRAM, separate SPI buses) | $2-12 |
 | **NFC Reader** | PN5180 (recommended, all tag formats) or PN532 (ISO14443A only, SLIX2/OpenPrintTag not supported) | $3-6 |
 | **NFC Tags** | NTAG215 stickers for UID-based tracking, or ICODE SLIX2 for OpenPrintTag (PN5180 required) | $5-8 |
 | **Jumper Wires** | Female-to-female dupont wires (8 minimum, more if adding extras) | $2 |
@@ -35,7 +35,7 @@ Everything you need to build a SpoolSense scanner. Total cost: **$10-20** depend
 
 All components are widely available on Amazon, AliExpress, and electronics suppliers. Search for:
 
-- "ESP32 WROOM DevKit" or "ESP32-S3-Zero Waveshare" or "ESP32-S3-DevKitC-1-N16R8"
+- "ESP32-C3 SuperMini" or "ESP32 WROOM DevKit" or "ESP32-S3-Zero Waveshare" or "ESP32-S3-DevKitC-1-N16R8"
 - "AITRIP PN5180 NFC module" or "PN532 NFC module SPI"
 - "NTAG215 NFC stickers" or "ICODE SLIX2 NFC tags"
 - "16x2 I2C LCD 0x27"
