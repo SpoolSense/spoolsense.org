@@ -1,5 +1,13 @@
 # Scanner Changelog
 
+## [1.7.5] - 2026-04-29
+
+### Added
+
+- **Snapmaker U1 direct-mode integration** — scanner posts scan results to a Snapmaker U1's external filament-detection endpoint via HTTP. New **Snapmaker U1 Integration** section on the config page binds a scanner to a toolhead channel (0–3). All 6 tag formats route through this path: smart tags publish on detection, generic UID tags publish after Spoolman lookup. Per-material temperature defaults (PLA/PETG/ABS/ASA/TPU/PVA/PC/PA) fill gaps for tags missing data; Spoolman augment overlays extra fields without overwriting on-tag values. Hostname auto-suggest sets `spoolsense-tN` when a channel is picked, simplifying multi-scanner deployments. Requires [paxx12 Extended Firmware](https://github.com/paxx12/SnapmakerU1-Extended-Firmware) (develop branch) with **Filament Detection: External** enabled. See the [Snapmaker U1 Integration guide](../installation/snapmaker-u1.md) for setup. (#98, #182)
+
+---
+
 ## [1.6.12] - 2026-04-06
 
 ### Changed

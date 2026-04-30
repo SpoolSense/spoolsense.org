@@ -85,6 +85,7 @@ nav:
     - Spoolman Integration: installation/spoolman.md
     - Home Assistant: installation/home-assistant.md
     - Bambu Lab AMS: installation/bambu-ams.md
+    - Snapmaker U1: installation/snapmaker-u1.md
   - Releases:
     - Overview: releases/index.md
     - Scanner: releases/scanner.md
@@ -100,6 +101,7 @@ nav:
       - Multi-Toolhead: resources/workflow-multi-toolhead.md
       - AFC (Box Turtle): resources/workflow-afc.md
       - Bambu Lab AMS: resources/workflow-bambu.md
+      - Snapmaker U1: resources/workflow-snapmaker-u1.md
     - Troubleshooting: resources/troubleshooting.md
   - Roadmap: roadmap.md
   - Contributing:

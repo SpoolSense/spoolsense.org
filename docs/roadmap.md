@@ -212,8 +212,8 @@ a.roadmap-stat:hover {
 <div class="explore-grid">
   <div class="explore-card">
     <div class="card-repo">Scanner</div>
-    <div class="card-title">Direct Moonraker Mode</div>
-    <div class="card-desc">Scanner talks to Moonraker directly, no middleware needed</div>
+    <div class="card-title">U1 Stage Mode</div>
+    <div class="card-desc">One scanner serves all 4 U1 channels — scan-then-pick via keypad, web UI, or filament-insert auto-detect</div>
   </div>
   <div class="explore-card">
     <div class="card-repo">Scanner</div>
@@ -267,7 +267,6 @@ a.roadmap-stat:hover {
 
 <table class="roadmap-table">
 <tr><th>Feature</th><th>Repo</th><th>Notes</th></tr>
-<tr><td>Direct Moonraker mode</td><td><span class="repo-tag">Scanner</span></td><td>Design complete, implementation planned</td></tr>
 <tr><td>Creality rooted printer guide</td><td><span class="repo-tag">Docs</span></td><td>Compatible via Moonraker</td></tr>
 </table>
 
@@ -275,6 +274,7 @@ a.roadmap-stat:hover {
 
 <table class="roadmap-table completed">
 <tr><th>Feature</th><th>Repo</th><th>Version</th></tr>
+<tr><td>Snapmaker U1 direct-mode integration (per-toolhead)</td><td><span class="repo-tag">Scanner</span></td><td><span class="version-tag">v1.7.5</span></td></tr>
 <tr><td>Filament deduplication (client-side matching)</td><td><span class="repo-tag">Scanner</span></td><td><span class="version-tag">v1.6.9</span></td></tr>
 <tr><td>Temperature averaging for Spoolman</td><td><span class="repo-tag">Scanner</span></td><td><span class="version-tag">v1.6.9</span></td></tr>
 <tr><td>Diameter default to 1.75mm</td><td><span class="repo-tag">Scanner</span></td><td><span class="version-tag">v1.6.9</span></td></tr>
