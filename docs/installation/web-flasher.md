@@ -25,7 +25,30 @@ hide:
 .flasher-hero .subtitle {
   font-size: 1.05rem;
   opacity: 0.7;
+  margin-bottom: 0.5rem;
+}
+
+.version-badge {
+  display: inline-block;
+  padding: 4px 12px;
   margin-bottom: 1.5rem;
+  border-radius: 999px;
+  border: 1px solid #2a2e36;
+  background: #141519;
+  font-size: 0.85rem;
+  font-family: var(--md-code-font, JetBrains Mono), monospace;
+  color: #ef4444;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.version-badge a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.version-badge a:hover {
+  text-decoration: underline;
 }
 
 .flash-btn-wrap {
@@ -158,6 +181,7 @@ esp-web-install-button button:hover {
   <img src="https://raw.githubusercontent.com/SpoolSense/spoolsense_middleware/master/docs/spoolsense-logo.png" alt="SpoolSense" />
   <h2>Web Flasher</h2>
   <p class="subtitle">Flash SpoolSense Scanner firmware directly from your browser. No installs needed.</p>
+  <div class="version-badge" id="versionBadge">Loading version&hellip;</div>
 </div>
 
 <div class="flash-steps">
@@ -238,5 +262,25 @@ function updateManifest() {
   var select = document.getElementById("boardSelect");
   var btn = document.getElementById("flashBtn");
   btn.setAttribute("manifest", select.value);
+  refreshVersionBadge(select.value);
 }
+
+// Read the version from whichever manifest the flash button is currently
+// pointing at. The manifest is auto-bumped by the firmware-release workflow,
+// so the badge tracks the actual firmware on offer without manual edits.
+function refreshVersionBadge(manifestPath) {
+  var badge = document.getElementById("versionBadge");
+  if (!badge) return;
+  fetch(manifestPath, { cache: "no-store" })
+    .then(function(r) { return r.ok ? r.json() : Promise.reject(r.status); })
+    .then(function(m) {
+      var v = m && m.version ? m.version : "unknown";
+      badge.innerHTML = 'Firmware <a href="https://github.com/SpoolSense/spoolsense_scanner/releases/tag/v' + v + '" target="_blank" rel="noopener">v' + v + '</a>';
+    })
+    .catch(function() {
+      badge.textContent = "Firmware version unavailable";
+    });
+}
+
+refreshVersionBadge(document.getElementById("flashBtn").getAttribute("manifest"));
 </script>
