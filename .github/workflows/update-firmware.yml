@@ -31,11 +31,27 @@ jobs:
           sed -i "s/\"version\": \".*\"/\"version\": \"${VERSION}\"/" docs/installation/manifest-esp32c3.json
 
       - name: Commit and push
+        id: commit
         run: |
           VERSION="${{ github.event.client_payload.tag }}"
           VERSION="${VERSION#v}"
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add docs/firmware/ docs/installation/manifest*.json
-          git commit -m "firmware: update web flasher to v${VERSION}" || echo "No changes"
-          git push
+          if git commit -m "firmware: update web flasher to v${VERSION}"; then
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
+            git push
+          else
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+            echo "No changes to push"
+          fi
+
+      # Pushes made with the default GITHUB_TOKEN don't trigger other workflows
+      # (anti-recursion guard), so deploy.yml's `on: push` won't fire from the
+      # manifest commit above. Trigger it explicitly so the new firmware version
+      # actually goes live on the site.
+      - name: Trigger site redeploy
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --repo "${{ github.repository }}" --ref main
