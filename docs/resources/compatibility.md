@@ -9,6 +9,7 @@ SpoolSense works with any printer that runs Klipper with Moonraker. Direct integ
 | **Klipper + Moonraker** | ✅ | ✅ | ✅ | ✅ | Full support via middleware |
 | **AFC (BoxTurtle, NightOwl)** | ✅ | ✅ | ✅ | ✅ | Per-lane assignment, `publish_lane_data` for Orca Slicer |
 | **Toolchanger (Klipper)** | ✅ | ✅ | ✅ | ✅ | `ASSIGN_SPOOL TOOL=T{n}` macro or keypad |
+| **Snapmaker U1 (extended firmware)** | ✅ | ✅ | ✅ | ✅ | All 6 tag formats. Requires paxx12 Extended Firmware with Filament Detection: External |
 | **Prusa (PrusaLink)** | ✅ | ✅ | ⚠️ Experimental | ❌ | See below |
 | **Creality K1/K1 Max (rooted)** | ✅ | ✅ | ✅ | ✅ | Requires Moonraker via community script |
 | **Creality K1/K1 Max (stock)** | ✅ | ❌ | ❌ | ❌ | Scan only — no API to push spool data |
@@ -26,6 +27,27 @@ Full support. Any Klipper printer with Moonraker works out of the box with the S
 - Any DIY Klipper build
 
 See [Middleware Setup](../installation/middleware.md) to get started.
+
+---
+
+## Snapmaker U1
+
+**Status: Supported via Extended Firmware**
+
+The U1 toolchanger is supported via [paxx12's Snapmaker U1 Extended Firmware](https://github.com/paxx12/SnapmakerU1-Extended-Firmware/tree/develop) (develop branch). The extended firmware exposes an HTTP API the scanner posts to directly.
+
+All six SpoolSense tag formats work on the U1, the same as on Voron / Klipper:
+
+- OpenSpool
+- OpenPrintTag
+- TigerTag
+- OpenTag3D
+- Bambu UID
+- NFC+ (generic UID)
+
+Each scanner is bound to one toolhead channel (0–3). For a fully-loaded U1, use four scanners — one per channel. For single-color use, one scanner is enough.
+
+See the [Snapmaker U1 Integration guide](../installation/snapmaker-u1.md) for setup steps.
 
 ---
 
