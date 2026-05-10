@@ -86,6 +86,7 @@ nav:
     - Home Assistant: installation/home-assistant.md
     - Bambu Lab AMS: installation/bambu-ams.md
     - Snapmaker U1: installation/snapmaker-u1.md
+    - Prusa MK4 / MMU3: installation/prusa.md
   - Releases:
     - Overview: releases/index.md
     - Scanner: releases/scanner.md
