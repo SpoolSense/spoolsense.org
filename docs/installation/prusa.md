@@ -31,9 +31,18 @@ If those tradeoffs are deal-breakers, this integration isn't for you. Most HA us
 | **RESTful Sensor** integration | HA, built-in (`sensor` platform) | n/a |
 | Spoolman | Service on your network | 0.20.0 or newer |
 | SpoolSense scanner firmware | Per scanner | **v1.6.14 or newer** (v1.7.x recommended) |
-| Prusa Buddy firmware | On the printer | 4.4 or newer |
+| PrusaLink HTTP API | On the printer or on a Raspberry Pi (see below) | API v1 endpoints (Buddy 4.4+ or current RPi PrusaLink) |
 
 The MQTT, PrusaLink, and RESTful Sensor pieces are all part of HA core — no HACS or custom integrations to install. Only the MQTT broker (Mosquitto) is an add-on you may need to enable separately.
+
+### How PrusaLink is hosted
+
+PrusaLink is the HTTP API this integration depends on. Where it runs depends on the printer:
+
+- **Built into the printer** on Buddy firmware 4.4 or newer. Covers MK4 / MK4S, MK3.5, MK3.9, XL, and MINI/+. Available out of the box at `http://YOUR_PRUSA_IP/`.
+- **On an external Raspberry Pi** for older Marlin-based printers (MK3S+, MK3, MK2.5S). Install [PrusaLink for RPi](https://github.com/prusa3d/Prusa-Link), connect the Pi to the printer over USB. The Pi exposes the same HTTP API at the same endpoints.
+
+Both deployment paths expose the same `/api/v1/job`, `/api/v1/status`, and `/api/v1/info` endpoints with the same response shape, so the rest of this guide is identical for either setup. Use whichever IP serves the API.
 
 ## Step 1: Add the REST Sensor
 
