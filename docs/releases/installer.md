@@ -1,5 +1,12 @@
 # Installer Changelog
 
+## [1.2.6] - 2026-05-09
+
+### Added
+- **ESP32-C3 board support** — `ESP32-C3-DevKitM-1 (4MB)` now selectable in the scanner board prompt. Matches the existing `esp32c3` PlatformIO env in the scanner firmware. Bootloader offset `0x0` (newer-ROM behavior, same as S3 family).
+
+---
+
 ## [1.2.5] - 2026-04-06
 
 ### Added
@@ -60,5 +67,5 @@ Initial public release.
 - Configures WiFi, MQTT, Spoolman, automation mode
 - Writes NVS configuration for OTA-safe settings
 - Creates Spoolman extra fields (nfc_id, tag_format, aspect, dry_temp, dry_time_hours)
-- Supports ESP32-WROOM, ESP32-S3-Zero, and ESP32-S3-DevKitC-1 boards
+- Supports ESP32-WROOM and ESP32-S3-Zero boards
 - Installs and configures SpoolSense middleware as a systemd service
