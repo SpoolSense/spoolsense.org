@@ -12,6 +12,7 @@ Cases and mounts contributed by the community, listed by configuration. Gaps wit
 | ESP32-S3-Zero + PN5180 + 16x2 LCD | [PlasticSnake](https://github.com/SpoolSense/spoolsense_scanner/tree/main/usermods/plasticsnake) | 4-part with LED diffuser and optional TPU feet. Photos included. |
 | ESP32-S3-Zero + PN532 | [LinuxGangster](https://github.com/SpoolSense/spoolsense_scanner/tree/main/usermods/linuxgangster) | 2-piece case |
 | ESP32-S3-SuperMini + PN5180 | [roomonthethird](https://github.com/SpoolSense/spoolsense_scanner/tree/main/usermods/roomonthethird) | Snap-fit, Fusion 360 source included |
+| ESP32-DevKitC (WROOM) or ESP32-S3-Zero | [Poseidon](https://www.printables.com/model/1716784-spoolsense-solo-reader) | Interchangeable mount plates for both boards. Hosted on Printables. |
 
 ### MMU / Multi-Lane Mounts
 
@@ -26,7 +27,7 @@ See [Community Mods](../builds/community-mods.md) for file lists and assembly no
 
 These don't have a case yet:
 
-- **Standalone case for ESP32-WROOM**, with either PN5180 or PN532. WROOM is still the most common board target.
+- **Standalone case for ESP32-WROOM with confirmed reader support.** Poseidon's case above supports the WROOM form factor but the reader compatibility (PN5180 vs PN532) isn't explicitly stated. A case with explicit reader-fit confirmation would still be useful.
 - **Keypad cutouts (3x4 matrix).** None of the existing cases include a keypad opening. A remix of any standalone case above would work.
 
 ## Design Guidelines

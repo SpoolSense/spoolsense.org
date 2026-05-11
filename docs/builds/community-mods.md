@@ -55,6 +55,14 @@ License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ---
 
+### Poseidon's SpoolSense Solo Reader
+
+A standalone scanner case with interchangeable mount plates for both ESP32-DevKitC (WROOM) and ESP32-S3-Zero boards.
+
+[:material-download: Model on Printables](https://www.printables.com/model/1716784-spoolsense-solo-reader){ .md-button }
+
+---
+
 ## Submit Your Own
 
 Have a case, mount, or mod? Add it to the scanner repo's `usermods/` directory:
