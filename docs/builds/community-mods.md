@@ -45,6 +45,16 @@ A modified BoxTurtle tray that holds a PN532 reader alongside an AFC lane. For m
 
 ---
 
+### zoldemberg's ArmoredTurtle Tray (PN532)
+
+A tray for [ArmoredTurtle](https://github.com/ArmoredTurtle) multi-material setups that integrates a PN532 RFID mount and ESP32 WROOM enclosure for per-lane scanning.
+
+[:material-download: Model on Printables](https://www.printables.com/model/1699546-armoredturtle-tray-with-pn532-rfid-mount-and-esp32){ .md-button }
+
+License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+
+---
+
 ## Submit Your Own
 
 Have a case, mount, or mod? Add it to the scanner repo's `usermods/` directory:
