@@ -1,52 +1,56 @@
 # Enclosure Design
 
-We need printable cases for the SpoolSense scanner. If you have CAD skills, your contribution would be a huge help to the community.
+Cases and mounts contributed by the community, listed by configuration. Gaps without a case yet are at the bottom.
 
-## Designs Needed
+## Available
 
-### Standalone Scanner Case (ESP32-WROOM + PN5180)
+### Standalone Scanners
 
-- Wall or desk mount
-- Flat NFC placement area on top (PN5180 antenna close to surface)
-- USB port accessible for power
-- Optional cutouts for 16x2 LCD and keypad
+| Configuration | Designer | Notes |
+|---|---|---|
+| ESP32-S3-Zero + PN5180 | [Jim](https://github.com/SpoolSense/spoolsense_scanner/tree/main/usermods/jims_enclosure) | 3-piece print |
+| ESP32-S3-Zero + PN5180 + 16x2 LCD | [PlasticSnake](https://github.com/SpoolSense/spoolsense_scanner/tree/main/usermods/plasticsnake) | 4-part with LED diffuser and optional TPU feet. Photos included. |
+| ESP32-S3-Zero + PN532 | [LinuxGangster](https://github.com/SpoolSense/spoolsense_scanner/tree/main/usermods/linuxgangster) | 2-piece case |
+| ESP32-S3-SuperMini + PN5180 | [roomonthethird](https://github.com/SpoolSense/spoolsense_scanner/tree/main/usermods/roomonthethird) | Snap-fit, Fusion 360 source included |
 
-### Standalone Scanner Case (ESP32-S3-Zero + PN5180)
+### MMU / Multi-Lane Mounts
 
-- Same requirements, smaller footprint
-- No LCD cutout needed (S3 + LCD is uncommon)
+| Configuration | Designer | Notes |
+|---|---|---|
+| BoxTurtle + PN532 | [LinuxGangster](https://github.com/SpoolSense/spoolsense_scanner/tree/main/usermods/linuxgangster) | Modified tray |
+| ArmoredTurtle + PN532 + ESP32 WROOM | [zoldemberg](https://www.printables.com/model/1699546-armoredturtle-tray-with-pn532-rfid-mount-and-esp32) | Hosted on Printables (CC BY 4.0) |
 
-### Standalone Scanner Case (ESP32-WROOM + PN532)
+See [Community Mods](../builds/community-mods.md) for file lists and assembly notes.
 
-- Similar to PN5180 case but sized for PN532 module
+## Not Yet Built
 
-### BoxTurtle AFC Lane Mount
+These don't have a case yet:
 
-- Bracket or tray that positions the NFC antenna alongside a BoxTurtle lane
-- Antenna should face the spool tag position when a spool is loaded
-- Must not interfere with filament path
+- **Standalone case for ESP32-WROOM**, with either PN5180 or PN532. WROOM is still the most common board target.
+- **Keypad cutouts (3x4 matrix).** None of the existing cases include a keypad opening. A remix of any standalone case above would work.
 
 ## Design Guidelines
 
-- **Material:** PLA or PETG, 0.2mm layer height, 15-20% infill
+- **Material:** PLA or PETG, 0.2mm layer height, 15-20% infill.
 - **Antenna placement:** NFC reader antenna as close to the scanning surface as possible. Avoid thick plastic layers between the antenna and the tag.
-- **Mounting:** Consider both desk-standing and wall-mount options
-- **Access:** USB port must be accessible. Consider a slot rather than a hole for easy cable insertion.
-- **Ventilation:** The ESP32 runs warm. A few vent slots are helpful.
+- **Mounting:** Both desk-standing and wall-mount options where possible.
+- **Access:** USB port accessible. A slot is easier to use than a round hole.
+- **Ventilation:** A few vent slots — the ESP32 runs warm.
+- Several existing cases include CAD source files (STEP, Fusion `.f3d`). Remixing is fine.
 
 ## How to Submit
 
 Enclosure designs live in the [`usermods/`](https://github.com/SpoolSense/spoolsense_scanner/tree/main/usermods) directory of the scanner repo.
 
-1. Fork [spoolsense_scanner](https://github.com/SpoolSense/spoolsense_scanner)
-2. Create a directory under `usermods/` (e.g., `usermods/my_enclosure/`)
+1. Fork [spoolsense_scanner](https://github.com/SpoolSense/spoolsense_scanner).
+2. Create a directory under `usermods/` (e.g., `usermods/my_enclosure/`).
 3. Include:
-    - STL files (oriented for printing)
-    - STEP file (for remixing)
-    - Photos of the printed result if possible
-    - A `README.md` with print settings and assembly notes
-4. Open a PR targeting `main`
+    - STL files (oriented for printing).
+    - STEP or `.f3d` source so others can remix.
+    - Photos of the printed result if possible.
+    - A `README.md` with print settings and assembly notes.
+4. Open a PR targeting `main`.
 
-Each contributor owns and maintains their mod. See the [usermods README](https://github.com/SpoolSense/spoolsense_scanner/blob/main/usermods/README.md) and existing [Community Mods](../builds/community-mods.md) for examples.
+Each contributor owns and maintains their mod. See the [usermods README](https://github.com/SpoolSense/spoolsense_scanner/blob/main/usermods/README.md) for details.
 
-Or if you prefer, [open an issue](https://github.com/SpoolSense/spoolsense_scanner/issues) with photos and download links.
+If you don't want to open a PR, [open an issue](https://github.com/SpoolSense/spoolsense_scanner/issues) with photos and download links instead.
