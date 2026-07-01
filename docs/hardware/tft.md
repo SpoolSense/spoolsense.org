@@ -102,7 +102,7 @@ Make sure the LCD toggle is **off** when enabling TFT on WROOM.
 | 1.3" ST7789 Square | 1.3" | 240x240 | ST7789 | Should work (same driver) |
 | [GC9A01 Round](https://www.amazon.com/dp/B0CLM3Y4KH) | 1.28" | 240x240 | GC9A01 | Supported — select in config page |
 
-The firmware uses [LovyanGFX](https://github.com/lovyan03/LovyanGFX) which supports many SPI display drivers. Any 240x240 SPI TFT with a supported driver should work with a config change. If you try a display not listed here, let us know in [Discord](https://discord.gg/JYFQQQR5F).
+The firmware uses [LovyanGFX](https://github.com/lovyan03/LovyanGFX) which supports many SPI display drivers. Any 240x240 SPI TFT with a supported driver should work with a config change. If you try a display not listed here, let us know in [Discord](https://discord.gg/pbXJhKpzd2).
 
 !!! info "GC9A01 Round Display"
     The GC9A01 round TFT is supported as of v1.6.10. Select "GC9A01 round" in the TFT driver dropdown on the config page (`/config` > Hardware > TFT Driver). Same resolution and SPI wiring as the ST7789 — same pins, just a different driver selected at runtime.

@@ -113,7 +113,7 @@ hide:
   <p class="tagline">Smart filament tracking for your 3D printer</p>
   <a href="intro/" class="cta">Get Started</a>
   <a href="https://github.com/SpoolSense" class="cta cta-secondary" target="_blank">GitHub</a>
-  <a href="https://discord.gg/JYFQQQR5F" class="cta cta-secondary" target="_blank">Discord</a>
+  <a href="https://discord.gg/pbXJhKpzd2" class="cta cta-secondary" target="_blank">Discord</a>
 </div>
 
 <div class="tool-grid">
