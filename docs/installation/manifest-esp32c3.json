@@ -1,6 +1,6 @@
 {
   "name": "SpoolSense Scanner (ESP32-C3 SuperMini)",
-  "version": "1.7.5",
+  "version": "1.7.6",
   "new_install_prompt_erase": true,
   "builds": [
     {
