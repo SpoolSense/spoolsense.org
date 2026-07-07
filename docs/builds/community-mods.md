@@ -1,77 +1,110 @@
 # Community Mods
 
-Community-contributed enclosures, mounts, and modifications for the SpoolSense scanner. These live in the [`usermods/`](https://github.com/SpoolSense/spoolsense_scanner/tree/main/usermods) directory of the scanner repo.
+Community-contributed enclosures, mounts, and trays for the SpoolSense scanner — from desk-friendly standalone cases to per-lane readers for multi-material systems. Repo-hosted mods live in the [`usermods/`](https://github.com/SpoolSense/spoolsense_scanner/tree/main/usermods) directory; others are published on Printables. Every design here is free.
 
-## Available Mods
+## Standalone Scanner Cases
 
-### Jim's Scanner Enclosure v2
+<div class="grid cards" markdown>
 
-A 3-piece printable enclosure for the **ESP32-S3-Zero + PN5180** configuration.
+-   :material-monitor-small:{ .lg .middle } **PlasticSnake's Standalone Enclosure**
 
-| File | Description |
-|------|-------------|
-| `enclosure_2-BASE.stl` | Bottom piece |
-| `enclosure_2-MIDDLE.stl` | Middle section |
-| `enclosure_2-INSET_A.stl` | Inset panel |
+    ---
 
-**Print settings:** PLA or PETG, 0.2mm layer height, 15-20% infill
+    ![PlasticSnake's enclosure](https://raw.githubusercontent.com/SpoolSense/spoolsense_scanner/main/usermods/plasticsnake/images/main_photo.jpg)
 
-[:material-download: Download STLs from GitHub](https://github.com/SpoolSense/spoolsense_scanner/tree/main/usermods/jims_enclosure){ .md-button }
+    A 4-part desk unit for **ESP32-S3-Zero + PN5180 + 16x2 I2C LCD**, with an LED diffuser and optional TPU feet. Designed to keep the NFC antenna tight against the scan surface for reliable reads.
 
----
+    *PLA/PETG · no supports on the top piece*
 
-### LinuxGangster's Scanner Mods
+    [:simple-github: GitHub](https://github.com/SpoolSense/spoolsense_scanner/tree/main/usermods/plasticsnake){ .md-button }
+    [:simple-printables: Printables](https://www.printables.com/model/1698547-spoolsense-standalone-scanner-case-esp32-s3-zero-p){ .md-button }
 
-#### Standalone Case (ESP32-S3-Zero + PN532)
+-   :material-package-variant-closed:{ .lg .middle } **roomonthethird's Snap-Fit Case**
 
-A two-piece case (body + lid) for the ESP32-S3-Zero with PN532 NFC reader.
+    ---
 
-| File | Description |
-|------|-------------|
-| `nfc-case-esp32s3zero.3mf` | Main case body |
-| `NFC+Reader+Lid+v1.0.stl` | Lid |
+    ![roomonthethird's case](https://raw.githubusercontent.com/SpoolSense/spoolsense_scanner/main/usermods/roomonthethird/case-assembled-1.jpg)
 
-**Print settings:** PLA or PETG, 0.2mm layer height, 15-20% infill
+    The most compact option: a snap-fit two-piece case for **ESP32-S3-SuperMini + PN5180**. Wires solder directly to both boards (no headers — that's how it stays this small). Fusion 360 source included for remixing.
 
-#### BoxTurtle PN532 Tray
+    *PLA/PETG · 15%+ infill · no supports*
 
-A modified BoxTurtle tray that holds a PN532 reader alongside an AFC lane. For multi-scanner setups with per-lane spool detection.
+    [:simple-github: GitHub](https://github.com/SpoolSense/spoolsense_scanner/tree/main/usermods/roomonthethird){ .md-button }
 
-| File | Description |
-|------|-------------|
-| `tray_plain_pn532.stl` | Modified BoxTurtle tray for PN532 |
+-   :material-cube-outline:{ .lg .middle } **Jim's Scanner Enclosure v2**
 
-[:material-download: Download from GitHub](https://github.com/SpoolSense/spoolsense_scanner/tree/main/usermods/linuxgangster){ .md-button }
+    ---
 
----
+    A clean 3-piece printable enclosure (base, middle, inset panel) for the **ESP32-S3-Zero + PN5180** configuration.
 
-### zoldemberg's ArmoredTurtle Tray (PN532)
+    *PLA/PETG · 0.2mm layers · 15–20% infill*
 
-A tray for [ArmoredTurtle](https://github.com/ArmoredTurtle) multi-material setups that integrates a PN532 RFID mount and ESP32 WROOM enclosure for per-lane scanning.
+    [:simple-github: GitHub](https://github.com/SpoolSense/spoolsense_scanner/tree/main/usermods/jims_enclosure){ .md-button }
 
-[:material-download: Model on Printables](https://www.printables.com/model/1699546-armoredturtle-tray-with-pn532-rfid-mount-and-esp32){ .md-button }
+-   :material-cube-scan:{ .lg .middle } **LinuxGangster's Standalone Case**
 
-License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+    ---
 
----
+    A two-piece case (body + lid) for the **ESP32-S3-Zero + PN532** reader configuration.
 
-### Poseidon's SpoolSense Solo Reader
+    *PLA/PETG · 0.2mm layers · 15–20% infill*
 
-A standalone scanner case with interchangeable mount plates for both ESP32-DevKitC (WROOM) and ESP32-S3-Zero boards.
+    [:simple-github: GitHub](https://github.com/SpoolSense/spoolsense_scanner/tree/main/usermods/linuxgangster){ .md-button }
 
-[:material-download: Model on Printables](https://www.printables.com/model/1716784-spoolsense-solo-reader){ .md-button }
+-   :material-select-place:{ .lg .middle } **Poseidon's SpoolSense Solo Reader**
 
----
+    ---
+
+    A standalone scanner case with **interchangeable mount plates** — one design fits both the ESP32-DevKitC (WROOM) and the ESP32-S3-Zero.
+
+    [:simple-printables: Printables](https://www.printables.com/model/1716784-spoolsense-solo-reader){ .md-button }
+
+</div>
+
+## Shelf & Dock Mounts
+
+<div class="grid cards" markdown>
+
+-   :material-dock-top:{ .lg .middle } **Poseidon's SpoolSense Dock**
+
+    ---
+
+    A dock-style scanner case for **ESP32 + PN5180 + 16x2 I2C LCD + RGB LED** that mounts to **CerealBox, Kichly, and Skroam** dry-box shelving — scan spools right where they're stored.
+
+    [:simple-printables: Printables](https://www.printables.com/model/1708123-spoolsense-dock-standalone-scanner-case-esp32-pn51){ .md-button }
+
+</div>
+
+## Multi-Material System Trays
+
+Per-lane readers for AFC and toolchanger setups — pair with the [BoxTurtle build guide](boxturtles.md).
+
+<div class="grid cards" markdown>
+
+-   :material-tray-full:{ .lg .middle } **LinuxGangster's BoxTurtle PN532 Tray**
+
+    ---
+
+    A modified **BoxTurtle** tray that seats a PN532 reader alongside an AFC lane, for multi-scanner setups with per-lane spool detection.
+
+    [:simple-github: GitHub](https://github.com/SpoolSense/spoolsense_scanner/tree/main/usermods/linuxgangster){ .md-button }
+
+-   :material-tray-full:{ .lg .middle } **zoldemberg's ArmoredTurtle Tray**
+
+    ---
+
+    A tray for [ArmoredTurtle](https://github.com/ArmoredTurtle) multi-material setups integrating a **PN532 mount + ESP32-WROOM enclosure** for per-lane scanning.
+
+    *License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)*
+
+    [:simple-printables: Printables](https://www.printables.com/model/1699546-armoredturtle-tray-with-pn532-rfid-mount-and-esp32){ .md-button }
+
+</div>
 
 ## Submit Your Own
 
-Have a case, mount, or mod? Add it to the scanner repo's `usermods/` directory:
+Have a case, mount, or mod? Two ways to get it on this page:
 
-1. Fork [spoolsense_scanner](https://github.com/SpoolSense/spoolsense_scanner)
-2. Create a directory under `usermods/` (e.g., `usermods/my_mount/`)
-3. Include:
-    - STL/3MF/STEP files
-    - A `README.md` with description, print settings, and photos
-4. Open a PR targeting `main`
+**Host it in the repo** — fork [spoolsense_scanner](https://github.com/SpoolSense/spoolsense_scanner), add a directory under `usermods/` with your STL/3MF/STEP files and a `README.md` (description, print settings, photos), and open a PR targeting `main`. Each contributor owns and maintains their mod — see the [usermods README](https://github.com/SpoolSense/spoolsense_scanner/blob/main/usermods/README.md).
 
-Each contributor owns and maintains their mod. See the [usermods README](https://github.com/SpoolSense/spoolsense_scanner/blob/main/usermods/README.md) for details.
+**Published on Printables?** Open an [issue](https://github.com/SpoolSense/spoolsense_scanner/issues) or drop the link in Discord and we'll add it here.
