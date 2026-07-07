@@ -18,7 +18,7 @@
 
 1. Wire the NFC reader to the ESP32 per the [wiring guide](../hardware/wiring-pn5180.md)
 2. Connect optional peripherals (LCD, LED, keypad)
-3. Flash firmware via the [installer](../installation/firmware.md)
+3. Flash firmware via the [web flasher](../installation/web-flasher.md)
 4. Power via USB
 
 The NFC reader antenna should face upward so you can place spools on top of it.

@@ -220,7 +220,7 @@ If you have an existing `config.yaml` with `toolhead_mode` and `scanner_lane_map
 - **Online status publishing** — middleware publishes `true` to `nfc/middleware/online` on successful broker connection. On clean shutdown via SIGTERM or SIGINT, publishes `false` before disconnecting
 - **Clean shutdown handler** — `SIGTERM` and `SIGINT` now trigger a graceful shutdown that publishes offline status before disconnecting, so a service restart looks different from a crash to any subscribers
 
-Optionally surface middleware status in Home Assistant — see [middleware-setup.md](docs/middleware-setup.md) for the binary sensor config.
+Optionally surface middleware status in Home Assistant — see [middleware-setup.md](https://github.com/SpoolSense/spoolsense_middleware/blob/main/docs/middleware-setup.md) for the binary sensor config.
 
 ### Changed
 - **`TOOLHEADS` config variable** — replaces the hardcoded `["T0", "T1", "T2", "T3"]` list in the subscribe loop. Adjust to match your setup — single toolhead users set `["T0"]`, larger toolchanger setups add entries as needed.
