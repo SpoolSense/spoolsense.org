@@ -2,6 +2,20 @@
 
 The PN5180 connects to the ESP32 via SPI. 8 wires total.
 
+## Recommended module
+
+The [Elechouse PN5180 NFC module](https://www.elechouse.com/product/pn5180-nfc-module/) is the recommended reader: it's a higher-quality build than the common clones, noticeably smaller, and has a cleaner antenna layout. Its header naming differs slightly from the generic boards:
+
+| Elechouse pin | Connect to | Notes |
+|---------------|-----------|-------|
+| PD/CE | **leave unconnected** | Power-down/chip-enable. The board enables the chip by default; wiring this to a driven GPIO will power-cycle the reader unexpectedly (a chip-select line here caused intermittent NFC failures on our bench) |
+| 5V | 5V | Board supply |
+| PVDD | leave unconnected | Pad supply — provided on-board |
+| GND | GND | Ground |
+| NSS / MOSI / MISO / SCK / BUSY / RST | as tables below | SPI logic is **3.3V** (marked `SPI=3V3` on the board) despite the 5V supply |
+
+The separate 4-pin auxiliary header (GPO1, IRQ, AUX1, REQ) is not needed for SpoolSense — leave it unconnected. `REQ` is the firmware-download pin; never tie it high.
+
 ## ESP32-WROOM Pinout
 
 | PN5180 Pin | ESP32 GPIO | Function |
@@ -71,7 +85,7 @@ The C3 has a single usable SPI controller, so this variant is scoped to the NFC 
     Connect 5V to the ESP32's 5V pin (not 3.3V). The SPI data lines are 3.3V logic and are level-shifted on the PN5180 board.
 
 - Keep SPI wires short (under 15cm) for reliable communication
-- The AITRIP PN5180 module has labeled pins matching the table above
+- The AITRIP and Elechouse PN5180 modules have labeled pins matching the tables above (the Elechouse board adds PD/CE and PVDD — see "Recommended module")
 - GPIO/IRQ/AUX pins are defined in firmware but not currently required for basic operation
 
 !!! warning "Using a different board or module?"
