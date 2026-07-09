@@ -110,3 +110,4 @@ nav:
     - Development Setup: contributing/dev-setup.md
     - Enclosure Design: contributing/enclosure-design.md
     - Board Variants: contributing/board-variants.md
+  - Privacy Policy: privacy.md
