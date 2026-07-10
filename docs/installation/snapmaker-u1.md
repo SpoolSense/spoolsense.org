@@ -118,3 +118,13 @@ OpenSpool tags don't carry bed temp on-tag, so the bed-temp default is the most 
 **Two scanners post to the same channel.**
 
 Each channel binding is stored in the scanner's own NVS. Open the config page on the duplicate scanner and change its channel.
+
+---
+
+## Optional: Running the Middleware
+
+The U1 integration above works scanner-direct — no middleware needed. But if
+you also want middleware features (Spoolman weight writeback, the MQTT event
+stream for Home Assistant automations, the mobile app), the U1 itself can't
+host the middleware. Run it in Docker on any other machine on your LAN
+instead — see [Middleware Setup → Run in Docker](middleware.md#run-in-docker).

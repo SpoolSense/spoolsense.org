@@ -1,6 +1,6 @@
 # Middleware Setup
 
-The SpoolSense middleware bridges the scanner to Klipper/AFC. It typically runs on your Klipper host (Raspberry Pi), but can run on any machine on your network that can reach the MQTT broker and Moonraker.
+The SpoolSense middleware bridges the scanner to Klipper/AFC. It typically runs on your Klipper host (Raspberry Pi), but can run on any machine on your network that can reach the MQTT broker and Moonraker — including [in Docker](#run-in-docker) on a home server or NAS.
 
 ## Do I Need This?
 
@@ -94,6 +94,39 @@ Enable slicer integration for toolheads? [y/N]: <span style="color:#fff">y</span
    Find it at http://spoolsense.local (shown on landing page).</span>
 </pre>
 </div>
+
+## Run in Docker
+
+*Middleware v1.8.2+*
+
+If your printer's host can't run the middleware directly (e.g. Snapmaker U1),
+or you'd rather keep it on a home server, NAS, or the box already running
+Spoolman, run it as a container:
+
+```bash
+git clone https://github.com/SpoolSense/spoolsense_middleware.git
+cd spoolsense_middleware/docker
+docker compose up -d
+```
+
+The first start seeds `./spoolsense-data/` with config examples and waits.
+Copy the one matching your printer to `config.yaml`, edit it (MQTT broker,
+Moonraker URL, Spoolman URL, scanners), and the middleware starts on its own
+within a few seconds — no restart needed.
+
+Everything below on this page (configuration, actions, Klipper macros)
+applies the same; your config lives in `spoolsense-data/config.yaml` instead
+of `~/SpoolSense/config.yaml`. The web panel's save-and-restart works in the
+container too.
+
+Full details — upgrades, logs, validation — in
+[docker/README.md](https://github.com/SpoolSense/spoolsense_middleware/blob/master/docker/README.md).
+
+!!! warning "One middleware per printer"
+    Run exactly one middleware instance per printer. A second instance (for
+    example one on the printer host *and* one in Docker, pointed at the same
+    broker) will fight over the retained MQTT status topics and double-process
+    every scan.
 
 ## Configuration
 
