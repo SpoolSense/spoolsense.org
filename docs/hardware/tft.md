@@ -101,11 +101,16 @@ Make sure the LCD toggle is **off** when enabling TFT on WROOM.
 | [1.54" ST7789 Square](https://www.amazon.com/dp/B0DN9NMBFW) | 1.54" | 240x240 | ST7789 | Tested |
 | 1.3" ST7789 Square | 1.3" | 240x240 | ST7789 | Should work (same driver) |
 | [GC9A01 Round](https://www.amazon.com/dp/B0CLM3Y4KH) | 1.28" | 240x240 | GC9A01 | Supported — select in config page |
+| ILI9341 panel | 2.4"–3.2" | up to 320x240 | ILI9341 | Supported — select in config page (v1.8.3+) |
+| ILI9488 panel | 3.5" | up to 480x320 | ILI9488 | Supported — select in config page (v1.8.3+) |
 
 The firmware uses [LovyanGFX](https://github.com/lovyan03/LovyanGFX) which supports many SPI display drivers. Any 240x240 SPI TFT with a supported driver should work with a config change. If you try a display not listed here, let us know in [Discord](https://discord.gg/pbXJhKpzd2).
 
 !!! info "GC9A01 Round Display"
     The GC9A01 round TFT is supported as of v1.6.10. Select "GC9A01 round" in the TFT driver dropdown on the config page (`/config` > Hardware > TFT Driver). Same resolution and SPI wiring as the ST7789 — same pins, just a different driver selected at runtime.
+
+!!! info "ILI9341 and ILI9488 panels — new in v1.8.3+"
+    The ILI9341 and ILI9488 driver panels are supported alongside the ST7789 and GC9A01. Pick the matching driver from the TFT Driver dropdown on the config page (`/config` > Hardware > TFT Driver) — no recompile needed. These are larger panels, so the 240x240 dashboard renders **centered** on the display rather than filling it. Same SPI wiring as the other TFTs.
 
 ## SPI Bus Note
 

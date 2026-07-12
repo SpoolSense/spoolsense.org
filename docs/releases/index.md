@@ -28,6 +28,8 @@ Each scanner release includes pre-built firmware for all three boards:
 
 Plus matching bootloader and partition table binaries. The installer handles flashing all of these automatically.
 
+As of v1.8.3, each binary also ships with a matching `.sha256` sidecar file so you can verify a manual download (for example, `shasum -a 256 -c spoolsense_scanner_esp32dev.bin.sha256`).
+
 ## Updating
 
 - **OTA:** Open `http://spoolsense.local/update` to check for and install updates over WiFi

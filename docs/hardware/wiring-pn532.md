@@ -14,6 +14,9 @@ The PN532 module has a mode selector (DIP switch or solder jumpers). Set it to *
 
 Check your specific board. Some have a 2-position DIP switch, others have solder pads.
 
+!!! info "Remapping pins at runtime — new in v1.8.3+"
+    The reader pins can be reassigned from the config page (`/config` > **NFC Reader Pins (advanced)**) without a recompile. The PN532 shares the same pin slots as the PN5180 (its BUSY field is unused). Leave a field blank for the board default; invalid or conflicting pins are rejected. See the [PN5180 wiring page](wiring-pn5180.md) for details. The pinouts below remain the recommended defaults.
+
 ## ESP32-WROOM Pinout
 
 | PN532 Pin | ESP32 GPIO | Function |

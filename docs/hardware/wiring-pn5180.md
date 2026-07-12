@@ -16,6 +16,9 @@ The [Elechouse PN5180 NFC module](https://www.elechouse.com/product/pn5180-nfc-m
 
 The separate 4-pin auxiliary header (GPO1, IRQ, AUX1, REQ) is not needed for SpoolSense — leave it unconnected. `REQ` is the firmware-download pin; never tie it high.
 
+!!! info "Remapping pins at runtime — new in v1.8.3+"
+    The six NFC reader pins (RST, NSS/SS, BUSY, SCK, MOSI, MISO) can be reassigned from the scanner's config page (`/config` > **NFC Reader Pins (advanced)**) — no recompile needed. Leave a field **blank** to keep that board's default. Invalid or conflicting pins are rejected and revert to the previous value. Changes apply after the post-save restart. The PN532 uses the same slots (its BUSY field is unused). The pinouts below remain the recommended defaults.
+
 ## ESP32-WROOM Pinout
 
 | PN5180 Pin | ESP32 GPIO | Function |

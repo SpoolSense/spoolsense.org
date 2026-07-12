@@ -1,5 +1,56 @@
 # Troubleshooting
 
+## Full Self-Test wizard
+
+!!! tip "Start here — new in v1.8.3+"
+    Before working through the sections below, run the built-in self-test. It checks everything in one pass and produces a report you can paste straight into a GitHub issue.
+
+The **Full Self-Test** is a guided diagnostic built into the scanner's web UI. Open `http://spoolsense.local/troubleshooting` and click **Run Self-Test**.
+
+It is entirely **read-only**: it never writes a tag and never changes your settings. It just inspects the running device and tells you what it finds.
+
+### Options
+
+- **Network checks** — WiFi, MQTT, Spoolman, and printer reachability.
+- **NFC stability test** *(optional)* — measures how reliably the reader sees a tag. This one needs a tag; skip it if you only want the network checks.
+
+### What happens
+
+1. Click **Run Self-Test**. Results stream in live as each check completes:
+   Device, Last reset reason, Memory, Task stacks, WiFi, MQTT, Spoolman, Printer, and the NFC reader's init state, firmware version, and register readback.
+2. If you enabled the NFC stability test, a popup asks you to place **one** tag flat on the reader and press **Continue**.
+3. The reader runs for about 10 seconds, then shows an overall verdict plus an **NFC stability score out of 100**.
+
+### Reading the NFC stability score
+
+| Score | Rating | Meaning |
+|-------|--------|---------|
+| 95–100 | Excellent | Strong, consistent coupling |
+| 85–94 | Good | Reliable placement |
+| 70–84 | Marginal | Reads work but coupling is weak |
+| Below 70 | Poor | Frequent misses likely |
+
+!!! note "The score is experimental"
+    It reflects tag coupling and placement during the test — how well that specific tag sat over the antenna — not a fixed hardware grade. Re-running with the tag repositioned can change the number.
+
+### Copy report for GitHub
+
+After the run, click **Copy report for GitHub**. This copies a plain-text report that **redacts your WiFi and MQTT passwords, API keys, and most of the tag UID** before it lands on your clipboard.
+
+The fastest way to get help is:
+
+1. Run the self-test.
+2. Click **Copy report for GitHub**.
+3. Paste it into a [GitHub issue](https://github.com/SpoolSense/spoolsense_scanner/issues) describing what you're seeing.
+
+### What the results are telling you
+
+| Result | What to do |
+|--------|-----------|
+| NFC score **Poor** or **Marginal** | Reposition the tag flat and centered over the antenna, remove any nearby metal, and check the reader's 5V supply |
+| Reader **init FAIL** | Check power and SPI wiring against the [wiring guide](../hardware/wiring-pn5180.md) |
+| Reader reported as **bus-wedged** | Power-cycle the scanner, and check the 5V supply and decoupling |
+
 ## Scanner won't connect to WiFi
 
 - Verify SSID and password are correct (re-run installer if needed)
