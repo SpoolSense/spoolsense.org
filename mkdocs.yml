@@ -25,7 +25,7 @@ theme:
     - navigation.instant
     - navigation.top
     - navigation.sections
-    - navigation.expand
+    - navigation.footer
     - content.code.copy
     - search.suggest
     - search.highlight
@@ -59,43 +59,41 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Introduction:
-    - What is SpoolSense: intro/index.md
+  - Start Here:
+    - Your First Scanner: start-here.md
+    - Is My Printer Compatible?: resources/compatibility.md
+    - What is SpoolSense?: intro/index.md
     - How It Works: intro/how-it-works.md
-    - Supported Tags: intro/supported-tags.md
-  - Getting Started:
-    - Shopping List: getting-started/shopping-list.md
-    - Choose Your Board: getting-started/choose-board.md
-    - Choose Your NFC Reader: getting-started/choose-reader.md
-    - Choose Your Extras: getting-started/choose-extras.md
-  - Hardware Guides:
-    - Wiring - ESP32 + PN5180: hardware/wiring-pn5180.md
-    - Wiring - ESP32 + PN532: hardware/wiring-pn532.md
-    - Optional - LCD Display: hardware/lcd.md
-    - Optional - TFT Display: hardware/tft.md
-    - Optional - Keypad: hardware/keypad.md
-    - Optional - Status LED: hardware/led.md
-  - Build Guides:
-    - Standalone Scanner: builds/standalone.md
-    - BoxTurtle AFC Mount: builds/boxturtles.md
-    - Community Mods: builds/community-mods.md
-  - Installation:
-    - Web Flasher (Firmware): installation/web-flasher.md
-    - Middleware Setup: installation/middleware.md
-    - Spoolman Integration: installation/spoolman.md
+  - Build a Scanner:
+    - Parts List: getting-started/shopping-list.md
+    - Choose a Board: getting-started/choose-board.md
+    - Choose an NFC Reader: getting-started/choose-reader.md
+    - Wire a PN5180: hardware/wiring-pn5180.md
+    - Wire a PN532: hardware/wiring-pn532.md
+    - Flash the Firmware: installation/web-flasher.md
+    - Enclosures & Mounts:
+      - Standalone Scanner: builds/standalone.md
+      - BoxTurtle AFC Mount: builds/boxturtles.md
+      - Community Mods: builds/community-mods.md
+  - Connect & Integrate:
+    - Spoolman Inventory: installation/spoolman.md
     - Home Assistant: installation/home-assistant.md
-    - Bambu Lab AMS: installation/bambu-ams.md
-    - Snapmaker U1: installation/snapmaker-u1.md
-    - Prusa MK4 / MMU3: installation/prusa.md
-  - Releases:
-    - Overview: releases/index.md
-    - Scanner: releases/scanner.md
-    - Middleware: releases/middleware.md
-    - Installer: releases/installer.md
-  - Resources:
-    - Printer Compatibility: resources/compatibility.md
+    - Klipper & Moonraker: installation/middleware.md
+    - Printer Guides:
+      - Bambu Lab AMS: installation/bambu-ams.md
+      - Snapmaker U1: installation/snapmaker-u1.md
+      - Prusa MK4 / MMU3: installation/prusa.md
+  - Customize:
+    - Choose Your Extras: getting-started/choose-extras.md
+    - TFT Display: hardware/tft.md
+    - LCD Display: hardware/lcd.md
+    - Keypad: hardware/keypad.md
+    - Status LED: hardware/led.md
+  - Reference:
+    - Supported Tags: intro/supported-tags.md
     - Tag Formats: resources/tag-formats.md
     - API Reference: resources/api.md
+    - Troubleshooting: resources/troubleshooting.md
     - Workflow Diagrams:
       - Overview: resources/workflow-diagrams.md
       - Single Toolhead: resources/workflow-single-toolhead.md
@@ -103,11 +101,16 @@ nav:
       - AFC (Box Turtle): resources/workflow-afc.md
       - Bambu Lab AMS: resources/workflow-bambu.md
       - Snapmaker U1: resources/workflow-snapmaker-u1.md
-    - Troubleshooting: resources/troubleshooting.md
-  - Roadmap: roadmap.md
-  - Contributing:
-    - How to Contribute: contributing/index.md
-    - Development Setup: contributing/dev-setup.md
-    - Enclosure Design: contributing/enclosure-design.md
-    - Board Variants: contributing/board-variants.md
-  - Privacy Policy: privacy.md
+  - Project:
+    - Roadmap: roadmap.md
+    - Releases:
+      - Overview: releases/index.md
+      - Scanner: releases/scanner.md
+      - Middleware: releases/middleware.md
+      - Installer: releases/installer.md
+    - Contributing:
+      - How to Contribute: contributing/index.md
+      - Development Setup: contributing/dev-setup.md
+      - Enclosure Design: contributing/enclosure-design.md
+      - Board Variants: contributing/board-variants.md
+    - Privacy Policy: privacy.md
