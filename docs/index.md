@@ -10,8 +10,8 @@ hide:
     <h1>Know what filament is loaded—without updating it by hand.</h1>
     <p class="home-hero__lead">SpoolSense reads an NFC tag on your filament spool, identifies the material, and keeps your inventory or printer in sync.</p>
     <div class="home-actions">
-      <a href="start-here/" class="button button--primary">Build your first scanner <span aria-hidden="true">→</span></a>
-      <a href="resources/compatibility/" class="button button--secondary">Check compatibility</a>
+      <a href="https://apps.apple.com/us/app/spoolsense-nfc-filament-tags/id6789256550" class="button button--primary" target="_blank" rel="noopener">Try the iOS app <span aria-hidden="true">↗</span></a>
+      <a href="start-here/" class="button button--secondary">Build your first scanner <span aria-hidden="true">→</span></a>
     </div>
     <p class="home-proof">No cloud · No subscription · About $8–20 in hardware</p>
   </div>

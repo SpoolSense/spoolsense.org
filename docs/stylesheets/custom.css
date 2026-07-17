@@ -402,6 +402,90 @@
   color: var(--md-default-fg-color--light);
 }
 
+/* iOS app landing page */
+.ios-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.58fr);
+  align-items: center;
+  gap: clamp(2rem, 8vw, 6rem);
+  min-height: 76vh;
+  padding: clamp(3rem, 8vw, 7rem) 0;
+}
+
+.md-typeset .ios-hero h1 {
+  max-width: 720px;
+  margin: 0.35rem 0 1.15rem;
+  font-size: clamp(2.7rem, 5.8vw, 5rem);
+  font-weight: 850;
+  letter-spacing: -0.04em;
+  line-height: 0.96;
+}
+
+.ios-hero__lead {
+  max-width: 680px;
+  margin: 0;
+  color: var(--md-default-fg-color--light);
+  font-size: clamp(1.05rem, 1.8vw, 1.32rem);
+  line-height: 1.6;
+}
+
+.ios-hero__media {
+  position: relative;
+  justify-self: center;
+}
+
+.ios-hero__media::before {
+  position: absolute;
+  inset: 12% -28%;
+  z-index: -1;
+  border-radius: 50%;
+  background: rgba(220, 38, 38, 0.16);
+  content: "";
+  filter: blur(70px);
+}
+
+.ios-hero__media img {
+  display: block;
+  width: min(100%, 310px);
+  border: 1px solid #2a2e36;
+  border-radius: 36px;
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.42);
+}
+
+.ios-screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.25rem, 4vw, 3rem);
+  max-width: 760px;
+  margin: 2.5rem auto 0;
+}
+
+.ios-screenshot-grid figure {
+  margin: 0;
+  text-align: center;
+}
+
+.ios-screenshot-grid img {
+  display: block;
+  width: 100%;
+  border: 1px solid #2a2e36;
+  border-radius: 30px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+}
+
+.ios-screenshot-grid figcaption {
+  margin-top: 1rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.84rem;
+}
+
+.ios-privacy > p {
+  max-width: 720px;
+  margin-right: auto;
+  margin-left: auto;
+  color: var(--md-default-fg-color--light);
+}
+
 .text-links {
   display: flex;
   justify-content: center;
@@ -515,10 +599,15 @@
 }
 
 @media (max-width: 900px) {
-  .home-hero {
+  .home-hero,
+  .ios-hero {
     grid-template-columns: 1fr;
     min-height: auto;
     padding-top: 4rem;
+  }
+
+  .ios-hero__media {
+    order: 2;
   }
 
   .home-hero__media img {
@@ -547,6 +636,10 @@
   .quick-facts {
     grid-template-columns: 1fr 1fr;
   }
+
+  .ios-screenshot-grid {
+    gap: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -558,5 +651,14 @@
   .text-links {
     flex-direction: column;
     gap: 0.65rem;
+  }
+
+  .ios-hero__media img {
+    width: min(100%, 270px);
+  }
+
+  .ios-screenshot-grid {
+    grid-template-columns: 1fr;
+    max-width: 280px;
   }
 }

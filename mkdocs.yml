@@ -59,6 +59,7 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - iOS App: ios-app.md
   - Start Here:
     - Your First Scanner: start-here.md
     - Is My Printer Compatible?: resources/compatibility.md
