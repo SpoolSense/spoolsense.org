@@ -1,0 +1,15 @@
+{
+  "name": "SpoolSense Scanner",
+  "version": "1.9.0",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32-C6",
+      "parts": [
+        { "path": "/firmware/bootloader_esp32c6.bin", "offset": 0 },
+        { "path": "/firmware/partitions_esp32c6.bin", "offset": 32768 },
+        { "path": "/firmware/spoolsense_scanner_esp32c6.bin", "offset": 65536 }
+      ]
+    }
+  ]
+}
