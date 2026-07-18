@@ -82,6 +82,44 @@ The C3 has a single usable SPI controller, so this variant is scoped to the NFC 
 !!! note "Strap pins to be aware of on the C3"
     GPIO 8 and 9 are also strap pins (they also happen to be LCD I2C lines — see [LCD wiring](lcd.md)). A standard PCF8574 I2C backpack provides external pull-ups that idle both lines HIGH, which satisfies the POR requirement. Don't wire anything to GPIO 8/9 that can drive them LOW before firmware finishes startup.
 
+## ESP32-C6-DevKitC-1 Pinout (shared SPI)
+
+The C6 has one general-purpose SPI controller, shared between the PN5180 and the optional TFT (v1.9.0+). SCK and MOSI fan out to both devices; MISO goes to the PN5180 only (the TFT is write-only).
+
+| PN5180 Pin | ESP32-C6 GPIO | Function |
+|------------|--------------|----------|
+| RST | GPIO 0 | Hardware reset (active low) |
+| NSS | GPIO 10 | SPI chip select — **add a 10kΩ pull-up to 3V3** |
+| MOSI | GPIO 7 | SPI data out (shared with TFT SDA) |
+| MISO | GPIO 2 | SPI data in (PN5180 only) |
+| SCK | GPIO 6 | SPI clock (shared with TFT SCL) |
+| BUSY | GPIO 1 | Busy signal (input) |
+| 5V | 5V | Power |
+| GND | GND | Ground |
+
+IRQ/GPIO/AUX are not connected on this board. If you add the TFT, see [TFT wiring](tft.md) — its CS (GPIO 3) also needs a 10kΩ pull-up so neither device is selected during reset.
+
+!!! note "Strap pins on the C6"
+    GPIO 4, 5, 9, and 15 are strap pins and GPIO 12/13 are the native USB pins — the pin map avoids all of them. Keep them free if you re-wire.
+
+## ESP32-C5-DevKitC-1 Pinout (shared SPI)
+
+Same shared-bus layout as the C6, different GPIO numbers. New in v1.9.0.
+
+| PN5180 Pin | ESP32-C5 GPIO | Function |
+|------------|--------------|----------|
+| RST | GPIO 0 | Hardware reset (active low) |
+| NSS | GPIO 10 | SPI chip select — **add a 10kΩ pull-up to 3V3** |
+| MOSI | GPIO 8 | SPI data out (shared with TFT SDA) |
+| MISO | GPIO 9 | SPI data in (PN5180 only) |
+| SCK | GPIO 6 | SPI clock (shared with TFT SCL) |
+| BUSY | GPIO 1 | Busy signal (input) |
+| 5V | 5V | Power |
+| GND | GND | Ground |
+
+!!! warning "The header pin labeled RX is GPIO 12"
+    On the C5-DevKitC-1 the UART pins are silkscreened TX/RX (GPIO 11/12), not by GPIO number. Don't wire peripherals to them, and avoid the strap pins (GPIO 2, 3, 7, 25, 26, 28) and the native USB pins (GPIO 13/14).
+
 ## Wiring Tips
 
 !!! note "PN5180 uses 5V power"

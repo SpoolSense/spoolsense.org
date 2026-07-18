@@ -73,6 +73,32 @@ The PN532 shares the same SPI pins as the PN5180 on the C3 — only one reader i
 !!! note "RST on GPIO 0 is intentional"
     GPIO 2 is a C3 boot strap pin. RST is wired to GPIO 0 (non-strap) so the reader cannot hold the board in download mode at power-on.
 
+## ESP32-C6-DevKitC-1 Pinout (shared SPI)
+
+The PN532 uses the same shared SPI pins as the PN5180 map on this board (v1.9.0+).
+
+| PN532 Pin | ESP32-C6 GPIO | Function |
+|-----------|--------------|----------|
+| SS | GPIO 10 | SPI chip select — **add a 10kΩ pull-up to 3V3** |
+| MOSI | GPIO 7 | SPI data out (shared with TFT SDA) |
+| MISO | GPIO 2 | SPI data in |
+| SCK | GPIO 6 | SPI clock (shared with TFT SCL) |
+| RSTPDN | GPIO 0 | Reset (optional) |
+| VCC | 3V3 or 5V (per module) | Power |
+| GND | GND | Ground |
+
+## ESP32-C5-DevKitC-1 Pinout (shared SPI)
+
+| PN532 Pin | ESP32-C5 GPIO | Function |
+|-----------|--------------|----------|
+| SS | GPIO 10 | SPI chip select — **add a 10kΩ pull-up to 3V3** |
+| MOSI | GPIO 8 | SPI data out (shared with TFT SDA) |
+| MISO | GPIO 9 | SPI data in |
+| SCK | GPIO 6 | SPI clock (shared with TFT SCL) |
+| RSTPDN | GPIO 0 | Reset (optional) |
+| VCC | 3V3 or 5V (per module) | Power |
+| GND | GND | Ground |
+
 ## Wiring Tips
 
 !!! note "PN532 uses 3.3V power"

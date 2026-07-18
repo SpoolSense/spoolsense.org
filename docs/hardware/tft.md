@@ -77,6 +77,25 @@ The S3-DevKitC runs the TFT on SPI3, completely separate from the PN5180 on SPI2
 !!! tip "Best board for TFT + PN5180"
     The S3-DevKitC is the only board with dedicated SPI buses for both the NFC reader and TFT display. No pin sharing, no compromises.
 
+## Wiring (ESP32-C6 — shared SPI, v1.9.0+)
+
+The C6 runs the TFT and the NFC reader on its single SPI bus. SCK and MOSI are shared wires reaching both devices; each device keeps its own chip select.
+
+| TFT Pin | ESP32-C6 GPIO | Note |
+|---------|--------------|------|
+| SCL/SCK | GPIO 6 | Shared with the NFC reader's SCK |
+| SDA/MOSI | GPIO 7 | Shared with the NFC reader's MOSI |
+| CS | GPIO 3 | **10kΩ pull-up to 3V3 required** |
+| DC | GPIO 11 | |
+| RST | GPIO 18 | |
+| BL | 3V3 | Backlight always on |
+| VCC | 3V3 | |
+| GND | GND | |
+
+Use a write-only TFT: leave the TFT's MISO/SDO pin disconnected — the bus's MISO line belongs to the NFC reader. Fit 10kΩ pull-ups on **both** chip selects (TFT GPIO 3 and NFC GPIO 10) so neither device is selected while the board resets.
+
+On the ESP32-C5 the same shared-bus design is built into the firmware (TFT CS GPIO 4, DC GPIO 5, RST GPIO 23) but has not been hardware-validated yet — treat TFT on the C5 as experimental.
+
 ## What It Shows
 
 - **Boot:** SpoolSense logo + firmware version
@@ -109,11 +128,13 @@ The firmware uses [LovyanGFX](https://github.com/lovyan03/LovyanGFX) which suppo
 !!! info "GC9A01 Round Display"
     The GC9A01 round TFT is supported as of v1.6.10. Select "GC9A01 round" in the TFT driver dropdown on the config page (`/config` > Hardware > TFT Driver). Same resolution and SPI wiring as the ST7789 — same pins, just a different driver selected at runtime.
 
-!!! info "ILI9341 and ILI9488 panels — new in v1.8.3+"
-    The ILI9341 and ILI9488 driver panels are supported alongside the ST7789 and GC9A01. Pick the matching driver from the TFT Driver dropdown on the config page (`/config` > Hardware > TFT Driver) — no recompile needed. These are larger panels, so the 240x240 dashboard renders **centered** on the display rather than filling it. Same SPI wiring as the other TFTs.
+!!! info "ILI9341 and ILI9488 panels"
+    The ILI9341 and ILI9488 driver panels are supported alongside the ST7789 and GC9A01 (v1.8.3+). Pick the matching driver from the TFT Driver dropdown on the config page (`/config` > Hardware > TFT Driver) — no recompile needed. As of **v1.9.0** the 3.5" ILI9488 gets a dedicated full-screen **landscape dashboard**: a 3D spool rendered in the scanned filament's colour, larger typography, and a live WiFi / Home Assistant / printer status bar. On the ILI9341 the 240x240 dashboard renders centered.
 
 ## SPI Bus Note
 
 - **ESP32-WROOM:** The TFT uses VSPI and the PN5180 uses HSPI — separate buses, no contention.
 - **ESP32-S3-DevKitC:** The TFT uses SPI3 and the PN5180 uses SPI2 (FSPI) — fully dedicated buses.
 - **ESP32-S3-Zero:** The TFT shares SPI pins with the PN5180, so TFT is only compatible with the PN532 reader on this board.
+- **ESP32-C6:** One shared SPI bus for TFT + either reader (PN5180 or PN532) — supported in v1.9.0+ with the pull-up wiring above.
+- **ESP32-C5:** Same shared-bus firmware as the C6; awaiting hardware validation.

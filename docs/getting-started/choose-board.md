@@ -1,6 +1,6 @@
 # Choose Your Board
 
-SpoolSense supports four ESP32 board variants.
+SpoolSense supports six ESP32 board variants.
 
 ## ESP32-WROOM DevKit (Recommended)
 
@@ -108,6 +108,55 @@ A tiny, inexpensive RISC-V board (HORNAXYS, Waveshare, and other clones). Scoped
 - No PSRAM, less flash headroom for future features
 - Strap pins on GPIO 2, 8, 9 require care when wiring (see [PN5180 wiring](../hardware/wiring-pn5180.md))
 
+## ESP32-C6-DevKitC-1 (Espressif)
+
+WiFi 6 board with full SpoolSense support as of v1.9.0, including the shared-SPI TFT.
+
+| Spec | Value |
+|------|-------|
+| Chip | ESP32-C6, single-core RISC-V 160MHz |
+| Flash | 8MB |
+| USB | Two USB-C ports (UART + native USB) |
+| Status LED | Onboard WS2812 RGB (no wiring needed) |
+| Display | I2C LCD, or TFT sharing the SPI bus with the NFC reader |
+| Price | ~$8-10 |
+
+**Pros:**
+
+- WiFi 6 (802.11ax) on 2.4GHz
+- Onboard RGB LED
+- TFT **and** NFC on one SPI bus (shared-bus support, v1.9.0+) — including the 3.5" ILI9488 landscape dashboard
+- Web flasher supported
+
+**Cons:**
+
+- Single SPI controller — the TFT shares the bus with the NFC reader (works, but wiring needs the documented pull-ups)
+- Keypad not supported
+
+## ESP32-C5-DevKitC-1 (Espressif)
+
+The first dual-band board — 5GHz WiFi. Support is new in v1.9.0 and still maturing.
+
+| Spec | Value |
+|------|-------|
+| Chip | ESP32-C5, single-core RISC-V 240MHz |
+| Flash | 8MB (WROOM-1 N8R8 module) |
+| USB | Two USB-C ports (UART + native USB) |
+| Status LED | Onboard WS2812 RGB (no wiring needed) |
+| Display | I2C LCD; TFT support is built in but not yet hardware-validated |
+| Price | ~$10-14 |
+
+**Pros:**
+
+- Dual-band WiFi 6: 2.4GHz **and** 5GHz
+- Onboard RGB LED
+
+**Cons:**
+
+- USB flash only for now (no web-flasher entry yet)
+- TFT support is compile-enabled but awaiting hardware validation — treat it as experimental
+- Keypad not supported
+
 ## Which Should I Choose?
 
 | If you want... | Choose |
@@ -119,6 +168,8 @@ A tiny, inexpensive RISC-V board (HORNAXYS, Waveshare, and other clones). Scoped
 | Onboard LED (no wiring) | **ESP32-S3-Zero** or **S3-DevKitC** |
 | PN5180 + TFT on separate SPI buses | **ESP32-S3-DevKitC** |
 | Most flash + PSRAM | **ESP32-S3-DevKitC** |
+| WiFi 6 + TFT on a compact board | **ESP32-C6-DevKitC-1** |
+| 5GHz WiFi | **ESP32-C5-DevKitC-1** (new, experimental TFT) |
 
 !!! note
     Each board has its own firmware binary. The installer and web flasher handle board selection automatically.
