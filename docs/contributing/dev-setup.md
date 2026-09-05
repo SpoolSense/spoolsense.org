@@ -21,28 +21,29 @@ Edit `include/UserConfig.h` with your WiFi credentials and preferences.
 
 ### Build and Flash
 
+One environment per board:
+
+| Board | Environment |
+|---|---|
+| ESP32-WROOM DevKit | `esp32dev` |
+| ESP32-S3-Zero | `esp32s3zero` |
+| ESP32-S3-DevKitC-1 (N16R8) | `esp32s3devkitc` |
+| ESP32-C3 SuperMini / DevKitM-1 | `esp32c3` |
+| ESP32-C6-DevKitC-1 | `esp32c6` |
+| ESP32-C5-DevKitC-1 | `esp32c5` |
+
 ```bash
-# ESP32-WROOM
-pio run -e esp32dev
-pio run -e esp32dev -t upload
-
-# ESP32-S3-Zero
-pio run -e esp32s3zero
-pio run -e esp32s3zero -t upload
-
-# ESP32-S3-DevKitC-1
-pio run -e esp32s3devkitc
-pio run -e esp32s3devkitc -t upload
+pio run -e <environment>              # build
+pio run -e <environment> -t upload    # build + flash over USB
 ```
+
+The platform is pinned to a specific [pioarduino](https://github.com/pioarduino/platform-espressif32) release (Arduino-ESP32 3.x / ESP-IDF 5.x) in `platformio.ini` — PlatformIO downloads it automatically on first build. Don't change the pin; the official `espressif32` platform cannot build the C6/C5 targets.
 
 ### Run Tests
 
 ```bash
-# Native unit tests
+# Native unit tests (parsers, diagnostics, layout, write guard)
 make -C test/native test
-
-# OpenPrintTag library tests
-./test/native/test_openprinttag_runner
 ```
 
 ## Middleware
@@ -59,8 +60,12 @@ make -C test/native test
 git clone https://github.com/SpoolSense/spoolsense_middleware.git
 cd spoolsense_middleware/middleware
 pip3 install -r requirements.txt
-cp config.example.yaml config.yaml
+cp config.example.single.yaml config.yaml
 ```
+
+Config examples exist per setup type — copy the one that matches yours:
+`config.example.single.yaml` (single toolhead), `.afc.yaml` (AFC), `.toolchanger.yaml`,
+`.happy_hare.yaml`, `.indx.yaml`.
 
 ### Run
 
