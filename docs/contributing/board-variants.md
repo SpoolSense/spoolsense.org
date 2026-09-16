@@ -2,7 +2,7 @@
 
 The scanner firmware supports a fixed set of boards, each with its own compile-time pin map and PlatformIO build environment. If your ESP32 board isn't on the list, you can add it yourself and submit a PR. This page walks through every file a new variant touches.
 
-Current variants: `esp32dev` (WROOM), `esp32s3zero`, `esp32s3devkitc`, `esp32c3`, `esp32c6`, `esp32c5`.
+Current variants: `esp32dev` (WROOM), `esp32s3zero`, `esp32s3devkitc`, `esp32c3`, `esp32c6`, `esp32c5`, `seeed_xiao_esp32c6`.
 
 ## Before you start
 
@@ -22,6 +22,8 @@ Every chip family has pins you must avoid:
 | ESP32-C3 | GPIO 2, 8, 9 | Strap pins |
 | ESP32-C6 | GPIO 4, 5, 8, 9, 15 | Strap pins (8 drives the onboard WS2812 — safe only because nothing external can pull it at reset) |
 | ESP32-C5 | GPIO 2, 3, 7, 25, 26, 28 | Strap pins |
+| Seeed XIAO ESP32-C6 | GPIO 3, 14, 15 | Internal: RF enable, antenna select, user LED (strap) |
+| Seeed XIAO ESP32-C6 | GPIO 16 as a peripheral-driven input | U0TXD — the ROM drives it at boot (RST output is fine there, BUSY is not) |
 | All | GPIO 6-11 (classic ESP32) / flash pins | Connected to SPI flash |
 
 A peripheral that can hold a strap pin low at power-on (like an NFC reader's RST line) will put the board into download mode. This is why the C3 variant wires PN5180 RST to GPIO 0 (not a strap pin on C3) instead of GPIO 2.

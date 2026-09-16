@@ -1,6 +1,6 @@
 # Choose Your Board
 
-SpoolSense supports six ESP32 board variants.
+SpoolSense supports seven ESP32 board variants.
 
 ## ESP32-WROOM DevKit (Recommended)
 
@@ -133,6 +133,33 @@ WiFi 6 board with full SpoolSense support as of v1.9.0, including the shared-SPI
 - Single SPI controller — the TFT shares the bus with the NFC reader (works, but wiring needs the documented pull-ups)
 - Keypad not supported
 
+## Seeed Studio XIAO ESP32-C6
+
+A thumbnail-sized WiFi 6 board for compact NFC-only builds. New in v1.11.1, contributed and hardware-tested by the community.
+
+| Spec | Value |
+|------|-------|
+| Board | Seeed Studio XIAO ESP32-C6 |
+| Chip | ESP32-C6, single-core RISC-V 160MHz |
+| Flash | 4MB |
+| USB | USB-C (native USB CDC — no UART adapter needed) |
+| GPIO | 11 routed pads (D0–D10) |
+| Status LED | Onboard single-color user LED (no wiring needed) |
+| Display | I2C LCD supported; no TFT, no keypad |
+| Price | ~$5-6 |
+
+**Pros:**
+
+- Smallest supported board — ideal for tight enclosures
+- WiFi 6, with both a built-in antenna and an external antenna connector
+- USB-C serial and onboard LED, zero extra wiring beyond the reader
+
+**Cons:**
+
+- NFC-focused scope: no TFT and no keypad
+- Status LED is single-color — states show as brightness and blinking, not colors
+- 4MB flash, no PSRAM
+
 ## ESP32-C5-DevKitC-1 (Espressif)
 
 The first dual-band board — 5GHz WiFi. Support is new in v1.9.0 and still maturing.
@@ -169,6 +196,7 @@ The first dual-band board — 5GHz WiFi. Support is new in v1.9.0 and still matu
 | PN5180 + TFT on separate SPI buses | **ESP32-S3-DevKitC** |
 | Most flash + PSRAM | **ESP32-S3-DevKitC** |
 | WiFi 6 + TFT on a compact board | **ESP32-C6-DevKitC-1** |
+| Tiniest scanner (NFC + optional LCD) | **Seeed XIAO ESP32-C6** (v1.11.1+) |
 | 5GHz WiFi | **ESP32-C5-DevKitC-1** (new, experimental TFT) |
 
 !!! note

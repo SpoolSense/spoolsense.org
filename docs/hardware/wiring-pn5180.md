@@ -102,6 +102,30 @@ IRQ/GPIO/AUX are not connected on this board. If you add the TFT, see [TFT wirin
 !!! note "Strap pins on the C6"
     GPIO 4, 5, 9, and 15 are strap pins and GPIO 12/13 are the native USB pins — the pin map avoids all of them. Keep them free if you re-wire.
 
+## Seeed Studio XIAO ESP32-C6 Pinout
+
+Compact NFC-only build (no TFT, no keypad). New in v1.11.1. Uses the XIAO's hardware SPI pads plus three control lines.
+
+| PN5180 Pin | XIAO Pad | ESP32-C6 GPIO | Function |
+|------------|----------|---------------|----------|
+| RST | D6 | GPIO 16 | Hardware reset (active low) |
+| NSS | D3 | GPIO 21 | SPI chip select |
+| MOSI | D10 | GPIO 18 | SPI data out |
+| MISO | D9 | GPIO 20 | SPI data in |
+| SCK | D8 | GPIO 19 | SPI clock |
+| BUSY | D7 | GPIO 17 | Busy signal (input) |
+| 5V | 5V | — | Power |
+| 3V3 | 3V3 | — | Logic supply (some modules need both rails) |
+| GND | GND | — | Ground |
+
+The optional I2C LCD goes on D4/D5 (GPIO 22/23).
+
+!!! warning "Do not swap RST and BUSY"
+    D6/GPIO16 is the C6's boot-console TX pin — the chip drives it at every power-on. RST tolerates that (the firmware hard-resets the reader at init anyway), but the PN5180 drives BUSY, and putting BUSY on D6 makes two chips fight over one wire at every boot.
+
+!!! note "Internal pins on the XIAO"
+    GPIO 3 and 14 control the antenna switch and GPIO 15 is the onboard LED (a strap pin). They are not routed to pads — the firmware refuses them as pin overrides.
+
 ## ESP32-C5-DevKitC-1 Pinout (shared SPI)
 
 Same shared-bus layout as the C6, different GPIO numbers. New in v1.9.0.

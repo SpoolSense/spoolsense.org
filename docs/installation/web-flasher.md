@@ -220,6 +220,7 @@ esp-web-install-button button:hover {
       <option value="/installation/manifest-s3devkitc.json">ESP32-S3-DevKitC-1 (N16R8)</option>
       <option value="/installation/manifest-esp32c3.json">ESP32-C3 SuperMini</option>
       <option value="/installation/manifest-esp32c6.json">ESP32-C6-DevKitC-1</option>
+      <option value="/installation/manifest-xiao-esp32c6.json">Seeed XIAO ESP32-C6</option>
     </select>
   </div>
   <esp-web-install-button id="flashBtn" manifest="/installation/manifest.json">
