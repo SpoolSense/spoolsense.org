@@ -59,6 +59,18 @@ Community-contributed enclosures, mounts, and trays for the SpoolSense scanner �
 
     [:simple-printables: Printables](https://www.printables.com/model/1716784-spoolsense-solo-reader){ .md-button }
 
+-   :material-circle-slice-8:{ .lg .middle } **Cortexa's SpoolSense Compact Scanner**
+
+    ---
+
+    ![Cortexa's compact scanner](../img/gc9a01-compact-scanner.jpg)
+
+    A compact standalone case with a front opening for the **GC9A01 round TFT** — the first community case to support the round-display build.
+
+    *Photo © Cortexa · License: [CC BY](https://creativecommons.org/licenses/by/4.0/)*
+
+    [:simple-printables: Printables](https://www.printables.com/model/1770404-spoolsense-compact-scanner){ .md-button }
+
 </div>
 
 ## Shelf & Dock Mounts
