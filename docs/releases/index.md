@@ -18,13 +18,17 @@ curl -sL https://raw.githubusercontent.com/SpoolSense/spoolsense-installer/main/
 
 ## Firmware Binaries
 
-Each scanner release includes pre-built firmware for all three boards:
+Each scanner release includes pre-built firmware for every supported board:
 
 | File | Board |
 |------|-------|
 | `spoolsense_scanner_esp32dev.bin` | ESP32-WROOM DevKit |
 | `spoolsense_scanner_esp32s3zero.bin` | ESP32-S3-Zero |
 | `spoolsense_scanner_esp32s3devkitc.bin` | ESP32-S3-DevKitC-1 |
+| `spoolsense_scanner_esp32c3.bin` | ESP32-C3 SuperMini |
+| `spoolsense_scanner_esp32c6.bin` | ESP32-C6-DevKitC-1 |
+| `spoolsense_scanner_esp32c5.bin` | ESP32-C5-DevKitC-1 |
+| `spoolsense_scanner_seeed_xiao_esp32c6.bin` | Seeed Studio XIAO ESP32-C6 |
 
 Plus matching bootloader and partition table binaries. The installer handles flashing all of these automatically.
 

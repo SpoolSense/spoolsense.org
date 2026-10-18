@@ -26,11 +26,12 @@ Material IDs map to a community-maintained database with ~100 materials.
 
 ## OpenTag3D
 
-A newer format using CBOR encoding on NTAG tags.
+An open format that stores a fixed binary memory map on NTAG tags.
 
-- **Tag types:** NTAG215/216 (ISO14443A)
-- **Encoding:** CBOR
-- **Data:** Base material, modifiers, manufacturer, color, weight, density, temps
+- **Spec:** [opentag3d.info](https://opentag3d.info/spec.html)
+- **Tag types:** v2: NTAG215/216; v1: NTAG213/215/216 (ISO14443A)
+- **Encoding:** Fixed binary layout in an NDEF MIME record (`application/opentag3d`)
+- **Data:** Base material, modifiers, manufacturer, color (RGB + alpha), weight, density, diameter, temps
 
 SpoolSense supports full read and write for OpenTag3D via the web UI at `/writer/opentag3d`.
 
